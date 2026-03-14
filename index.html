@@ -18,9 +18,32 @@ box-sizing:border-box;
 
 body{
 font-family:Arial, Helvetica, sans-serif;
-color:#222;
 background:#f4f6f8;
+color:#222;
 line-height:1.6;
+}
+
+/* NAVBAR */
+
+.navbar{
+background:#ffffff;
+padding:15px 30px;
+display:flex;
+justify-content:space-between;
+align-items:center;
+box-shadow:0 2px 10px rgba(0,0,0,0.08);
+}
+
+.logo{
+font-weight:bold;
+font-size:20px;
+}
+
+.nav-links a{
+margin-left:20px;
+text-decoration:none;
+color:#222;
+font-weight:500;
 }
 
 /* HERO */
@@ -29,14 +52,14 @@ line-height:1.6;
 background:#0f172a;
 color:white;
 text-align:center;
-padding:100px 20px;
+padding:110px 20px;
 }
 
 .hero h1{
-font-size:40px;
+font-size:42px;
 max-width:900px;
 margin:auto;
-margin-bottom:20px;
+margin-bottom:25px;
 }
 
 .hero p{
@@ -49,9 +72,9 @@ font-size:18px;
 .cta{
 background:#2563eb;
 padding:16px 32px;
+border-radius:5px;
 color:white;
 text-decoration:none;
-border-radius:5px;
 font-weight:bold;
 }
 
@@ -64,15 +87,28 @@ padding:70px 20px;
 }
 
 .section h2{
+font-size:30px;
 margin-bottom:20px;
-font-size:28px;
 }
 
-/* IMAGE */
+/* IMAGE PLACEHOLDER */
 
-.section img{
+.image-placeholder{
 width:100%;
+height:320px;
+background:#dcdcdc;
 border-radius:6px;
+display:flex;
+align-items:center;
+justify-content:center;
+margin-top:25px;
+font-weight:bold;
+color:#555;
+}
+
+/* VIDEO */
+
+.video-box{
 margin-top:25px;
 }
 
@@ -92,34 +128,42 @@ border-radius:6px;
 box-shadow:0 4px 12px rgba(0,0,0,0.08);
 }
 
+.product img{
+width:100%;
+border-radius:6px;
+margin-bottom:15px;
+}
+
 .product h3{
 margin-bottom:15px;
 }
 
-.product ul{
-padding-left:18px;
-}
+/* CERTIFICATE GRID */
 
-/* BADGES */
-
-.badges{
+.certificates{
 display:flex;
 gap:30px;
 flex-wrap:wrap;
 margin-top:30px;
 }
 
-.badge{
+.certificate{
+width:200px;
 background:white;
-padding:18px 28px;
+padding:15px;
 border-radius:6px;
 box-shadow:0 3px 10px rgba(0,0,0,0.08);
-font-weight:bold;
+text-align:center;
+}
+
+.certificate img{
+width:100%;
+margin-bottom:10px;
 }
 
 /* CONTACT */
 
-.contact{
+.contact-box{
 background:white;
 padding:30px;
 border-radius:6px;
@@ -149,6 +193,11 @@ font-size:28px;
 grid-template-columns:1fr;
 }
 
+.navbar{
+flex-direction:column;
+gap:10px;
+}
+
 }
 
 </style>
@@ -157,6 +206,29 @@ grid-template-columns:1fr;
 
 <body>
 
+<!-- NAVBAR -->
+
+<div class="navbar">
+
+<div class="logo">
+
+<!-- Replace with your logo -->
+Apex Origin Global
+
+</div>
+
+<div class="nav-links">
+
+<a href="#origin">Origin</a>
+<a href="#products">Products</a>
+<a href="#compliance">Compliance</a>
+<a href="#contact">Contact</a>
+
+</div>
+
+</div>
+
+
 <!-- HERO -->
 
 <div class="hero">
@@ -164,7 +236,7 @@ grid-template-columns:1fr;
 <h1>Origin-Direct Indian Staples for GCC Supermarket Supply Chains</h1>
 
 <p>
-Sortex-cleaned Sona Masuri rice and nitrogen-flushed South Indian snacks sourced directly from Karnataka origin clusters.
+Sortex-cleaned Sona Masuri rice and nitrogen-flushed South Indian snacks sourced directly from Karnataka origin clusters.  
 5–7 day LCL/FCL transit to Sohar and Hamad ports.
 </p>
 
@@ -175,36 +247,67 @@ Request a GCC-Compliant Sample Box
 </div>
 
 
-<!-- ORIGIN MODEL -->
+<!-- ORIGIN SECTION -->
 
-<div class="section">
+<div class="section" id="origin">
 
 <h2>Origin-Direct Consolidation Model</h2>
 
 <p>
 Apex Origin Global consolidates agricultural and manufacturing products directly at origin clusters in Karnataka, India.
-By eliminating port-city trading intermediaries we provide GCC buyers cleaner procurement costs, stronger shelf margins,
+By eliminating port-city intermediaries we provide GCC buyers cleaner procurement costs, stronger shelf margins,
 and faster shipment cycles.
 </p>
 
-<img src="https://images.unsplash.com/photo-1586201375761-83865001e31c" alt="Rice Processing">
+<div class="image-placeholder">
+PLACE RICE MILL / PROCESSING PHOTO HERE
+</div>
+
+</div>
+
+
+<!-- FACTORY VIDEO -->
+
+<div class="section">
+
+<h2>Processing & Packaging</h2>
+
+<p>
+Rice sorting, snack processing, and packaging are performed through modern hygienic production lines designed for export-grade quality control.
+</p>
+
+<div class="video-box">
+
+<!-- Replace with real factory video later -->
+
+<video width="100%" controls>
+
+<source src="assets/factory.mp4" type="video/mp4">
+
+</video>
+
+</div>
 
 </div>
 
 
 <!-- PRODUCTS -->
 
-<div class="section">
+<div class="section" id="products">
 
 <h2>Product Portfolio</h2>
 
 <div class="products">
 
+
 <div class="product">
+
+<img src="assets/rice.jpg" alt="Sona Masuri Rice">
 
 <h3>Sona Masuri Rice</h3>
 
 <ul>
+
 <li>Davanagere Origin</li>
 <li>Sortex-cleaned</li>
 <li>Double-polished</li>
@@ -212,20 +315,26 @@ and faster shipment cycles.
 <li>Packaging: 5kg / 10kg / 25kg / 50kg</li>
 <li>Export Ports: Chennai / Mangalore</li>
 <li>Transit: 5–7 days to Sohar & Hamad Ports</li>
+
 </ul>
 
 </div>
 
+
 <div class="product">
+
+<img src="assets/snacks.jpg" alt="Khara Mixture">
 
 <h3>South Indian Snacks – Khara Mixture</h3>
 
 <ul>
+
 <li>Nitrogen-flushed packaging</li>
 <li>6-month shelf life</li>
 <li>Retail packs: 150g / 250g / 500g</li>
 <li>Dual English / Arabic labeling</li>
 <li>LCL & FCL shipments available</li>
+
 </ul>
 
 </div>
@@ -237,7 +346,7 @@ and faster shipment cycles.
 
 <!-- COMPLIANCE -->
 
-<div class="section">
+<div class="section" id="compliance">
 
 <h2>Compliance & Certifications</h2>
 
@@ -245,15 +354,31 @@ and faster shipment cycles.
 Apex Origin Global operates under a verified export compliance framework ensuring shipment readiness for GCC retail markets.
 </p>
 
-<div class="badges">
+<div class="certificates">
 
-<div class="badge">100% Women-Owned MSME Enterprise</div>
+<div class="certificate">
 
-<div class="badge">APEDA Registered Exporter</div>
+<img src="assets/apeda.png">
 
-<div class="badge">FSSAI Central License – Trader</div>
+<p>APEDA Registered Exporter</p>
 
-<div class="badge">GCC Customs Compliance</div>
+</div>
+
+<div class="certificate">
+
+<img src="assets/msme.png">
+
+<p>Women-Owned MSME</p>
+
+</div>
+
+<div class="certificate">
+
+<img src="assets/fssai.png">
+
+<p>FSSAI Central License</p>
+
+</div>
 
 </div>
 
@@ -262,11 +387,11 @@ Apex Origin Global operates under a verified export compliance framework ensurin
 
 <!-- CONTACT -->
 
-<div class="section">
+<div class="section" id="contact">
 
 <h2>Request Sample Box</h2>
 
-<div class="contact">
+<div class="contact-box">
 
 <p><strong>Email</strong><br>
 exports@apexoriginglobal.com</p>
@@ -282,6 +407,12 @@ Bengaluru, Karnataka, India</p>
 Sunday – Thursday<br>
 09:00 – 18:00 GST</p>
 
+<br>
+
+<a class="cta" href="mailto:exports@apexoriginglobal.com">
+Request Sample Box
+</a>
+
 </div>
 
 </div>
@@ -294,4 +425,5 @@ Sunday – Thursday<br>
 </footer>
 
 </body>
+
 </html>
