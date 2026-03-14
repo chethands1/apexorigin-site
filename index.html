@@ -6,95 +6,128 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>Apex Origin Global</title>
+<title>Apex Origin Global | India → GCC Export Supply</title>
 
 <style>
 
 *{
-box-sizing:border-box;
 margin:0;
 padding:0;
+box-sizing:border-box;
 }
 
 body{
-font-family:Arial, sans-serif;
-line-height:1.6;
+font-family:Arial, Helvetica, sans-serif;
 color:#222;
-background:#f5f5f5;
+background:#f4f6f8;
+line-height:1.6;
 }
 
-header{
+/* HERO */
+
+.hero{
 background:#0f172a;
 color:white;
 text-align:center;
-padding:90px 20px;
+padding:100px 20px;
 }
 
-header h1{
-font-size:36px;
+.hero h1{
+font-size:40px;
+max-width:900px;
+margin:auto;
 margin-bottom:20px;
 }
 
-header p{
+.hero p{
 max-width:700px;
 margin:auto;
 margin-bottom:30px;
+font-size:18px;
 }
 
-button{
+.cta{
 background:#2563eb;
-border:none;
-padding:14px 30px;
+padding:16px 32px;
 color:white;
-font-size:16px;
-cursor:pointer;
-border-radius:4px;
+text-decoration:none;
+border-radius:5px;
+font-weight:bold;
 }
 
-.container{
+/* SECTION */
+
+.section{
 max-width:1100px;
 margin:auto;
-padding:60px 20px;
+padding:70px 20px;
 }
 
-h2{
+.section h2{
 margin-bottom:20px;
+font-size:28px;
 }
+
+/* IMAGE */
+
+.section img{
+width:100%;
+border-radius:6px;
+margin-top:25px;
+}
+
+/* PRODUCT GRID */
 
 .products{
 display:grid;
 grid-template-columns:1fr 1fr;
 gap:30px;
+margin-top:30px;
 }
 
-.card{
+.product{
 background:white;
 padding:25px;
 border-radius:6px;
-box-shadow:0 3px 10px rgba(0,0,0,0.1);
+box-shadow:0 4px 12px rgba(0,0,0,0.08);
 }
+
+.product h3{
+margin-bottom:15px;
+}
+
+.product ul{
+padding-left:18px;
+}
+
+/* BADGES */
 
 .badges{
 display:flex;
-gap:40px;
-justify-content:center;
+gap:30px;
 flex-wrap:wrap;
 margin-top:30px;
 }
 
 .badge{
 background:white;
-padding:15px 25px;
+padding:18px 28px;
 border-radius:6px;
-box-shadow:0 2px 8px rgba(0,0,0,0.1);
+box-shadow:0 3px 10px rgba(0,0,0,0.08);
 font-weight:bold;
 }
 
-.visual{
-width:100%;
+/* CONTACT */
+
+.contact{
+background:white;
+padding:30px;
 border-radius:6px;
-margin-top:25px;
+box-shadow:0 3px 10px rgba(0,0,0,0.08);
+margin-top:20px;
 }
+
+/* FOOTER */
 
 footer{
 background:#111;
@@ -104,9 +137,11 @@ padding:40px;
 margin-top:40px;
 }
 
+/* MOBILE */
+
 @media(max-width:768px){
 
-header h1{
+.hero h1{
 font-size:28px;
 }
 
@@ -122,50 +157,57 @@ grid-template-columns:1fr;
 
 <body>
 
-<header>
+<!-- HERO -->
+
+<div class="hero">
 
 <h1>Origin-Direct Indian Staples for GCC Supermarket Supply Chains</h1>
 
 <p>
-Sortex-cleaned Sona Masuri rice and nitrogen-flushed South Indian snacks shipped directly from Karnataka origin clusters.  
+Sortex-cleaned Sona Masuri rice and nitrogen-flushed South Indian snacks sourced directly from Karnataka origin clusters.
 5–7 day LCL/FCL transit to Sohar and Hamad ports.
 </p>
 
-<a href="mailto:exports@apexoriginglobal.com">
-<button>Request GCC-Compliant Sample Box</button>
+<a class="cta" href="mailto:exports@apexoriginglobal.com">
+Request a GCC-Compliant Sample Box
 </a>
-
-</header>
-
-
-<div class="container">
-
-<h2>Origin-Direct Consolidation</h2>
-
-<p>
-Apex Origin Global consolidates agricultural and manufacturing products directly at origin clusters in Karnataka, India.  
-By eliminating port-city intermediaries we deliver stronger retail margins, faster procurement cycles and reliable export supply for GCC buyers.
-</p>
-
-<img class="visual" src="https://images.unsplash.com/photo-1604328698692-f76ea9498e76" alt="Rice Processing">
 
 </div>
 
 
-<div class="container">
+<!-- ORIGIN MODEL -->
+
+<div class="section">
+
+<h2>Origin-Direct Consolidation Model</h2>
+
+<p>
+Apex Origin Global consolidates agricultural and manufacturing products directly at origin clusters in Karnataka, India.
+By eliminating port-city trading intermediaries we provide GCC buyers cleaner procurement costs, stronger shelf margins,
+and faster shipment cycles.
+</p>
+
+<img src="https://images.unsplash.com/photo-1586201375761-83865001e31c" alt="Rice Processing">
+
+</div>
+
+
+<!-- PRODUCTS -->
+
+<div class="section">
 
 <h2>Product Portfolio</h2>
 
 <div class="products">
 
-<div class="card">
+<div class="product">
 
 <h3>Sona Masuri Rice</h3>
 
 <ul>
 <li>Davanagere Origin</li>
 <li>Sortex-cleaned</li>
-<li>Double polished</li>
+<li>Double-polished</li>
 <li>Moisture ≤12%</li>
 <li>Packaging: 5kg / 10kg / 25kg / 50kg</li>
 <li>Export Ports: Chennai / Mangalore</li>
@@ -174,17 +216,16 @@ By eliminating port-city intermediaries we deliver stronger retail margins, fast
 
 </div>
 
-
-<div class="card">
+<div class="product">
 
 <h3>South Indian Snacks – Khara Mixture</h3>
 
 <ul>
-<li>Nitrogen flushed packaging</li>
-<li>6 month shelf life</li>
+<li>Nitrogen-flushed packaging</li>
+<li>6-month shelf life</li>
 <li>Retail packs: 150g / 250g / 500g</li>
 <li>Dual English / Arabic labeling</li>
-<li>LCL / FCL shipments available</li>
+<li>LCL & FCL shipments available</li>
 </ul>
 
 </div>
@@ -194,7 +235,9 @@ By eliminating port-city intermediaries we deliver stronger retail margins, fast
 </div>
 
 
-<div class="container">
+<!-- COMPLIANCE -->
+
+<div class="section">
 
 <h2>Compliance & Certifications</h2>
 
@@ -204,33 +247,42 @@ Apex Origin Global operates under a verified export compliance framework ensurin
 
 <div class="badges">
 
-<div class="badge">Women-Owned MSME</div>
+<div class="badge">100% Women-Owned MSME Enterprise</div>
+
 <div class="badge">APEDA Registered Exporter</div>
-<div class="badge">FSSAI Central License</div>
-<div class="badge">GCC Labeling Compliance</div>
+
+<div class="badge">FSSAI Central License – Trader</div>
+
+<div class="badge">GCC Customs Compliance</div>
 
 </div>
 
 </div>
 
 
-<div class="container">
+<!-- CONTACT -->
 
-<h2>Contact</h2>
+<div class="section">
 
-<p><b>Email</b>  
+<h2>Request Sample Box</h2>
+
+<div class="contact">
+
+<p><strong>Email</strong><br>
 exports@apexoriginglobal.com</p>
 
 <br>
 
-<p><b>Registered Office</b>  
+<p><strong>Registered Office</strong><br>
 Bengaluru, Karnataka, India</p>
 
 <br>
 
-<p><b>Operating Hours</b>  
-Sunday – Thursday  
+<p><strong>Operating Hours</strong><br>
+Sunday – Thursday<br>
 09:00 – 18:00 GST</p>
+
+</div>
 
 </div>
 
