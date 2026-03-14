@@ -6,7 +6,19 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>Apex Origin Global | India Export Supply</title>
+<title>Apex Origin Global | Sona Masuri Rice & Indian Food Exporter</title>
+
+<meta name="description" content="Apex Origin Global exports Sona Masuri rice and South Indian snacks directly from Karnataka origin clusters to international distributors and supermarket procurement teams.">
+
+<meta name="keywords" content="sona masuri rice exporter, indian snack exporter, india food export company, rice supplier gcc, indian rice exporter">
+
+<meta name="author" content="Apex Origin Global">
+
+<!-- OpenGraph for LinkedIn sharing -->
+
+<meta property="og:title" content="Apex Origin Global | Food Export Supply">
+<meta property="og:description" content="Origin-direct Sona Masuri rice and South Indian snack exports from Karnataka, India.">
+<meta property="og:type" content="website">
 
 <style>
 
@@ -17,8 +29,8 @@ box-sizing:border-box;
 }
 
 body{
-font-family:Arial, Helvetica, sans-serif;
-background:#f4f6f8;
+font-family:system-ui, -apple-system, Arial;
+background:#f5f7fa;
 color:#222;
 line-height:1.6;
 }
@@ -27,22 +39,26 @@ line-height:1.6;
 
 .navbar{
 background:white;
-padding:15px 30px;
+padding:16px 28px;
 display:flex;
 justify-content:space-between;
 align-items:center;
-box-shadow:0 2px 8px rgba(0,0,0,0.08);
+box-shadow:0 2px 8px rgba(0,0,0,0.07);
+position:sticky;
+top:0;
+z-index:10;
 }
 
 .logo{
-font-weight:bold;
 font-size:20px;
+font-weight:600;
 }
 
 .nav-links a{
-margin-left:20px;
+margin-left:18px;
 text-decoration:none;
 color:#333;
+font-weight:500;
 }
 
 /* HERO */
@@ -51,30 +67,30 @@ color:#333;
 background:#0f172a;
 color:white;
 text-align:center;
-padding:100px 20px;
+padding:110px 20px;
 }
 
 .hero h1{
 font-size:42px;
-margin-bottom:20px;
 max-width:900px;
-margin-left:auto;
-margin-right:auto;
+margin:auto;
+margin-bottom:20px;
 }
 
 .hero p{
 max-width:700px;
 margin:auto;
-margin-bottom:25px;
+margin-bottom:30px;
 }
 
 .cta{
+display:inline-block;
 background:#2563eb;
-padding:15px 30px;
-color:white;
-text-decoration:none;
+padding:14px 30px;
 border-radius:5px;
-font-weight:bold;
+text-decoration:none;
+color:white;
+font-weight:600;
 }
 
 /* SECTION */
@@ -86,23 +102,37 @@ padding:70px 20px;
 }
 
 .section h2{
-margin-bottom:20px;
 font-size:30px;
+margin-bottom:18px;
 }
 
-/* PRODUCTS */
+/* IMAGE PLACEHOLDER */
+
+.placeholder{
+background:#e2e2e2;
+height:300px;
+border-radius:6px;
+display:flex;
+align-items:center;
+justify-content:center;
+color:#555;
+margin-top:25px;
+}
+
+/* PRODUCT GRID */
 
 .products{
 display:grid;
 grid-template-columns:1fr 1fr;
 gap:30px;
+margin-top:30px;
 }
 
 .product{
 background:white;
 padding:25px;
 border-radius:6px;
-box-shadow:0 3px 12px rgba(0,0,0,0.08);
+box-shadow:0 4px 14px rgba(0,0,0,0.08);
 }
 
 .product img{
@@ -115,34 +145,22 @@ margin-bottom:15px;
 
 .certificates{
 display:flex;
-gap:25px;
 flex-wrap:wrap;
+gap:25px;
+margin-top:30px;
 }
 
 .cert{
+width:180px;
 background:white;
 padding:20px;
 border-radius:6px;
 box-shadow:0 3px 10px rgba(0,0,0,0.08);
 text-align:center;
-width:180px;
 }
 
 .cert img{
 width:100%;
-}
-
-/* PLACEHOLDER */
-
-.placeholder{
-background:#ddd;
-height:300px;
-display:flex;
-align-items:center;
-justify-content:center;
-border-radius:6px;
-color:#555;
-margin-top:25px;
 }
 
 /* CONTACT */
@@ -151,7 +169,12 @@ margin-top:25px;
 background:white;
 padding:30px;
 border-radius:6px;
-box-shadow:0 3px 10px rgba(0,0,0,0.08);
+box-shadow:0 3px 12px rgba(0,0,0,0.08);
+}
+
+.contact a{
+color:#2563eb;
+text-decoration:none;
 }
 
 /* FOOTER */
@@ -162,6 +185,21 @@ color:white;
 text-align:center;
 padding:40px;
 margin-top:40px;
+}
+
+/* WHATSAPP BUTTON */
+
+.whatsapp{
+position:fixed;
+bottom:25px;
+right:25px;
+background:#25D366;
+color:white;
+padding:12px 18px;
+border-radius:30px;
+text-decoration:none;
+font-weight:600;
+box-shadow:0 4px 12px rgba(0,0,0,0.2);
 }
 
 /* MOBILE */
@@ -194,18 +232,13 @@ gap:10px;
 <div class="navbar">
 
 <div class="logo">
-
-<!-- Replace later with assets/logo.png -->
 Apex Origin Global
-
 </div>
 
 <div class="nav-links">
-
 <a href="#products">Products</a>
 <a href="#compliance">Compliance</a>
 <a href="#contact">Contact</a>
-
 </div>
 
 </div>
@@ -215,7 +248,7 @@ Apex Origin Global
 
 <div class="hero">
 
-<h1>Origin-Direct Indian Food Staples for Global Supermarket Supply Chains</h1>
+<h1>Origin-Direct Sona Masuri Rice and Indian Snack Exports</h1>
 
 <p id="shippingMessage">
 
@@ -223,12 +256,8 @@ Loading regional shipping information...
 
 </p>
 
-<br>
-
 <a class="cta" href="mailto:exports@apexoriginglobal.com">
-
 Request GCC-Compliant Sample Box
-
 </a>
 
 </div>
@@ -241,16 +270,30 @@ Request GCC-Compliant Sample Box
 <h2>Origin-Direct Consolidation</h2>
 
 <p>
-
-Apex Origin Global consolidates agricultural and manufacturing products directly at origin clusters in Karnataka, India.
-By eliminating port-city intermediaries we deliver stronger retail margins, faster procurement cycles and reliable export supply.
-
+Apex Origin Global consolidates agricultural and food manufacturing products directly at origin clusters in Karnataka, India.  
+This model removes intermediary trading layers and improves procurement efficiency for international distributors and supermarket buyers.
 </p>
 
 <div class="placeholder">
+Place Rice Processing / Factory Image Here
+</div>
 
-Place Rice Mill / Processing Photo Here
+</div>
 
+
+<!-- LOGISTICS -->
+
+<div class="section">
+
+<h2>Export Logistics</h2>
+
+<p>
+Shipments are dispatched from major South Indian export ports including Chennai and Mangalore.  
+Flexible shipment options include LCL and FCL container loads depending on buyer requirements.
+</p>
+
+<div class="placeholder">
+Place Container Loading / Shipping Photo Here
 </div>
 
 </div>
@@ -264,21 +307,18 @@ Place Rice Mill / Processing Photo Here
 
 <div class="products">
 
-
 <div class="product">
 
-<img src="assets/rice.jpg">
+<img src="assets/rice.jpg" loading="lazy" alt="Sona Masuri Rice">
 
 <h3>Sona Masuri Rice</h3>
 
 <ul>
-
-<li>Davanagere Origin</li>
+<li>Davanagere origin</li>
 <li>Sortex-cleaned</li>
 <li>Double polished</li>
 <li>Moisture ≤12%</li>
-<li>Retail & bulk packaging available</li>
-
+<li>Retail and bulk packaging available</li>
 </ul>
 
 </div>
@@ -286,17 +326,15 @@ Place Rice Mill / Processing Photo Here
 
 <div class="product">
 
-<img src="assets/snacks.jpg">
+<img src="assets/snacks.jpg" loading="lazy" alt="South Indian Snacks">
 
 <h3>South Indian Snacks</h3>
 
 <ul>
-
 <li>Nitrogen-flushed packaging</li>
-<li>6 month shelf life</li>
-<li>Retail packs available</li>
+<li>6-month shelf life</li>
+<li>Retail pack sizes available</li>
 <li>Export ready labeling</li>
-
 </ul>
 
 </div>
@@ -313,35 +351,24 @@ Place Rice Mill / Processing Photo Here
 <h2>Compliance & Certifications</h2>
 
 <p>
-
-Our export operations follow global compliance standards required for international food imports.
-
+Export operations comply with Indian food export regulations and documentation standards required for international imports.
 </p>
 
 <div class="certificates">
 
 <div class="cert">
-
-<img src="assets/apeda.png">
-
+<img src="assets/apeda.png" alt="APEDA Certification">
 <p>APEDA Registered</p>
-
 </div>
 
 <div class="cert">
-
-<img src="assets/msme.png">
-
+<img src="assets/msme.png" alt="MSME Certification">
 <p>Women-Owned MSME</p>
-
 </div>
 
 <div class="cert">
-
-<img src="assets/fssai.png">
-
-<p>FSSAI License</p>
-
+<img src="assets/fssai.png" alt="FSSAI Certification">
+<p>FSSAI Licensed</p>
 </div>
 
 </div>
@@ -358,27 +385,18 @@ Our export operations follow global compliance standards required for internatio
 <div class="contact">
 
 <p><strong>Email</strong><br>
-
-exports@apexoriginglobal.com
-
-</p>
+<a href="mailto:exports@apexoriginglobal.com">exports@apexoriginglobal.com</a></p>
 
 <br>
 
 <p><strong>Registered Office</strong><br>
-
-Bengaluru, Karnataka, India
-
-</p>
+Bengaluru, Karnataka, India</p>
 
 <br>
 
 <p><strong>Operating Hours</strong><br>
-
 Sunday – Thursday<br>
-09:00 – 18:00 GST
-
-</p>
+09:00 – 18:00 GST</p>
 
 </div>
 
@@ -392,6 +410,13 @@ Sunday – Thursday<br>
 </footer>
 
 
+<!-- WHATSAPP BUTTON -->
+
+<a class="whatsapp" href="https://wa.me/91XXXXXXXXXX" target="_blank">
+WhatsApp
+</a>
+
+
 <!-- GEO LOCATION SCRIPT -->
 
 <script>
@@ -402,7 +427,7 @@ fetch("https://ipapi.co/json/")
 
 let country = data.country;
 
-let message = "Origin-Direct exports from India with flexible international shipping options.";
+let message = "Origin-direct exports from India with flexible international shipping options.";
 
 if(country === "OM"){
 message = "Direct export supply from India to Oman. Typical transit to Sohar Port: 5–7 days.";
@@ -418,11 +443,15 @@ message = "Direct export supply from India to UAE with fast regional shipping.";
 
 document.getElementById("shippingMessage").innerText = message;
 
+})
+
+.catch(() => {
+document.getElementById("shippingMessage").innerText =
+"Origin-direct export supply from India to international markets.";
 });
 
 </script>
 
 
 </body>
-
 </html>
