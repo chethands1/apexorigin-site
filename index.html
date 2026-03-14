@@ -1,57 +1,119 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
+
 <head>
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
 <title>Apex Origin Global</title>
 
-<meta name="viewport" content="width=device-width, initial-scale=1">
-
 <style>
 
-body{
-font-family: Arial;
+*{
+box-sizing:border-box;
 margin:0;
-color:#222;
+padding:0;
+}
+
+body{
+font-family:Arial, sans-serif;
 line-height:1.6;
+color:#222;
+background:#f5f5f5;
 }
 
 header{
 background:#0f172a;
 color:white;
 text-align:center;
-padding:80px 20px;
+padding:90px 20px;
 }
 
-section{
-max-width:1000px;
-margin:auto;
-padding:60px 20px;
-}
-
-h1,h2{
+header h1{
+font-size:36px;
 margin-bottom:20px;
 }
 
-.product{
-border:1px solid #ddd;
-padding:20px;
-margin-top:20px;
+header p{
+max-width:700px;
+margin:auto;
+margin-bottom:30px;
 }
 
 button{
 background:#2563eb;
-color:white;
 border:none;
-padding:15px 28px;
+padding:14px 30px;
+color:white;
 font-size:16px;
 cursor:pointer;
+border-radius:4px;
+}
+
+.container{
+max-width:1100px;
+margin:auto;
+padding:60px 20px;
+}
+
+h2{
+margin-bottom:20px;
+}
+
+.products{
+display:grid;
+grid-template-columns:1fr 1fr;
+gap:30px;
+}
+
+.card{
+background:white;
+padding:25px;
+border-radius:6px;
+box-shadow:0 3px 10px rgba(0,0,0,0.1);
+}
+
+.badges{
+display:flex;
+gap:40px;
+justify-content:center;
+flex-wrap:wrap;
+margin-top:30px;
+}
+
+.badge{
+background:white;
+padding:15px 25px;
+border-radius:6px;
+box-shadow:0 2px 8px rgba(0,0,0,0.1);
+font-weight:bold;
+}
+
+.visual{
+width:100%;
+border-radius:6px;
+margin-top:25px;
 }
 
 footer{
 background:#111;
 color:white;
 text-align:center;
-padding:30px;
+padding:40px;
+margin-top:40px;
+}
+
+@media(max-width:768px){
+
+header h1{
+font-size:28px;
+}
+
+.products{
+grid-template-columns:1fr;
+}
+
 }
 
 </style>
@@ -65,10 +127,9 @@ padding:30px;
 <h1>Origin-Direct Indian Staples for GCC Supermarket Supply Chains</h1>
 
 <p>
-Sortex-cleaned Sona Masuri rice and nitrogen-flushed South Indian snacks shipped directly from Karnataka origin clusters.
+Sortex-cleaned Sona Masuri rice and nitrogen-flushed South Indian snacks shipped directly from Karnataka origin clusters.  
+5–7 day LCL/FCL transit to Sohar and Hamad ports.
 </p>
-
-<br>
 
 <a href="mailto:exports@apexoriginglobal.com">
 <button>Request GCC-Compliant Sample Box</button>
@@ -77,22 +138,27 @@ Sortex-cleaned Sona Masuri rice and nitrogen-flushed South Indian snacks shipped
 </header>
 
 
-<section>
+<div class="container">
 
 <h2>Origin-Direct Consolidation</h2>
 
 <p>
-Apex Origin Global consolidates agricultural and manufacturing products directly at origin clusters in Karnataka, India. By eliminating port-city intermediaries we provide GCC buyers cleaner procurement costs, stronger retail margins and faster shipment cycles.
+Apex Origin Global consolidates agricultural and manufacturing products directly at origin clusters in Karnataka, India.  
+By eliminating port-city intermediaries we deliver stronger retail margins, faster procurement cycles and reliable export supply for GCC buyers.
 </p>
 
-</section>
+<img class="visual" src="https://images.unsplash.com/photo-1604328698692-f76ea9498e76" alt="Rice Processing">
+
+</div>
 
 
-<section>
+<div class="container">
 
 <h2>Product Portfolio</h2>
 
-<div class="product">
+<div class="products">
+
+<div class="card">
 
 <h3>Sona Masuri Rice</h3>
 
@@ -103,13 +169,13 @@ Apex Origin Global consolidates agricultural and manufacturing products directly
 <li>Moisture ≤12%</li>
 <li>Packaging: 5kg / 10kg / 25kg / 50kg</li>
 <li>Export Ports: Chennai / Mangalore</li>
-<li>Transit: 5-7 days to Sohar and Hamad Ports</li>
+<li>Transit: 5–7 days to Sohar & Hamad Ports</li>
 </ul>
 
 </div>
 
 
-<div class="product">
+<div class="card">
 
 <h3>South Indian Snacks – Khara Mixture</h3>
 
@@ -118,40 +184,55 @@ Apex Origin Global consolidates agricultural and manufacturing products directly
 <li>6 month shelf life</li>
 <li>Retail packs: 150g / 250g / 500g</li>
 <li>Dual English / Arabic labeling</li>
-<li>LCL and FCL shipments available</li>
+<li>LCL / FCL shipments available</li>
 </ul>
 
 </div>
 
-</section>
+</div>
+
+</div>
 
 
-<section>
+<div class="container">
 
-<h2>Compliance</h2>
+<h2>Compliance & Certifications</h2>
 
-<ul>
-<li>100% Women-Owned MSME Enterprise</li>
-<li>APEDA Registered Exporter</li>
-<li>FSSAI Central License – Trader</li>
-<li>GCC Customs Compliance</li>
-<li>Dual English / Arabic Labeling Ready</li>
-</ul>
+<p>
+Apex Origin Global operates under a verified export compliance framework ensuring shipment readiness for GCC retail markets.
+</p>
 
-</section>
+<div class="badges">
+
+<div class="badge">Women-Owned MSME</div>
+<div class="badge">APEDA Registered Exporter</div>
+<div class="badge">FSSAI Central License</div>
+<div class="badge">GCC Labeling Compliance</div>
+
+</div>
+
+</div>
 
 
-<section>
+<div class="container">
 
 <h2>Contact</h2>
 
-<p>Email: exports@apexoriginglobal.com</p>
+<p><b>Email</b>  
+exports@apexoriginglobal.com</p>
 
-<p>Registered Office: Bengaluru, Karnataka, India</p>
+<br>
 
-<p>Operating Hours: Sunday – Thursday | 09:00 – 18:00 GST</p>
+<p><b>Registered Office</b>  
+Bengaluru, Karnataka, India</p>
 
-</section>
+<br>
+
+<p><b>Operating Hours</b>  
+Sunday – Thursday  
+09:00 – 18:00 GST</p>
+
+</div>
 
 
 <footer>
