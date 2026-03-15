@@ -1,31 +1,18 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="theme-color" content="#111111">
-
-  <title>Apex Origin Global | Premium Commodity Exports</title>
-  <meta name="description" content="Apex Origin Global exports Sona Masuri rice and South Indian snacks from Karnataka origin clusters to international distributors and supermarket procurement teams worldwide.">
-  <meta name="author" content="Apex Origin Global">
-
-  <meta property="og:title" content="Apex Origin Global | Origin-Direct Indian Food Exports">
-  <meta property="og:description" content="Sona Masuri rice and South Indian snack exports from Karnataka origin clusters to global markets.">
-  <meta property="og:type" content="website">
-  <meta property="og:url" content="https://apexoriginglobal.com">
-
-  <link rel="canonical" href="https://apexoriginglobal.com">
-  <meta name="robots" content="index, follow">
-
+  <meta name="theme-color" content="#0A192F">
+  
+  <title>Apex Origin Global | Origin-Direct Commodity Exports</title>
+  <meta name="description" content="Apex Origin Global exports Sona Masuri rice and South Indian snacks from Karnataka origin clusters to international distributors and supermarket procurement teams.">
+  
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link rel="preconnect" href="https://images.unsplash.com">
-  <link rel="preconnect" href="https://formspree.io">
-  <link rel="dns-prefetch" href="//ipapi.co">
-
-  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,400&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
-
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  
   <script type="application/ld+json">
   {
     "@context": "https://schema.org",
@@ -37,6 +24,7 @@
     "industry": "Food Export",
     "address": {
       "@type": "PostalAddress",
+      "streetAddress": "Savitr Residency, 2, 2A, 1st C Main Road, Vivekananda Nagar, BSK 3rd stage",
       "addressLocality": "Bengaluru",
       "addressRegion": "Karnataka",
       "postalCode": "560085",
@@ -52,676 +40,457 @@
   </script>
 
   <style>
-    /* ── DESIGN TOKENS (GLOBAL VARIABLES) ── */
+    /* ── CORPORATE DESIGN TOKENS ── */
     :root {
-      --brand-dark:    #0a0a0a; /* True Obsidian */
-      --brand-accent:  #C86938; /* Terracotta / Spice Copper */
-      --brand-light:   #F9F9F7; /* Warm Gallery White */
-      --surface:       #FFFFFF;
-      --text-main:     #1f2937;
-      --text-muted:    #4b5563;
-      --border:        #e5e7eb;
-      --radius-sm:     4px;
-      --radius-lg:     12px;
-      --shadow-sm:     0 4px 6px -1px rgba(0, 0, 0, 0.05);
-      --shadow-hover:  0 20px 25px -5px rgba(0, 0, 0, 0.1);
-      --transition:    all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+      --primary: #0A192F; /* Deep Navy Blue */
+      --primary-light: #172A45;
+      --accent: #0070F3; /* Bright Corporate Blue */
+      --accent-hover: #0056B3;
+      --bg-white: #FFFFFF;
+      --bg-gray: #F8F9FA;
+      --text-dark: #111827;
+      --text-gray: #4B5563;
+      --border: #E5E7EB;
+      --transition: all 0.3s ease;
     }
 
-    html { scroll-behavior: smooth; }
     * { margin: 0; padding: 0; box-sizing: border-box; }
-
+    html { scroll-behavior: smooth; }
+    
     body {
-      font-family: 'Inter', system-ui, sans-serif;
-      background-color: var(--brand-light);
-      color: var(--text-main);
-      line-height: 1.7;
-      overflow-x: hidden;
+      font-family: 'Inter', sans-serif;
+      color: var(--text-dark);
+      line-height: 1.6;
+      background-color: var(--bg-white);
       -webkit-font-smoothing: antialiased;
     }
 
-    /* ── SCROLL ANIMATIONS ── */
-    .reveal {
-      opacity: 0;
-      transform: translateY(40px);
-      transition: var(--transition);
-      transition-duration: 0.8s;
+    /* ── UTILITIES ── */
+    .container { max-width: 1280px; margin: 0 auto; padding: 0 5%; }
+    .section-padding { padding: 100px 0; }
+    .bg-gray { background-color: var(--bg-gray); }
+    
+    .section-tag {
+      display: inline-block;
+      color: var(--accent);
+      font-size: 13px;
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 1.5px;
+      margin-bottom: 16px;
     }
-    .reveal.active {
-      opacity: 1;
-      transform: translateY(0);
+    .section-title {
+      font-size: 36px;
+      font-weight: 700;
+      color: var(--primary);
+      margin-bottom: 24px;
+      line-height: 1.2;
+    }
+    .section-desc {
+      font-size: 18px;
+      color: var(--text-gray);
+      margin-bottom: 48px;
+      max-width: 800px;
     }
 
-    /* ── NAVBAR ── */
+    /* ── NAVBAR & TRANSLATOR ── */
     .navbar {
-      background: rgba(249, 249, 247, 0.9);
-      backdrop-filter: blur(12px);
-      -webkit-backdrop-filter: blur(12px);
-      padding: 16px 40px;
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
+      background-color: var(--bg-white);
       border-bottom: 1px solid var(--border);
+      padding: 16px 0;
       position: sticky;
       top: 0;
       z-index: 1000;
     }
-    .logo {
-      font-family: 'Cormorant Garamond', serif;
-      font-size: 26px;
-      font-weight: 600;
-      color: var(--brand-dark);
-      text-decoration: none;
-      letter-spacing: -0.5px;
-    }
-    .logo span { color: var(--brand-accent); font-style: italic; }
-    
+    .nav-container { display: flex; justify-content: space-between; align-items: center; }
+    .logo { font-size: 22px; font-weight: 700; color: var(--primary); text-decoration: none; letter-spacing: -0.5px; }
+    .logo span { color: var(--accent); }
     .nav-links { display: flex; gap: 24px; align-items: center; }
-    .nav-links a {
-      text-decoration: none;
-      color: var(--text-muted);
-      font-size: 13px;
-      font-weight: 500;
-      text-transform: uppercase;
-      letter-spacing: 0.5px;
-      transition: color 0.3s ease;
-    }
-    .nav-links a:hover { color: var(--brand-accent); }
-    
-    .nav-cta {
-      background: var(--brand-dark);
-      color: white !important;
-      padding: 10px 24px;
-      border-radius: var(--radius-sm);
-      transition: var(--transition);
-    }
-    .nav-cta:hover { background: var(--brand-accent); }
+    .nav-links a { text-decoration: none; color: var(--text-gray); font-size: 14px; font-weight: 500; transition: var(--transition); }
+    .nav-links a:hover { color: var(--accent); }
+    .btn-nav { background-color: var(--primary); color: var(--bg-white) !important; padding: 10px 20px; border-radius: 4px; }
+    .btn-nav:hover { background-color: var(--primary-light); }
 
-    /* ── HERO SECTION ── */
-    .hero {
-      position: relative;
-      padding: 140px 40px;
-      text-align: center;
-      background-color: var(--brand-dark);
-      color: white;
-      overflow: hidden;
+    /* Google Translate Clean-up Hacks */
+    #google_translate_element { margin-left: 12px; }
+    .goog-te-combo {
+      padding: 8px 12px; border: 1px solid var(--border); border-radius: 4px; background-color: var(--bg-gray); color: var(--text-dark); font-family: inherit; font-size: 13px; font-weight: 500; cursor: pointer; outline: none; transition: var(--transition);
     }
+    .goog-te-combo:focus { border-color: var(--accent); }
+    .goog-te-banner-frame.skiptranslate, .goog-te-gadget-icon, .goog-logo-link { display: none !important; }
+    body { top: 0px !important; }
+    .goog-tooltip { display: none !important; pointer-events: none; }
+    .goog-text-highlight { background-color: transparent !important; border: none !important; box-shadow: none !important; }
+    .goog-te-gadget { color: transparent !important; font-size: 0; }
+
+    /* ── HERO ── */
+    .hero { position: relative; background-color: var(--primary); color: var(--bg-white); padding: 120px 0 140px; overflow: hidden; }
     .hero-bg {
-      position: absolute;
-      top: 0; left: 0; width: 100%; height: 100%;
+      position: absolute; top: 0; right: 0; bottom: 0; left: 0;
       background-image: url('https://images.unsplash.com/photo-1586201375761-83865001e31c?w=1600&q=80');
-      background-size: cover;
-      background-position: center;
-      opacity: 0.2;
-      z-index: 0;
+      background-size: cover; background-position: center; opacity: 0.15;
     }
-    .hero-content {
-      position: relative;
-      z-index: 1;
-      max-width: 900px;
-      margin: 0 auto;
-    }
-    .hero-label {
-      display: inline-block;
-      font-size: 12px;
-      font-weight: 600;
-      letter-spacing: 2px;
-      text-transform: uppercase;
-      color: var(--brand-accent);
-      margin-bottom: 24px;
-      border: 1px solid var(--brand-accent);
-      padding: 6px 16px;
-      border-radius: 50px;
-    }
-    .hero h1 {
-      font-family: 'Cormorant Garamond', serif;
-      font-size: 56px;
-      font-weight: 300;
-      line-height: 1.1;
-      margin-bottom: 24px;
-    }
-    .hero h1 em { color: var(--brand-accent); font-style: italic; }
-    .hero p {
-      font-size: 18px;
-      color: rgba(255,255,255,0.8);
-      max-width: 700px;
-      margin: 0 auto 40px;
-      font-weight: 300;
-    }
+    .hero .container { position: relative; z-index: 2; max-width: 800px; margin: 0; }
+    .hero h1 { font-size: 52px; font-weight: 700; line-height: 1.1; margin-bottom: 24px; letter-spacing: -1px; }
+    .hero p { font-size: 18px; color: #9CA3AF; margin-bottom: 40px; max-width: 600px; }
+    .btn-primary { display: inline-block; background-color: var(--accent); color: var(--bg-white); padding: 16px 32px; font-weight: 600; text-decoration: none; border-radius: 4px; transition: var(--transition); }
+    .btn-primary:hover { background-color: var(--accent-hover); transform: translateY(-2px); }
 
-    /* ── LAYOUT & TYPOGRAPHY ── */
-    .container {
-      max-width: 1200px;
-      margin: 0 auto;
-      padding: 80px 40px;
+    /* ── TRUST RIBBON ── */
+    .trust-ribbon {
+      background-color: var(--bg-white); border-bottom: 1px solid var(--border); padding: 30px 0; transform: translateY(-50%); position: relative; z-index: 10; box-shadow: 0 4px 6px -1px rgba(0,0,0,0.05); border-radius: 8px; max-width: 1100px; margin: 0 auto;
     }
-    .section-header { margin-bottom: 48px; }
-    .section-label {
-      font-size: 11px;
-      font-weight: 600;
-      letter-spacing: 2px;
-      text-transform: uppercase;
-      color: var(--brand-accent);
-      margin-bottom: 12px;
-      display: flex;
-      align-items: center;
-      gap: 12px;
-    }
-    .section-label::before {
-      content: ''; width: 30px; height: 1px; background-color: var(--brand-accent);
-    }
-    .section-title {
-      font-family: 'Cormorant Garamond', serif;
-      font-size: 40px;
-      font-weight: 400;
-      color: var(--brand-dark);
-      margin-bottom: 16px;
-    }
-    .section-desc {
-      font-size: 16px;
-      color: var(--text-muted);
-      max-width: 800px;
-    }
-    hr.divider {
-      border: none;
-      border-top: 1px solid var(--border);
-      max-width: 1200px;
-      margin: 0 auto;
-    }
+    .trust-grid { display: flex; justify-content: space-around; align-items: center; flex-wrap: wrap; gap: 20px; }
+    .trust-item { display: flex; align-items: center; gap: 12px; font-weight: 600; font-size: 14px; color: var(--primary); }
+    .trust-item svg { width: 24px; height: 24px; color: var(--accent); }
 
-    /* ── BENTO GRID SYSTEM ── */
-    .bento-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
-      gap: 32px;
-    }
-    .bento-card {
-      background: var(--surface);
-      border: 1px solid var(--border);
-      border-radius: var(--radius-lg);
-      padding: 40px;
-      box-shadow: var(--shadow-sm);
-      transition: var(--transition);
-      overflow: hidden;
-      position: relative;
-    }
-    .bento-card:hover {
-      transform: translateY(-5px);
-      box-shadow: var(--shadow-hover);
-      border-color: rgba(200, 105, 56, 0.3);
-    }
-    .bento-card h3 {
-      font-family: 'Cormorant Garamond', serif;
-      font-size: 26px;
-      color: var(--brand-dark);
-      margin-bottom: 16px;
-    }
-    .bento-card p {
-      color: var(--text-muted);
-      font-size: 15px;
-      margin-bottom: 24px;
-    }
-    .bento-list { list-style: none; margin-top: 16px; }
-    .bento-list li {
-      padding: 10px 0;
-      border-bottom: 1px dashed var(--border);
-      font-size: 14px;
-      color: var(--text-muted);
-      display: flex;
-      align-items: center;
-    }
-    .bento-list li:last-child { border-bottom: none; }
-    .bento-list li::before {
-      content: '✦';
-      color: var(--brand-accent);
-      margin-right: 12px;
-      font-size: 12px;
-    }
+    /* ── ZIG-ZAG FEATURE LAYOUT (PRODUCTS) ── */
+    .feature-row { display: flex; align-items: center; gap: 60px; margin-bottom: 100px; }
+    .feature-row:last-child { margin-bottom: 0; }
+    .feature-row.reverse { flex-direction: row-reverse; }
+    .feature-text { flex: 1; }
+    .feature-image { flex: 1; }
+    .feature-image img { width: 100%; height: 400px; object-fit: cover; border-radius: 8px; box-shadow: 0 20px 25px -5px rgba(0,0,0,0.1); }
+    .spec-list { list-style: none; margin-top: 24px; }
+    .spec-list li { padding: 12px 0; border-bottom: 1px solid var(--border); display: flex; justify-content: space-between; font-size: 15px; }
+    .spec-list li:last-child { border-bottom: none; }
+    .spec-list strong { color: var(--primary); }
 
-    /* ── PRODUCT IMAGES ── */
-    .product-img {
-      width: calc(100% + 80px);
-      margin: -40px -40px 24px -40px;
-      height: 240px;
-      object-fit: cover;
-      transition: transform 0.5s ease;
-    }
-    .bento-card:hover .product-img { transform: scale(1.02); }
+    /* ── MODULAR GRID SYSTEM (FOR ALL DATA SECTIONS) ── */
+    .grid-wrap { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 30px; }
+    .grid-card { background-color: var(--bg-white); padding: 40px 30px; border: 1px solid var(--border); border-radius: 8px; transition: var(--transition); }
+    .grid-card:hover { border-color: var(--accent); box-shadow: 0 10px 15px -3px rgba(0,0,0,0.05); }
+    .grid-card h3 { font-size: 20px; color: var(--primary); margin-bottom: 16px; }
+    .grid-card p { color: var(--text-gray); font-size: 15px; margin-bottom: 20px; line-height: 1.6; }
+    .grid-card ul { list-style: none; color: var(--text-gray); font-size: 15px; }
+    .grid-card ul li { margin-bottom: 10px; padding-left: 20px; position: relative; }
+    .grid-card ul li::before { content: '→'; color: var(--accent); position: absolute; left: 0; font-weight: bold; }
 
-    /* ── CERTIFICATION PILLS ── */
-    .cert-wrap {
-      display: flex; flex-wrap: wrap; gap: 16px; margin-top: 24px;
-    }
-    .cert-pill {
-      background: var(--brand-light);
-      border: 1px solid var(--border);
-      padding: 12px 20px;
-      border-radius: 50px;
-      font-size: 13px;
-      font-weight: 600;
-      color: var(--brand-dark);
-      display: flex;
-      align-items: center;
-      gap: 8px;
-    }
-    .cert-pill span { color: var(--brand-accent); }
+    /* ── DOWNLOADS SECTION ── */
+    .btn-download { display: inline-flex; align-items: center; justify-content: center; gap: 10px; background-color: var(--bg-white); color: var(--primary); border: 1px solid var(--border); padding: 14px 28px; font-weight: 600; font-size: 14px; text-decoration: none; border-radius: 4px; transition: var(--transition); margin-right: 16px; margin-top: 16px; box-shadow: 0 4px 6px -1px rgba(0,0,0,0.05); }
+    .btn-download:hover { border-color: var(--accent); color: var(--accent); transform: translateY(-2px); box-shadow: 0 10px 15px -3px rgba(0,0,0,0.05); }
 
-    /* ── BUTTONS & LINKS ── */
-    .btn-download {
-      display: inline-flex;
-      align-items: center;
-      gap: 10px;
-      background: var(--surface);
-      border: 1px solid var(--brand-dark);
-      color: var(--brand-dark);
-      padding: 12px 24px;
-      border-radius: var(--radius-sm);
-      text-decoration: none;
-      font-size: 14px;
-      font-weight: 600;
-      transition: var(--transition);
-      margin-right: 16px;
-      margin-top: 16px;
-    }
-    .btn-download:hover {
-      background: var(--brand-dark);
-      color: white;
-    }
-
-    /* ── CONTACT FORM ── */
-    .contact-layout {
-      display: grid;
-      grid-template-columns: 1fr 1.5fr;
-      gap: 60px;
-    }
-    .contact-info div { margin-bottom: 32px; }
-    .contact-info strong {
-      display: block;
-      font-size: 11px;
-      text-transform: uppercase;
-      letter-spacing: 1.5px;
-      color: var(--brand-accent);
-      margin-bottom: 8px;
-    }
-    .contact-info p, .contact-info a {
-      font-size: 16px;
-      color: var(--brand-dark);
-      text-decoration: none;
-      font-weight: 500;
-    }
-    .form-box {
-      background: var(--surface);
-      padding: 40px;
-      border-radius: var(--radius-lg);
-      border: 1px solid var(--border);
-      box-shadow: var(--shadow-sm);
-    }
+    /* ── CONTACT SPLIT ── */
+    .contact-split { display: flex; gap: 80px; background-color: var(--bg-white); border-radius: 12px; overflow: hidden; box-shadow: 0 20px 25px -5px rgba(0,0,0,0.05); border: 1px solid var(--border); }
+    .contact-info-panel { flex: 1; background-color: var(--primary); color: var(--bg-white); padding: 60px; }
+    .contact-info-panel h3 { font-size: 28px; margin-bottom: 30px; }
+    .contact-detail { margin-bottom: 30px; }
+    .contact-detail label { display: block; font-size: 12px; color: #9CA3AF; text-transform: uppercase; letter-spacing: 1px; margin-bottom: 8px; }
+    .contact-detail p, .contact-detail a { color: var(--bg-white); text-decoration: none; font-size: 16px; font-weight: 500; }
+    
+    .contact-form-panel { flex: 1.5; padding: 60px; }
     .form-group { margin-bottom: 24px; }
-    .form-group label {
-      display: block; font-size: 12px; font-weight: 600; color: var(--text-muted); margin-bottom: 8px; text-transform: uppercase;
-    }
-    .form-group input, .form-group textarea, .form-group select {
-      width: 100%; padding: 14px; border: 1px solid var(--border); border-radius: var(--radius-sm); background: var(--brand-light); font-family: inherit; font-size: 14px; transition: var(--transition);
-    }
-    .form-group input:focus, .form-group textarea:focus, .form-group select:focus {
-      outline: none; border-color: var(--brand-dark); background: var(--surface);
-    }
-    .submit-btn {
-      background: var(--brand-dark); color: white; padding: 16px 32px; border: none; border-radius: var(--radius-sm); font-family: inherit; font-size: 14px; font-weight: 600; text-transform: uppercase; letter-spacing: 1px; cursor: pointer; width: 100%; transition: var(--transition);
-    }
-    .submit-btn:hover { background: var(--brand-accent); }
-    #form-status { margin-top: 16px; font-size: 14px; font-weight: 500; }
+    .form-group label { display: block; font-size: 13px; font-weight: 600; color: var(--text-dark); margin-bottom: 8px; }
+    .form-group input, .form-group select, .form-group textarea { width: 100%; padding: 14px; border: 1px solid var(--border); border-radius: 4px; font-family: inherit; font-size: 15px; background-color: var(--bg-gray); transition: var(--transition); }
+    .form-group input:focus, .form-group textarea:focus { outline: none; border-color: var(--accent); background-color: var(--bg-white); }
+    .btn-submit { background-color: var(--primary); color: white; padding: 16px; border: none; border-radius: 4px; width: 100%; font-size: 15px; font-weight: 600; cursor: pointer; transition: var(--transition); }
+    .btn-submit:hover { background-color: var(--primary-light); }
 
-    /* ── MAP & FOOTER ── */
-    .map-container {
-      width: 100%; height: 400px; border-radius: var(--radius-lg); overflow: hidden; margin-top: 24px; border: 1px solid var(--border);
-    }
-    footer {
-      background: var(--brand-dark);
-      color: #9ca3af;
-      padding: 60px 40px;
-      text-align: center;
-      font-size: 13px;
-    }
-    .footer-logo {
-      font-family: 'Cormorant Garamond', serif; font-size: 24px; color: white; margin-bottom: 16px;
-    }
-    .footer-logo span { color: var(--brand-accent); font-style: italic; }
+    /* ── MAP ── */
+    .map-wrapper { width: 100%; height: 400px; background: #eee; border-top: 1px solid var(--border); }
 
     /* ── WHATSAPP FAB ── */
-    .whatsapp-fab {
-      position: fixed; bottom: 30px; right: 30px; background: #25D366; color: white; width: 60px; height: 60px; border-radius: 50%; display: flex; align-items: center; justify-content: center; box-shadow: 0 10px 25px rgba(37,211,102,0.4); transition: var(--transition); z-index: 1000;
-    }
+    .whatsapp-fab { position: fixed; bottom: 30px; right: 30px; background: #25D366; color: white; width: 60px; height: 60px; border-radius: 50%; display: flex; align-items: center; justify-content: center; box-shadow: 0 10px 25px rgba(37,211,102,0.4); transition: var(--transition); z-index: 1000; }
     .whatsapp-fab:hover { transform: scale(1.1); }
     .whatsapp-fab svg { width: 32px; height: 32px; fill: white; }
 
+    /* ── FOOTER ── */
+    footer { background-color: var(--primary); color: #9CA3AF; padding: 60px 0; border-top: 1px solid rgba(255,255,255,0.1); }
+    .footer-flex { display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 20px;}
+    .footer-logo { font-size: 20px; font-weight: 700; color: var(--bg-white); }
+
     /* ── RESPONSIVE ── */
     @media (max-width: 900px) {
-      .hero { padding: 100px 24px; }
       .hero h1 { font-size: 40px; }
-      .container { padding: 60px 24px; }
-      .contact-layout { grid-template-columns: 1fr; }
-      .nav-links { display: none; } /* Hide text links on mobile */
-      .navbar { padding: 16px 24px; }
-      .form-box { padding: 24px; }
+      .nav-links { display: none; } /* On mobile, hide links to save space for logo and translator */
+      .feature-row, .feature-row.reverse { flex-direction: column; gap: 40px; }
+      .contact-split { flex-direction: column; gap: 0; }
+      .contact-info-panel, .contact-form-panel { padding: 40px 20px; }
+      .trust-ribbon { transform: translateY(0); border-radius: 0; padding: 20px; margin-bottom: 40px; }
+      .hero { padding: 80px 0; }
     }
   </style>
 </head>
-
 <body>
 
   <nav class="navbar">
-    <a href="#" class="logo">Apex Origin <span>Global</span></a>
-    <div class="nav-links">
-      <a href="#products">Products</a>
-      <a href="#operations">Operations</a>
-      <a href="#compliance">Compliance</a>
-      <a href="#markets">Markets</a>
-      <a href="#contact" class="nav-cta">Corporate Inquiry</a>
+    <div class="container nav-container">
+      <a href="#" class="logo">Apex Origin <span>Global</span></a>
+      <div class="nav-links">
+        <a href="#about">About</a>
+        <a href="#products">Products</a>
+        <a href="#operations">Operations</a>
+        <a href="#contact" class="btn-nav">Corporate Inquiry</a>
+        
+        <div id="google_translate_element"></div>
+      </div>
     </div>
   </nav>
 
   <header class="hero">
     <div class="hero-bg"></div>
-    <div class="hero-content reveal">
-      <div class="hero-label">Verified Institutional Exporter</div>
-      <h1>Global Trade.<br><em>Perfected at Origin.</em></h1>
-      <p id="shippingMessage">
-        Direct consolidation from Karnataka's agricultural clusters. We secure retail supply chains for international distributors worldwide.
-      </p>
+    <div class="container">
+      <h1>Global Food Commodities. Perfected at Origin.</h1>
+      <p id="shippingMessage">Origin-direct consolidation from Karnataka's agricultural clusters. Securing robust retail supply chains for international distributors.</p>
+      <a href="#contact" class="btn-primary">Initiate Procurement</a>
     </div>
   </header>
 
-  <section class="container reveal" id="about">
-    <div class="section-header">
-      <div class="section-label">About</div>
-      <h2 class="section-title">Company Overview</h2>
-      <p class="section-desc">
-        Apex Origin Global is an India-based merchant export company specializing in origin-direct sourcing of agricultural commodities and processed foods from Karnataka. We eliminate domestic intermediaries to optimize global procurement margins.
-      </p>
+  <div class="trust-ribbon">
+    <div class="trust-grid">
+      <div class="trust-item">
+        <svg fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg>
+        APEDA Registered
+      </div>
+      <div class="trust-item">
+        <svg fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg>
+        FSSAI Licensed Exporter
+      </div>
+      <div class="trust-item">
+        <svg fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg>
+        IEC Active & Compliant
+      </div>
+      <div class="trust-item">
+        <svg fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg>
+        Women-Owned MSME
+      </div>
+    </div>
+  </div>
+
+  <section id="about" class="section-padding">
+    <div class="container" style="text-align: center; max-width: 800px;">
+      <span class="section-tag">Corporate Overview</span>
+      <h2 class="section-title">Streamlining the Supply Chain</h2>
+      <p style="font-size: 18px; color: var(--text-gray);">Apex Origin Global operates as a highly specialized Indian merchant exporter. We bridge the gap between Karnataka's milling and manufacturing clusters and global retail shelves, eliminating domestic trading intermediaries to protect your procurement margins.</p>
     </div>
   </section>
 
-  <hr class="divider">
+  <section id="products" class="section-padding bg-gray">
+    <div class="container">
+      <span class="section-tag">Commodity Portfolio</span>
+      <h2 class="section-title" style="margin-bottom: 60px;">Origin-Direct Supply</h2>
 
-  <section class="container reveal" id="products">
-    <div class="section-header">
-      <div class="section-label">Portfolio</div>
-      <h2 class="section-title">Origin-Direct Supply</h2>
-      <p class="section-desc">High-grade commodities and FMCG products prepared strictly for international compliance and retail distribution.</p>
-    </div>
+      <div class="feature-row">
+        <div class="feature-image">
+          <img src="https://images.unsplash.com/photo-1604328698692-f76ea9498e76?w=900&q=80" alt="Sona Masuri Rice" loading="lazy">
+        </div>
+        <div class="feature-text">
+          <h3 style="font-size: 28px; color: var(--primary); margin-bottom: 16px;">Sona Masuri Rice</h3>
+          <p style="color: var(--text-gray); font-size: 16px;">A premium, lightweight, and aromatic medium-grain commodity. Sourced strictly from the milling hubs of Davanagere, this product is processed specifically for international retail distribution, ensuring consistent cooking metrics.</p>
+          <ul class="spec-list">
+            <li><span>Origin Hub</span> <strong>Davanagere, Karnataka</strong></li>
+            <li><span>Processing</span> <strong>100% Sortex Cleaned</strong></li>
+            <li><span>Moisture Control</span> <strong>Strictly ≤ 14%</strong></li>
+            <li><span>Bulk Formats</span> <strong>5kg, 10kg, 25kg Non-Woven</strong></li>
+          </ul>
+        </div>
+      </div>
 
-    <div class="bento-grid">
-      <article class="bento-card">
-        <img class="product-img" src="https://images.unsplash.com/photo-1604328698692-f76ea9498e76?w=800&q=80" alt="Sona Masuri Rice Demo" loading="lazy" decoding="async">
-        <h3>Sona Masuri Rice</h3>
-        <p>A premium, aromatic medium-grain rice directly sourced from Davanagere. Processed for consistent cooking quality and structural integrity.</p>
-        <ul class="bento-list">
-          <li>Davanagere origin</li>
-          <li>100% Sortex cleaned & Double polished</li>
-          <li>Moisture strictly ≤ 14%</li>
-          <li>Retail and bulk formats available</li>
-        </ul>
-      </article>
+      <div class="feature-row reverse">
+        <div class="feature-image">
+          <img src="https://images.unsplash.com/photo-1617191518009-3f8b80b9dcd5?w=900&q=80" alt="South Indian Snacks" loading="lazy">
+        </div>
+        <div class="feature-text">
+          <h3 style="font-size: 28px; color: var(--primary); margin-bottom: 16px;">South Indian FMCG Snacks</h3>
+          <p style="color: var(--text-gray); font-size: 16px;">Authentic, regionally processed snack mixtures. Manufactured using traditional extrusion methods but packaged with modern nitrogen-flushing technology to guarantee an extended shelf life for global ocean transit.</p>
+          <ul class="spec-list">
+            <li><span>Category</span> <strong>Processed FMCG</strong></li>
+            <li><span>Preservation</span> <strong>Nitrogen-Flushed</strong></li>
+            <li><span>Shelf Life</span> <strong>6 Months Verified</strong></li>
+            <li><span>Customs</span> <strong>Dual Labeling Ready</strong></li>
+          </ul>
+        </div>
+      </div>
 
-      <article class="bento-card">
-        <img class="product-img" src="https://images.unsplash.com/photo-1617191518009-3f8b80b9dcd5?w=800&q=80" alt="Snacks Demo" loading="lazy" decoding="async">
-        <h3>South Indian Snacks</h3>
-        <p>Authentic, regionally processed FMCG mixtures including Khara Mixture. Manufactured with modern preservation technology for export.</p>
-        <ul class="bento-list">
-          <li>Mechanized extrusion & processing</li>
-          <li>Nitrogen-flushed packaging</li>
-          <li>6-month verified commercial shelf life</li>
-          <li>Customs-compliant dual labeling ready</li>
-        </ul>
-      </article>
     </div>
   </section>
 
-  <hr class="divider">
-
-  <section class="container reveal" id="logistics">
-    <div class="section-header">
-      <div class="section-label">Logistics</div>
-      <h2 class="section-title">Export Infrastructure</h2>
-      <p class="section-desc">We manage seamless origin consolidation and dispatch via India's primary deep-water ports, supporting LCL and high-volume FCL consignments.</p>
-    </div>
-
-    <div class="bento-grid">
-      <div class="bento-card">
-        <h3>Primary Dispatch Hubs</h3>
-        <ul class="bento-list">
-          <li>Nhava Sheva (JNPT) — West Coast</li>
-          <li>Mundra Port — West Coast Terminal</li>
-          <li>Chennai Port — East Coast Gateway</li>
-          <li>New Mangalore Port — Regional Access</li>
-        </ul>
-      </div>
-      <div class="bento-card">
-        <h3>Trade & Payment Terms</h3>
-        <ul class="bento-list">
-          <li>Incoterms: FOB, CFR, and CIF pricing</li>
-          <li>Payment: Irrevocable LC at Sight</li>
-          <li>Alternative: TT (Advance + Balance vs BL)</li>
-          <li>Palletized shipments available on request</li>
-        </ul>
-      </div>
-    </div>
-  </section>
-
-  <hr class="divider">
-
-  <section class="container reveal" id="operations">
-    <div class="section-header">
-      <div class="section-label">Operations</div>
-      <h2 class="section-title">Operational Capability</h2>
-    </div>
-
-    <div class="bento-grid">
-      <div class="bento-card">
-        <h3>Supply Capability</h3>
-        <ul class="bento-list">
-          <li>Flexible MOQ depending on product category</li>
-          <li>LCL and FCL shipments fully supported</li>
-          <li>Export-ready origin documentation</li>
-          <li>Private label / White label packaging possible</li>
-        </ul>
-      </div>
-      <div class="bento-card">
-        <h3>Compliance Readiness</h3>
-        <ul class="bento-list">
-          <li>Destination-specific dual-language labeling</li>
-          <li>Retail packaging formats fully supported</li>
-          <li>Strict batch traceability maintained</li>
-          <li>Pre-dispatch independent quality inspection</li>
-        </ul>
-      </div>
-    </div>
-  </section>
-
-  <hr class="divider">
-
-  <section class="container reveal" id="packaging">
-    <div class="section-header">
-      <div class="section-label">Packaging</div>
-      <h2 class="section-title">Standardized Packaging</h2>
-    </div>
-
-    <div class="bento-grid">
-      <div class="bento-card">
-        <h3>Rice Commodities</h3>
-        <ul class="bento-list">
-          <li>5 kg retail branded packs</li>
-          <li>10 kg retail branded packs</li>
-          <li>25 kg non-woven export bags</li>
-          <li>50 kg bulk PP bags</li>
-        </ul>
-      </div>
-      <div class="bento-card">
-        <h3>FMCG Snacks</h3>
-        <ul class="bento-list">
-          <li>150 g nitrogen-flushed retail packs</li>
-          <li>250 g nitrogen-flushed retail packs</li>
-          <li>500 g nitrogen-flushed retail packs</li>
-          <li>Standardized corrugated export master cartons</li>
-        </ul>
-      </div>
-    </div>
-  </section>
-
-  <hr class="divider">
-
-  <section class="container reveal" id="compliance">
-    <div class="section-header">
-      <div class="section-label">Compliance</div>
-      <h2 class="section-title">Certifications</h2>
-      <p class="section-desc">Our export operations legally comply with supreme Indian food export regulations and the rigid documentation standards required for global imports.</p>
+  <section id="operations" class="section-padding">
+    <div class="container">
+      <span class="section-tag">Infrastructure</span>
+      <h2 class="section-title">Logistics & Operational Capacity</h2>
+      <p class="section-desc">From precision LCL consolidation to high-volume FCL dispatch, our operations are built to serve multi-national networks.</p>
       
-      <div class="cert-wrap">
-        <div class="cert-pill"><span>✦</span> APEDA Registered Exporter</div>
-        <div class="cert-pill"><span>✦</span> 100% Women-Owned MSME</div>
-        <div class="cert-pill"><span>✦</span> FSSAI Central License (Trader)</div>
-        <div class="cert-pill"><span>✦</span> Active Import Export Code (IEC)</div>
+      <div class="grid-wrap">
+        <div class="grid-card">
+          <h3>Dispatch Ports</h3>
+          <ul>
+            <li>Nhava Sheva (JNPT) Container Terminal</li>
+            <li>Mundra Port (High Volume)</li>
+            <li>Chennai Port (East Coast)</li>
+            <li>New Mangalore Port (Regional)</li>
+          </ul>
+        </div>
+        <div class="grid-card">
+          <h3>Trade Terms</h3>
+          <ul>
+            <li>Incoterms: FOB, CFR, CIF</li>
+            <li>Payment: Irrevocable LC at Sight</li>
+            <li>Alternative: TT (Advance + Balance)</li>
+            <li>LCL & FCL (20ft/40ft) Consolidation</li>
+          </ul>
+        </div>
+        <div class="grid-card">
+          <h3>Operational Capacity</h3>
+          <ul>
+            <li>Flexible MOQ configurations</li>
+            <li>Palletized LCL shipments</li>
+            <li>White-label packaging capability</li>
+            <li>Independent pre-dispatch inspection</li>
+          </ul>
+        </div>
       </div>
     </div>
   </section>
 
-  <hr class="divider">
-
-  <section class="container reveal" id="documentation">
-    <div class="section-header">
-      <div class="section-label">Documentation</div>
-      <h2 class="section-title">Standard Export Documents</h2>
-      <p class="section-desc">To ensure zero-friction customs clearance at your destination port, every commercial shipment is backed by a complete compliance packet.</p>
-    </div>
-
-    <div class="bento-grid">
-      <div class="bento-card">
-        <ul class="bento-list">
-          <li>Certificate of Origin (CoO)</li>
-          <li>Commercial Invoice & Packing List</li>
-        </ul>
-      </div>
-      <div class="bento-card">
-        <ul class="bento-list">
-          <li>Phytosanitary Certificate (Plant Quarantine)</li>
-          <li>Bill of Lading (OBL or Surrender)</li>
-        </ul>
-      </div>
-    </div>
-  </section>
-
-  <hr class="divider">
-
-  <section class="container reveal" id="markets">
-    <div class="section-header">
-      <div class="section-label">Global Reach</div>
-      <h2 class="section-title">Export Markets</h2>
-      <p class="section-desc">While we maintain a strong operational footprint in the Middle East, our logistics network is equipped to supply distributors globally.</p>
-    </div>
-
-    <div class="bento-grid">
-      <div class="bento-card">
-        <h3>Core Destinations</h3>
-        <ul class="bento-list">
-          <li>Middle East & GCC (Oman, Qatar, UAE, KSA)</li>
-          <li>Southeast Asia (Malaysia, Singapore)</li>
-          <li>North America (FDA labeling readiness)</li>
-          <li>European Union & United Kingdom</li>
-          <li>Africa & Oceanic Regions</li>
-        </ul>
+  <section class="section-padding bg-gray">
+    <div class="container">
+      <span class="section-tag">Fulfillment</span>
+      <h2 class="section-title">Standardized Packaging Formats</h2>
+      <p class="section-desc">We offer multiple packaging configurations to suit wholesale distribution and direct-to-retail supermarket shelf requirements.</p>
+      
+      <div class="grid-wrap">
+        <div class="grid-card">
+          <h3>Rice Commodities</h3>
+          <ul>
+            <li>5 kg retail branded packs</li>
+            <li>10 kg retail branded packs</li>
+            <li>25 kg non-woven export bags</li>
+            <li>50 kg bulk PP bags</li>
+          </ul>
+        </div>
+        <div class="grid-card">
+          <h3>FMCG Snacks</h3>
+          <ul>
+            <li>150 g nitrogen-flushed retail packs</li>
+            <li>250 g nitrogen-flushed retail packs</li>
+            <li>500 g nitrogen-flushed retail packs</li>
+            <li>Standardized corrugated export master cartons</li>
+          </ul>
+        </div>
       </div>
     </div>
   </section>
 
-  <hr class="divider">
+  <section class="section-padding">
+    <div class="container">
+      <span class="section-tag">Regulatory</span>
+      <h2 class="section-title">Documentation & Markets</h2>
+      <p class="section-desc">Every commercial shipment is backed by a complete compliance packet to ensure zero-friction customs clearance globally.</p>
+      
+      <div class="grid-wrap">
+        <div class="grid-card">
+          <h3>Standard Export Documents</h3>
+          <ul>
+            <li>Certificate of Origin (CoO)</li>
+            <li>Phytosanitary Certificates</li>
+            <li>Commercial Invoice & Packing List</li>
+            <li>Bill of Lading (OBL or Surrender)</li>
+          </ul>
+        </div>
+        <div class="grid-card">
+          <h3>Target Global Markets</h3>
+          <ul>
+            <li>Middle East & GCC (Oman, Qatar, UAE)</li>
+            <li>Southeast Asia (Malaysia, Singapore)</li>
+            <li>North America (FDA labeling readiness)</li>
+            <li>European Union & United Kingdom</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
 
-  <section class="container reveal" id="downloads">
-    <div class="section-header">
-      <div class="section-label">Assets</div>
+  <section class="section-padding bg-gray">
+    <div class="container">
+      <span class="section-tag">Assets</span>
       <h2 class="section-title">Company Documents</h2>
       <p class="section-desc">Download our official company profile and product specification sheets for your procurement committee's review.</p>
       
-      <a href="#" class="btn-download">⬇ Company Profile (PDF)</a>
-      <a href="#" class="btn-download">⬇ Technical Specifications (PDF)</a>
+      <a href="#" class="btn-download">
+        <svg width="20" height="20" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4"></path></svg>
+        Company Profile (PDF)
+      </a>
+      <a href="#" class="btn-download">
+        <svg width="20" height="20" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4"></path></svg>
+        Technical Specifications (PDF)
+      </a>
     </div>
   </section>
 
-  <hr class="divider">
+  <section id="contact" class="section-padding">
+    <div class="container">
+      <div class="contact-split">
+        
+        <div class="contact-info-panel">
+          <h3>Initiate Trade Dialogue</h3>
+          <div class="contact-detail">
+            <label>Export Desk Email</label>
+            <a href="mailto:exports@apexoriginglobal.com">exports@apexoriginglobal.com</a>
+          </div>
+          <div class="contact-detail">
+            <label>Direct Line / WhatsApp</label>
+            <a href="tel:+919986020742">+91 99860 20742</a>
+          </div>
+          <div class="contact-detail">
+            <label>Registered Headquarters</label>
+            <p>Savitr Residency, 2, 2A, 1st C Main Road<br>Vivekananda Nagar, BSK 3rd Stage<br>Bengaluru, Karnataka 560085<br>India</p>
+          </div>
+          <div class="contact-detail">
+            <label>Global Operating Hours</label>
+            <p>Mon – Sat | 09:00 – 18:00 IST (UTC +5:30)</p>
+          </div>
+        </div>
 
-  <section class="container reveal" id="contact">
-    <div class="section-header">
-      <div class="section-label">Procurement Desk</div>
-      <h2 class="section-title">Initiate Trade Dialogue</h2>
-    </div>
+        <div class="contact-form-panel">
+          <form id="sampleForm">
+            <div class="form-group">
+              <label>Full Name & Corporate Entity *</label>
+              <input type="text" name="name" required placeholder="e.g., John Doe, Corporate LLC">
+            </div>
+            <div class="form-group">
+              <label>Business Email *</label>
+              <input type="email" name="email" required placeholder="procurement@company.com">
+            </div>
+            <div class="form-group">
+              <label>Target Portfolio</label>
+              <select name="product">
+                <option value="sona-masuri-rice">Sona Masuri Rice (Bulk/Retail)</option>
+                <option value="south-indian-snacks">South Indian Snacks (FMCG)</option>
+                <option value="both">Both Categories</option>
+              </select>
+            </div>
+            <div class="form-group">
+              <label>Inquiry Details</label>
+              <textarea name="message" rows="4" placeholder="Specify your destination port, LCL/FCL volume requirements, etc."></textarea>
+            </div>
+            <button type="submit" class="btn-submit" id="submitBtn">Submit Secure Request</button>
+            <p id="form-status" style="margin-top: 15px; font-weight: 500; font-size: 14px;"></p>
+          </form>
+        </div>
 
-    <div class="contact-layout">
-      <div class="contact-info">
-        <div>
-          <strong>Export Desk Email</strong>
-          <a href="mailto:exports@apexoriginglobal.com">exports@apexoriginglobal.com</a>
-        </div>
-        <div>
-          <strong>Direct Line / WhatsApp</strong>
-          <a href="tel:+919110652474">+91 91106 52474</a>
-        </div>
-        <div>
-          <strong>Registered Headquarters</strong>
-          <p>Vivekananda Nagar, BSK 3rd Stage<br>Bengaluru, Karnataka 560085<br>India</p>
-        </div>
-        <div>
-          <strong>Global Operating Hours</strong>
-          <p>Monday – Saturday<br>09:00 – 18:00 IST (UTC +5:30)</p>
-        </div>
       </div>
-
-      <div class="form-box">
-        <form id="sampleForm">
-          <div class="form-group">
-            <label>Full Name & Corporate Entity *</label>
-            <input type="text" name="name" required placeholder="e.g., John Doe, Al Madina Supermarkets">
-          </div>
-          <div class="form-group">
-            <label>Business Email *</label>
-            <input type="email" name="email" required placeholder="procurement@company.com">
-          </div>
-          <div class="form-group">
-            <label>Target Product</label>
-            <select name="product">
-              <option value="sona-masuri-rice">Sona Masuri Rice</option>
-              <option value="south-indian-snacks">South Indian Snacks</option>
-              <option value="both">Both Portfolios</option>
-            </select>
-          </div>
-          <div class="form-group">
-            <label>Inquiry Details (Volume, Target Port)</label>
-            <textarea name="message" rows="4" placeholder="Specify your destination port, required volume (LCL/FCL), etc..."></textarea>
-          </div>
-          <button type="submit" class="submit-btn" id="submitBtn">Submit Secure Request</button>
-          <input type="hidden" name="source" value="apexoriginglobal.com">
-          <p id="form-status"></p>
-        </form>
-      </div>
-    </div>
-
-    <div class="map-container">
-      <iframe 
-        title="Apex Origin Global HQ Map"
-        width="100%" 
-        height="100%" 
-        style="border:0;" 
-        loading="lazy" 
-        allowfullscreen 
-        referrerpolicy="no-referrer-when-downgrade" 
-        src="https://maps.google.com/maps?q=Vivekananda%20Nagar,%20BSK%203rd%20Stage,%20Bengaluru,%20560085&t=&z=13&ie=UTF8&iwloc=&output=embed">
-      </iframe>
     </div>
   </section>
+
+  <div class="map-wrapper">
+    <iframe 
+      title="Apex Origin Global Map"
+      width="100%" 
+      height="100%" 
+      style="border:0;" 
+      loading="lazy" 
+      allowfullscreen 
+      referrerpolicy="no-referrer-when-downgrade" 
+      src="https://maps.google.com/maps?q=Vivekananda%20Nagar,%20BSK%203rd%20Stage,%20Bengaluru,%20Karnataka%20560085&t=&z=13&ie=UTF8&iwloc=&output=embed">
+    </iframe>
+  </div>
 
   <footer>
-    <div class="footer-logo">Apex Origin <span>Global</span></div>
-    <p>Bengaluru, Karnataka, India · exports@apexoriginglobal.com</p>
-    <p style="margin-top:16px; color: #6b7280;">© 2026 Apex Origin Global. All rights reserved. Registered Indian Merchant Exporter.</p>
+    <div class="container footer-flex">
+      <div class="footer-logo">Apex Origin Global</div>
+      <div>© 2026. Registered Indian Merchant Exporter.</div>
+    </div>
   </footer>
 
   <a class="whatsapp-fab" href="https://wa.me/919986020742?text=Hello%20Apex%20Origin%20Global,%20I%20am%20interested%20in%20your%20export%20supply%20chain." target="_blank" rel="noopener noreferrer" aria-label="Chat on WhatsApp">
@@ -730,29 +499,25 @@
     </svg>
   </a>
 
-  <script>
-    // 1. SCROLL REVEAL ANIMATION
-    document.addEventListener("DOMContentLoaded", function() {
-      const reveals = document.querySelectorAll(".reveal");
-      const observer = new IntersectionObserver((entries) => {
-        entries.forEach(entry => {
-          if (entry.isIntersecting) {
-            entry.target.classList.add("active");
-            observer.unobserve(entry.target);
-          }
-        });
-      }, { threshold: 0.1 });
-      reveals.forEach(reveal => observer.observe(reveal));
-    });
+  <script type="text/javascript">
+    function googleTranslateElementInit() {
+      new google.translate.TranslateElement({
+        pageLanguage: 'en', 
+        layout: google.translate.TranslateElement.InlineLayout.SIMPLE,
+        autoDisplay: false
+      }, 'google_translate_element');
+    }
+  </script>
+  <script type="text/javascript" src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
 
-    // 2. DYNAMIC GEO-IP SCRIPT (GLOBAL)
+  <script>
     (function() {
       const el = document.getElementById('shippingMessage');
-      const DEFAULT = 'Direct consolidation from Karnataka\'s agricultural clusters. We secure retail supply chains for international distributors worldwide.';
+      const DEFAULT = 'Origin-direct consolidation from Karnataka\'s agricultural clusters. Securing robust retail supply chains for international distributors.';
       const cached = sessionStorage.getItem('apog_country_name');
 
       if (cached) {
-        el.innerHTML = `Direct export supply from India to <strong>${cached}</strong>. We secure retail supply chains for international distributors worldwide.`;
+        el.innerHTML = `Direct export supply from India to <strong>${cached}</strong>. Securing robust retail supply chains for international distributors.`;
         return;
       }
 
@@ -762,30 +527,27 @@
           const countryName = (data && data.country_name) || '';
           if (countryName) {
             sessionStorage.setItem('apog_country_name', countryName);
-            el.innerHTML = `Direct export supply from India to <strong>${countryName}</strong>. We secure retail supply chains for international distributors worldwide.`;
+            el.innerHTML = `Direct export supply from India to <strong>${countryName}</strong>. Securing robust retail supply chains for international distributors.`;
           } else { el.textContent = DEFAULT; }
         })
         .catch(() => { el.textContent = DEFAULT; });
     })();
 
-    // 3. FORMSPREE SUBMISSION LOGIC
+    // 3. FORMSPREE SUBMISSION
     (function() {
-      // REPLACE WITH YOUR ACTUAL FORMSPREE ID!
-      const FORMSPREE_ID = 'xjgaoqnq';
+      // REPLACE 'xjgaoqnq' WITH YOUR ACTUAL FORMSPREE ID IF NEEDED
+      const FORMSPREE_ID = 'xjgaoqnq'; 
       const form       = document.getElementById('sampleForm');
       const submitBtn  = document.getElementById('submitBtn');
       const statusEl   = document.getElementById('form-status');
 
       form.addEventListener('submit', async function(e) {
         e.preventDefault();
-        
-        // Basic Validation
         if (!form.name.value.trim() || !form.email.value.trim()) {
           statusEl.textContent = 'Please fill in required fields (*).'; 
           statusEl.style.color = '#dc2626'; 
           return;
         }
-        
         submitBtn.disabled = true; 
         submitBtn.textContent = 'Authenticating...';
         
@@ -797,18 +559,17 @@
           });
           
           if (response.ok) {
-            statusEl.textContent = '✓ Request successfully logged. Our export desk will contact you shortly.'; 
+            statusEl.textContent = '✓ Request logged. Our export desk will contact you shortly.'; 
             statusEl.style.color = '#059669'; 
             form.reset();
           } else {
-            statusEl.textContent = 'Transmission failed. Please email exports@apexoriginglobal.com directly.'; 
+            statusEl.textContent = 'Transmission failed. Email exports@apexoriginglobal.com directly.'; 
             statusEl.style.color = '#dc2626';
           }
         } catch (err) {
-          statusEl.textContent = 'Network error. Please email exports@apexoriginglobal.com directly.'; 
+          statusEl.textContent = 'Network error. Email exports@apexoriginglobal.com directly.'; 
           statusEl.style.color = '#dc2626';
         }
-        
         submitBtn.disabled = false; 
         submitBtn.textContent = 'Submit Secure Request';
       });
