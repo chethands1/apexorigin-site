@@ -56,15 +56,12 @@
        1. DESIGN TOKENS & CSS VARIABLES
        ════════════════════════════════════════════════════════════ */
     :root {
-      /* Colors */
-      --primary: #0A192F;         /* Deep Navy Blue */
+      --primary: #0A192F;
       --primary-light: #172A45;
       --primary-dark: #020c1b;
-      --accent: #0070F3;          /* Bright Corporate Blue */
+      --accent: #0070F3;
       --accent-hover: #0056B3;
       --accent-light: rgba(0, 112, 243, 0.1);
-      
-      /* Neutrals */
       --bg-white: #FFFFFF;
       --bg-gray: #F8F9FA;
       --bg-alt: #F3F4F6;
@@ -72,8 +69,6 @@
       --text-gray: #4B5563;
       --text-light: #9CA3AF;
       --border: #E5E7EB;
-      
-      /* Layout & Effects */
       --radius-sm: 4px;
       --radius-md: 8px;
       --radius-lg: 12px;
@@ -83,9 +78,6 @@
       --transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
     }
 
-    /* ════════════════════════════════════════════════════════════
-       2. RESET & BASE STYLES
-       ════════════════════════════════════════════════════════════ */
     * { margin: 0; padding: 0; box-sizing: border-box; }
     html { scroll-behavior: smooth; overflow-x: hidden; }
     body {
@@ -97,10 +89,7 @@
       -moz-osx-font-smoothing: grayscale;
       overflow-x: hidden;
     }
-    
-    /* ════════════════════════════════════════════════════════════
-       3. UTILITY CLASSES
-       ════════════════════════════════════════════════════════════ */
+
     .container { max-width: 1280px; margin: 0 auto; padding: 0 5%; }
     .section-padding { padding: 100px 0; }
     .bg-gray { background-color: var(--bg-gray); }
@@ -131,7 +120,7 @@
     }
 
     /* ════════════════════════════════════════════════════════════
-       4. NAVBAR & TRANSLATOR
+       NAVBAR
        ════════════════════════════════════════════════════════════ */
     .navbar {
       background-color: rgba(255, 255, 255, 0.95);
@@ -165,31 +154,212 @@
     }
     .btn-nav:hover { background-color: var(--primary-light); transform: translateY(-1px); }
 
-    /* Custom Google Translate Integration */
-    #google_translate_element { margin-left: 16px; }
-    .goog-te-combo {
-      padding: 10px 14px;
-      border: 1px solid var(--border);
-      border-radius: var(--radius-sm);
-      background-color: var(--bg-gray);
-      color: var(--text-dark);
-      font-family: 'Inter', sans-serif;
-      font-size: 13px;
-      font-weight: 600;
-      cursor: pointer;
-      outline: none;
-      transition: var(--transition);
-      appearance: none;
-    }
-    .goog-te-combo:focus { border-color: var(--accent); box-shadow: 0 0 0 3px var(--accent-light); }
-    .goog-te-banner-frame.skiptranslate, .goog-te-gadget-icon, .goog-logo-link { display: none !important; }
+    /* ════════════════════════════════════════════════════════════
+       CUSTOM LANGUAGE PICKER
+       ════════════════════════════════════════════════════════════ */
+
+    /* Hide the actual Google Translate bar/banner */
+    .goog-te-banner-frame.skiptranslate,
+    .goog-te-gadget-icon,
+    .goog-logo-link { display: none !important; }
     body { top: 0px !important; }
     .goog-tooltip { display: none !important; pointer-events: none; }
     .goog-text-highlight { background-color: transparent !important; border: none !important; box-shadow: none !important; }
-    .goog-te-gadget { color: transparent !important; font-size: 0; }
+    .goog-te-gadget { font-size: 0 !important; color: transparent !important; }
+    /* Hide the actual native select (we control it via JS) */
+    #google_translate_element { position: absolute; opacity: 0; pointer-events: none; width: 0; height: 0; overflow: hidden; }
+
+    /* Custom translator trigger button */
+    .translate-trigger {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      padding: 10px 16px;
+      background: var(--bg-gray);
+      border: 1px solid var(--border);
+      border-radius: var(--radius-sm);
+      font-family: 'Inter', sans-serif;
+      font-size: 13px;
+      font-weight: 600;
+      color: var(--text-dark);
+      cursor: pointer;
+      transition: var(--transition);
+      position: relative;
+      white-space: nowrap;
+      user-select: none;
+    }
+    .translate-trigger:hover {
+      border-color: var(--accent);
+      color: var(--accent);
+      background: var(--accent-light);
+    }
+    .translate-trigger svg {
+      width: 16px;
+      height: 16px;
+      flex-shrink: 0;
+    }
+    .translate-trigger .lang-label {
+      max-width: 100px;
+      overflow: hidden;
+      text-overflow: ellipsis;
+    }
+    .translate-trigger .chevron {
+      transition: transform 0.25s ease;
+      flex-shrink: 0;
+    }
+    .translate-trigger.open .chevron {
+      transform: rotate(180deg);
+    }
+
+    /* Dropdown panel */
+    .translate-panel {
+      position: absolute;
+      top: calc(100% + 8px);
+      right: 0;
+      width: 280px;
+      background: var(--bg-white);
+      border: 1px solid var(--border);
+      border-radius: var(--radius-md);
+      box-shadow: 0 20px 40px -8px rgba(0,0,0,0.15), 0 4px 12px -2px rgba(0,0,0,0.08);
+      z-index: 2000;
+      overflow: hidden;
+      display: none;
+      animation: dropIn 0.2s cubic-bezier(0.16, 1, 0.3, 1) both;
+    }
+    .translate-panel.open {
+      display: block;
+    }
+    @keyframes dropIn {
+      from { opacity: 0; transform: translateY(-8px) scale(0.97); }
+      to   { opacity: 1; transform: translateY(0) scale(1); }
+    }
+
+    /* Search box inside panel */
+    .translate-search-wrap {
+      padding: 12px;
+      border-bottom: 1px solid var(--border);
+      position: relative;
+    }
+    .translate-search-wrap svg {
+      position: absolute;
+      left: 22px;
+      top: 50%;
+      transform: translateY(-50%);
+      width: 15px;
+      height: 15px;
+      color: var(--text-light);
+      pointer-events: none;
+    }
+    .translate-search {
+      width: 100%;
+      padding: 9px 12px 9px 34px;
+      border: 1px solid var(--border);
+      border-radius: var(--radius-sm);
+      font-family: 'Inter', sans-serif;
+      font-size: 13px;
+      color: var(--text-dark);
+      background: var(--bg-gray);
+      outline: none;
+      transition: var(--transition);
+    }
+    .translate-search::placeholder { color: var(--text-light); }
+    .translate-search:focus {
+      border-color: var(--accent);
+      background: var(--bg-white);
+      box-shadow: 0 0 0 3px var(--accent-light);
+    }
+
+    /* Language list */
+    .translate-list {
+      list-style: none;
+      max-height: 300px;
+      overflow-y: auto;
+      padding: 6px 0;
+      scroll-behavior: smooth;
+    }
+    .translate-list::-webkit-scrollbar { width: 4px; }
+    .translate-list::-webkit-scrollbar-track { background: transparent; }
+    .translate-list::-webkit-scrollbar-thumb { background: var(--border); border-radius: 2px; }
+    .translate-list::-webkit-scrollbar-thumb:hover { background: var(--text-light); }
+
+    .translate-list li {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      padding: 9px 16px;
+      font-size: 13px;
+      font-weight: 500;
+      color: var(--text-dark);
+      cursor: pointer;
+      transition: background 0.15s ease;
+    }
+    .translate-list li:hover { background: var(--bg-gray); }
+    .translate-list li.active {
+      background: var(--accent-light);
+      color: var(--accent);
+      font-weight: 700;
+    }
+    .translate-list li .lang-flag {
+      font-size: 18px;
+      line-height: 1;
+      flex-shrink: 0;
+    }
+    .translate-list li .lang-native {
+      color: var(--text-light);
+      font-size: 11px;
+      margin-left: auto;
+      font-weight: 400;
+    }
+    .translate-no-results {
+      padding: 24px 16px;
+      text-align: center;
+      color: var(--text-light);
+      font-size: 13px;
+    }
+
+    /* Panel header */
+    .translate-panel-header {
+      padding: 12px 16px 0;
+      font-size: 11px;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      color: var(--text-light);
+    }
+
+    /* Panel footer */
+    .translate-panel-footer {
+      padding: 8px 16px;
+      border-top: 1px solid var(--border);
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+    .translate-reset-btn {
+      font-size: 12px;
+      font-weight: 600;
+      color: var(--text-light);
+      background: none;
+      border: none;
+      cursor: pointer;
+      font-family: 'Inter', sans-serif;
+      padding: 4px 0;
+      transition: color 0.2s;
+    }
+    .translate-reset-btn:hover { color: var(--accent); }
+    .translate-count {
+      font-size: 11px;
+      color: var(--text-light);
+    }
+
+    /* Wrapper positioning */
+    .translate-wrapper {
+      position: relative;
+      margin-left: 16px;
+    }
 
     /* ════════════════════════════════════════════════════════════
-       5. HERO SECTION
+       HERO
        ════════════════════════════════════════════════════════════ */
     .hero {
       position: relative;
@@ -235,9 +405,7 @@
     }
     .btn-primary:hover { background-color: var(--accent-hover); transform: translateY(-3px); box-shadow: 0 15px 20px -3px rgba(0, 112, 243, 0.4); }
 
-    /* ════════════════════════════════════════════════════════════
-       6. TRUST RIBBON
-       ════════════════════════════════════════════════════════════ */
+    /* TRUST RIBBON */
     .trust-ribbon {
       background-color: var(--bg-white);
       border: 1px solid var(--border);
@@ -254,37 +422,29 @@
     .trust-item { display: flex; align-items: center; gap: 16px; font-weight: 700; font-size: 15px; color: var(--primary); }
     .trust-icon { width: 32px; height: 32px; color: var(--accent); background: var(--accent-light); padding: 6px; border-radius: 50%; }
 
-    /* ════════════════════════════════════════════════════════════
-       7. THE EXPORT PROCESS (TIMELINE)
-       ════════════════════════════════════════════════════════════ */
+    /* PROCESS */
     .process-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 30px; margin-top: 40px; }
     .process-step { position: relative; padding: 30px; background: var(--bg-white); border-radius: var(--radius-md); border: 1px solid var(--border); box-shadow: var(--shadow-sm); }
     .process-number { font-size: 48px; font-weight: 800; color: var(--bg-gray); position: absolute; top: 10px; right: 20px; line-height: 1; z-index: 0; }
     .process-step h3 { font-size: 18px; color: var(--primary); margin-bottom: 12px; position: relative; z-index: 1; }
     .process-step p { font-size: 14px; color: var(--text-gray); position: relative; z-index: 1; }
 
-    /* ════════════════════════════════════════════════════════════
-       8. ZIG-ZAG FEATURE LAYOUT (PRODUCTS)
-       ════════════════════════════════════════════════════════════ */
+    /* PRODUCTS ZIG-ZAG */
     .feature-row { display: flex; align-items: center; gap: 80px; margin-bottom: 120px; }
     .feature-row:last-child { margin-bottom: 0; }
     .feature-row.reverse { flex-direction: row-reverse; }
     .feature-text { flex: 1; }
     .feature-image { flex: 1; position: relative; }
     .feature-image img { width: 100%; height: 450px; object-fit: cover; border-radius: var(--radius-md); box-shadow: var(--shadow-lg); }
-    
     .product-title { font-size: 32px; font-weight: 800; color: var(--primary); margin-bottom: 20px; letter-spacing: -0.5px; }
     .product-desc { color: var(--text-gray); font-size: 17px; line-height: 1.7; margin-bottom: 30px; }
-    
     .spec-list { list-style: none; background: var(--bg-white); padding: 24px; border-radius: var(--radius-md); border: 1px solid var(--border); box-shadow: var(--shadow-sm); }
     .spec-list li { padding: 14px 0; border-bottom: 1px solid var(--border); display: flex; justify-content: space-between; font-size: 15px; }
     .spec-list li:last-child { border-bottom: none; padding-bottom: 0; }
     .spec-list li:first-child { padding-top: 0; }
     .spec-list strong { color: var(--primary); font-weight: 700; }
 
-    /* ════════════════════════════════════════════════════════════
-       9. MODULAR GRID SYSTEM (LOGISTICS, COMPLIANCE, FAQ)
-       ════════════════════════════════════════════════════════════ */
+    /* GRID SYSTEM */
     .grid-3 { display: grid; grid-template-columns: repeat(3, 1fr); gap: 40px; }
     .grid-2 { display: grid; grid-template-columns: repeat(2, 1fr); gap: 40px; }
     .grid-card {
@@ -294,14 +454,11 @@
     .grid-card svg { width: 40px; height: 40px; color: var(--accent); margin-bottom: 20px; }
     .grid-card h3 { font-size: 22px; font-weight: 700; color: var(--primary); margin-bottom: 16px; }
     .grid-card p { color: var(--text-gray); font-size: 15px; margin-bottom: 24px; line-height: 1.6; }
-    
     .check-list { list-style: none; }
     .check-list li { display: flex; align-items: flex-start; gap: 12px; margin-bottom: 16px; font-size: 15px; color: var(--text-gray); }
     .check-list li svg { width: 20px; height: 20px; color: #10B981; flex-shrink: 0; margin-bottom: 0; }
 
-    /* ════════════════════════════════════════════════════════════
-       10. ACCORDION FAQ
-       ════════════════════════════════════════════════════════════ */
+    /* FAQ */
     details { background: var(--bg-white); border: 1px solid var(--border); border-radius: var(--radius-md); margin-bottom: 16px; padding: 20px; transition: var(--transition); }
     details:hover { border-color: var(--accent); }
     summary { font-size: 18px; font-weight: 600; color: var(--primary); cursor: pointer; outline: none; list-style: none; position: relative; padding-right: 30px; }
@@ -310,9 +467,7 @@
     details[open] summary::after { content: '−'; }
     details p { margin-top: 16px; color: var(--text-gray); font-size: 15px; line-height: 1.7; padding-top: 16px; border-top: 1px solid var(--border); }
 
-    /* ════════════════════════════════════════════════════════════
-       11. DOWNLOADS
-       ════════════════════════════════════════════════════════════ */
+    /* DOWNLOADS */
     .download-grid { display: flex; gap: 24px; flex-wrap: wrap; }
     .btn-download {
       display: inline-flex; align-items: center; justify-content: center; gap: 12px; background-color: var(--bg-white); color: var(--primary); border: 1px solid var(--border); padding: 16px 32px; font-weight: 700; font-size: 15px; text-decoration: none; border-radius: var(--radius-sm); transition: var(--transition); box-shadow: var(--shadow-sm);
@@ -320,11 +475,8 @@
     .btn-download:hover { border-color: var(--accent); color: var(--accent); transform: translateY(-2px); box-shadow: var(--shadow-md); }
     .btn-download svg { width: 24px; height: 24px; }
 
-    /* ════════════════════════════════════════════════════════════
-       12. CONTACT & MAP
-       ════════════════════════════════════════════════════════════ */
+    /* CONTACT */
     .contact-split { display: flex; background-color: var(--bg-white); border-radius: var(--radius-lg); overflow: hidden; box-shadow: var(--shadow-lg); border: 1px solid var(--border); }
-    
     .contact-info-panel { flex: 1; background-color: var(--primary); color: var(--bg-white); padding: 80px 60px; }
     .contact-info-panel h3 { font-size: 32px; font-weight: 800; margin-bottom: 40px; }
     .contact-detail { margin-bottom: 32px; display: flex; gap: 16px; align-items: flex-start; }
@@ -332,7 +484,6 @@
     .contact-detail label { display: block; font-size: 12px; color: #9CA3AF; text-transform: uppercase; letter-spacing: 1.5px; margin-bottom: 8px; font-weight: 600; }
     .contact-detail p, .contact-detail a { color: var(--bg-white); text-decoration: none; font-size: 16px; font-weight: 500; line-height: 1.6; }
     .contact-detail a:hover { color: var(--accent); }
-    
     .contact-form-panel { flex: 1.5; padding: 80px 60px; }
     .form-group { margin-bottom: 24px; }
     .form-group label { display: block; font-size: 13px; font-weight: 700; color: var(--text-dark); margin-bottom: 10px; }
@@ -342,18 +493,14 @@
     .form-group input:focus, .form-group textarea:focus, .form-group select:focus { outline: none; border-color: var(--accent); background-color: var(--bg-white); box-shadow: 0 0 0 4px var(--accent-light); }
     .btn-submit { background-color: var(--primary); color: white; padding: 18px; border: none; border-radius: var(--radius-sm); width: 100%; font-size: 16px; font-weight: 700; cursor: pointer; transition: var(--transition); margin-top: 10px; }
     .btn-submit:hover { background-color: var(--primary-light); box-shadow: var(--shadow-md); }
-
     .map-wrapper { width: 100%; height: 500px; background: var(--bg-gray); border-top: 1px solid var(--border); }
 
-    /* ════════════════════════════════════════════════════════════
-       13. FOOTER & WHATSAPP
-       ════════════════════════════════════════════════════════════ */
+    /* FOOTER & WHATSAPP */
     .whatsapp-fab {
       position: fixed; bottom: 30px; right: 30px; background: #25D366; color: white; width: 64px; height: 64px; border-radius: 50%; display: flex; align-items: center; justify-content: center; box-shadow: 0 10px 25px rgba(37,211,102,0.4); transition: var(--transition); z-index: 1000;
     }
     .whatsapp-fab:hover { transform: scale(1.1); box-shadow: 0 15px 30px rgba(37,211,102,0.5); }
     .whatsapp-fab svg { width: 34px; height: 34px; fill: white; }
-
     footer { background-color: var(--primary-dark); color: #9CA3AF; padding: 80px 0 40px; }
     .footer-grid { display: grid; grid-template-columns: 2fr 1fr 1fr 1fr; gap: 60px; margin-bottom: 60px; }
     .footer-logo { font-size: 24px; font-weight: 800; color: var(--bg-white); margin-bottom: 20px; }
@@ -365,9 +512,7 @@
     .footer-links a:hover { color: var(--accent); }
     .footer-bottom { border-top: 1px solid rgba(255,255,255,0.1); padding-top: 30px; display: flex; justify-content: space-between; align-items: center; font-size: 13px; }
 
-    /* ════════════════════════════════════════════════════════════
-       14. RESPONSIVE MEDIA QUERIES
-       ════════════════════════════════════════════════════════════ */
+    /* RESPONSIVE */
     @media (max-width: 1024px) {
       .grid-3 { grid-template-columns: repeat(2, 1fr); }
       .process-grid { grid-template-columns: repeat(2, 1fr); }
@@ -375,7 +520,7 @@
     }
     @media (max-width: 768px) {
       .hero h1 { font-size: 42px; }
-      .nav-links { display: none; } /* Hide text links on mobile, keep translator */
+      .nav-links { display: none; }
       .feature-row, .feature-row.reverse { flex-direction: column; gap: 40px; margin-bottom: 60px; }
       .grid-3, .grid-2 { grid-template-columns: 1fr; }
       .process-grid { grid-template-columns: 1fr; }
@@ -385,6 +530,7 @@
       .hero { padding: 100px 0; }
       .footer-grid { grid-template-columns: 1fr; gap: 40px; }
       .footer-bottom { flex-direction: column; gap: 16px; text-align: center; }
+      .translate-panel { right: auto; left: 0; }
     }
   </style>
 </head>
@@ -399,8 +545,45 @@
         <a href="#logistics">Logistics</a>
         <a href="#faq">FAQ</a>
         <a href="#contact" class="btn-nav">Corporate Inquiry</a>
-        
-        <div id="google_translate_element"></div>
+
+        <!-- Hidden Google Translate element (controlled via JS) -->
+        <div id="google_translate_element" aria-hidden="true"></div>
+
+        <!-- ── Custom Searchable Language Picker ── -->
+        <div class="translate-wrapper" id="translateWrapper">
+          <button class="translate-trigger" id="translateTrigger" aria-haspopup="listbox" aria-expanded="false" title="Translate this page">
+            <svg fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="2">
+              <path stroke-linecap="round" stroke-linejoin="round" d="M3 5h12M9 3v2m1.048 9.5A18.022 18.022 0 016.412 9m6.088 9h7M11 21l5-10 5 10M12.751 5C11.783 10.77 8.07 15.61 3 18.129"/>
+            </svg>
+            <span class="lang-label" id="selectedLangLabel">Translate</span>
+            <svg class="chevron" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="2.5">
+              <path stroke-linecap="round" stroke-linejoin="round" d="M19 9l-7 7-7-7"/>
+            </svg>
+          </button>
+
+          <div class="translate-panel" id="translatePanel" role="listbox" aria-label="Select language">
+            <div class="translate-panel-header">Select Language</div>
+            <div class="translate-search-wrap">
+              <svg fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="2">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"/>
+              </svg>
+              <input
+                type="search"
+                class="translate-search"
+                id="langSearchInput"
+                placeholder="Search language…"
+                autocomplete="off"
+                spellcheck="false"
+              >
+            </div>
+            <ul class="translate-list" id="langListUL" role="listbox"></ul>
+            <div class="translate-panel-footer">
+              <button class="translate-reset-btn" id="resetTranslateBtn">Reset to English</button>
+              <span class="translate-count" id="langCount"></span>
+            </div>
+          </div>
+        </div>
+        <!-- ── End Language Picker ── -->
       </div>
     </div>
   </nav>
@@ -524,7 +707,6 @@
           </ul>
         </div>
       </div>
-
     </div>
   </section>
 
@@ -583,7 +765,6 @@
         <h2 class="section-title">Standardized Packaging</h2>
         <p class="section-desc">We offer multiple packaging configurations to suit wholesale distribution and direct-to-retail supermarket shelf requirements.</p>
       </div>
-      
       <div class="grid-2">
         <div class="grid-card">
           <h3>Rice & Agricultural Commodities</h3>
@@ -616,23 +797,19 @@
         <h2 class="section-title">Procurement FAQ</h2>
         <p class="section-desc">Common technical and operational questions from our international buyers.</p>
       </div>
-
       <div style="max-width: 900px;">
         <details>
           <summary>What is your Minimum Order Quantity (MOQ)?</summary>
           <p>For agricultural commodities like Sona Masuri Rice, our standard MOQ is a 20ft Full Container Load (FCL). For processed FMCG snacks, we accept LCL (Less than Container Load) shipments starting at 500 kg, allowing buyers to test their local market demand before scaling.</p>
         </details>
-        
         <details>
           <summary>Do you provide product samples?</summary>
           <p>Yes. We provide complete, GCC-compliant product sample boxes via DHL. The buyer is only required to cover the international courier charges, which will be fully deducted from the final invoice of your first commercial order.</p>
         </details>
-
         <details>
           <summary>Can you handle dual-language labeling for the Middle East?</summary>
           <p>Absolutely. We are fully equipped to apply dual-language (English/Arabic) ingredient and nutritional stickers on all FMCG goods to ensure total compliance with GCC customs and municipality regulations.</p>
         </details>
-
         <details>
           <summary>What are your standard payment terms?</summary>
           <p>To protect both parties, we operate on standard international trade terms. We accept Irrevocable Letters of Credit (LC) at Sight from prime global banks. Alternatively, we accept Telegraphic Transfer (TT) with a 50% advance and 50% balance against scanned copies of the Bill of Lading (B/L) and export documents.</p>
@@ -648,7 +825,6 @@
         <h2 class="section-title">Corporate Documents</h2>
         <p class="section-desc">Download our official company profile and product specification sheets for your procurement committee's internal review.</p>
       </div>
-      
       <div class="download-grid">
         <a href="#" class="btn-download">
           <svg fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4"></path></svg>
@@ -669,10 +845,8 @@
   <section id="contact" class="section-padding">
     <div class="container">
       <div class="contact-split">
-        
         <div class="contact-info-panel">
           <h3>Initiate Trade Dialogue</h3>
-          
           <div class="contact-detail">
             <svg fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"></path></svg>
             <div>
@@ -681,15 +855,13 @@
               <a href="mailto:chethands1999@gmail.com" style="font-size: 14px; color: #D1D5DB;">chethands1999@gmail.com</a>
             </div>
           </div>
-          
           <div class="contact-detail">
             <svg fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z"></path></svg>
             <div>
               <label>Direct Line / WhatsApp</label>
-              <a href="tel:+919986020742">+91 99860 20742</a>
+              <a href="tel:+919110652474">+91 91106 52474</a>
             </div>
           </div>
-          
           <div class="contact-detail">
             <svg fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"></path><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"></path></svg>
             <div>
@@ -697,7 +869,6 @@
               <p>Savitr Residency, 2, 2A, 1st C Main Road<br>Vivekananda Nagar, BSK 3rd Stage<br>Bengaluru, Karnataka 560085<br>India</p>
             </div>
           </div>
-          
           <div class="contact-detail">
             <svg fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg>
             <div>
@@ -734,7 +905,6 @@
             <p id="form-status" style="margin-top: 15px; font-weight: 600; font-size: 14px;"></p>
           </form>
         </div>
-
       </div>
     </div>
   </section>
@@ -742,13 +912,8 @@
   <div class="map-wrapper">
     <iframe 
       title="Apex Origin Global Map"
-      width="100%" 
-      height="100%" 
-      style="border:0;" 
-      loading="lazy" 
-      allowfullscreen 
-      referrerpolicy="no-referrer-when-downgrade" 
-      src="https://www.google.com/maps?q=Vivekananda+Nagar,+BSK+3rd+Stage,+Bengaluru,+Karnataka+560085&output=embed">
+      width="100%" height="100%" style="border:0;" loading="lazy" allowfullscreen referrerpolicy="no-referrer-when-downgrade"
+      src="https://maps.app.goo.gl/vg1Zp95GKxAsgHPNA">
     </iframe>
   </div>
 
@@ -784,7 +949,6 @@
           </ul>
         </div>
       </div>
-      
       <div class="footer-bottom">
         <div>© 2026 Apex Origin Global. All rights reserved.</div>
         <div>Registered Indian Merchant Exporter | Udyam MSME | APEDA</div>
@@ -798,10 +962,13 @@
     </svg>
   </a>
 
+  <!-- ══════════════════════════════════════════════════════════
+       GOOGLE TRANSLATE INIT (hidden, controlled by custom UI)
+       ══════════════════════════════════════════════════════════ -->
   <script type="text/javascript">
     function googleTranslateElementInit() {
       new google.translate.TranslateElement({
-        pageLanguage: 'en', 
+        pageLanguage: 'en',
         layout: google.translate.TranslateElement.InlineLayout.SIMPLE,
         autoDisplay: false
       }, 'google_translate_element');
@@ -809,70 +976,359 @@
   </script>
   <script type="text/javascript" src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
 
+  <!-- ══════════════════════════════════════════════════════════
+       CUSTOM LANGUAGE PICKER + GEO-IP + FORM LOGIC
+       ══════════════════════════════════════════════════════════ -->
   <script>
-    (function() {
-      // Geo-IP Hero Text Replacement
-      const el = document.getElementById('shippingMessage');
-      const DEFAULT = 'Origin-direct consolidation from Karnataka\'s agricultural clusters. Securing robust retail supply chains for international distributors.';
-      const cached = sessionStorage.getItem('apog_country_name');
+  (function () {
 
-      if (cached) {
-        el.innerHTML = `Direct export supply from India to <strong>${cached}</strong>. Securing robust retail supply chains for international distributors.`;
-      } else {
-        fetch('https://ipapi.co/json/')
-          .then(res => res.json())
-          .then(data => {
-            const countryName = (data && data.country_name) || '';
-            if (countryName) {
-              sessionStorage.setItem('apog_country_name', countryName);
-              el.innerHTML = `Direct export supply from India to <strong>${countryName}</strong>. Securing robust retail supply chains for international distributors.`;
-            } else { el.textContent = DEFAULT; }
-          })
-          .catch(() => { el.textContent = DEFAULT; });
+    /* ─────────────────────────────────────────────────────────
+       1. FULL LANGUAGE LIST  (code: [English name, Native name, flag emoji])
+       ───────────────────────────────────────────────────────── */
+    const LANGUAGES = [
+      { code: 'af',    name: 'Afrikaans',            native: 'Afrikaans',          flag: '🇿🇦' },
+      { code: 'sq',    name: 'Albanian',              native: 'Shqip',              flag: '🇦🇱' },
+      { code: 'am',    name: 'Amharic',               native: 'አማርኛ',              flag: '🇪🇹' },
+      { code: 'ar',    name: 'Arabic',                native: 'العربية',            flag: '🇸🇦' },
+      { code: 'hy',    name: 'Armenian',              native: 'Հայերեն',            flag: '🇦🇲' },
+      { code: 'as',    name: 'Assamese',              native: 'অসমীয়া',            flag: '🇮🇳' },
+      { code: 'ay',    name: 'Aymara',                native: 'Aymar aru',          flag: '🇧🇴' },
+      { code: 'az',    name: 'Azerbaijani',           native: 'Azərbaycan',         flag: '🇦🇿' },
+      { code: 'bm',    name: 'Bambara',               native: 'Bamanankan',         flag: '🇲🇱' },
+      { code: 'eu',    name: 'Basque',                native: 'Euskara',            flag: '🏴' },
+      { code: 'be',    name: 'Belarusian',            native: 'Беларуская',         flag: '🇧🇾' },
+      { code: 'bn',    name: 'Bengali',               native: 'বাংলা',              flag: '🇧🇩' },
+      { code: 'bho',   name: 'Bhojpuri',              native: 'भोजपुरी',            flag: '🇮🇳' },
+      { code: 'bs',    name: 'Bosnian',               native: 'Bosanski',           flag: '🇧🇦' },
+      { code: 'bg',    name: 'Bulgarian',             native: 'Български',          flag: '🇧🇬' },
+      { code: 'ca',    name: 'Catalan',               native: 'Català',             flag: '🏴' },
+      { code: 'ceb',   name: 'Cebuano',               native: 'Cebuano',            flag: '🇵🇭' },
+      { code: 'ny',    name: 'Chichewa',              native: 'Chichewa',           flag: '🇲🇼' },
+      { code: 'zh-CN', name: 'Chinese (Simplified)',  native: '中文(简体)',          flag: '🇨🇳' },
+      { code: 'zh-TW', name: 'Chinese (Traditional)',native: '中文(繁體)',           flag: '🇹🇼' },
+      { code: 'co',    name: 'Corsican',              native: 'Corsu',              flag: '🇫🇷' },
+      { code: 'hr',    name: 'Croatian',              native: 'Hrvatski',           flag: '🇭🇷' },
+      { code: 'cs',    name: 'Czech',                 native: 'Čeština',            flag: '🇨🇿' },
+      { code: 'da',    name: 'Danish',                native: 'Dansk',              flag: '🇩🇰' },
+      { code: 'dv',    name: 'Dhivehi',               native: 'ދިވެހި',             flag: '🇲🇻' },
+      { code: 'doi',   name: 'Dogri',                 native: 'डोगरी',              flag: '🇮🇳' },
+      { code: 'nl',    name: 'Dutch',                 native: 'Nederlands',         flag: '🇳🇱' },
+      { code: 'en',    name: 'English',               native: 'English',            flag: '🇬🇧' },
+      { code: 'eo',    name: 'Esperanto',             native: 'Esperanto',          flag: '🟢' },
+      { code: 'et',    name: 'Estonian',              native: 'Eesti',              flag: '🇪🇪' },
+      { code: 'ee',    name: 'Ewe',                   native: 'Eʋegbe',             flag: '🇬🇭' },
+      { code: 'tl',    name: 'Filipino',              native: 'Filipino',           flag: '🇵🇭' },
+      { code: 'fi',    name: 'Finnish',               native: 'Suomi',              flag: '🇫🇮' },
+      { code: 'fr',    name: 'French',                native: 'Français',           flag: '🇫🇷' },
+      { code: 'fy',    name: 'Frisian',               native: 'Frysk',              flag: '🇳🇱' },
+      { code: 'gl',    name: 'Galician',              native: 'Galego',             flag: '🇪🇸' },
+      { code: 'ka',    name: 'Georgian',              native: 'ქართული',            flag: '🇬🇪' },
+      { code: 'de',    name: 'German',                native: 'Deutsch',            flag: '🇩🇪' },
+      { code: 'el',    name: 'Greek',                 native: 'Ελληνικά',           flag: '🇬🇷' },
+      { code: 'gn',    name: 'Guarani',               native: "Avañe'ẽ",            flag: '🇵🇾' },
+      { code: 'gu',    name: 'Gujarati',              native: 'ગુજરાતી',            flag: '🇮🇳' },
+      { code: 'ht',    name: 'Haitian Creole',        native: 'Kreyòl ayisyen',     flag: '🇭🇹' },
+      { code: 'ha',    name: 'Hausa',                 native: 'Hausa',              flag: '🇳🇬' },
+      { code: 'haw',   name: 'Hawaiian',              native: 'ʻŌlelo Hawaiʻi',    flag: '🌺' },
+      { code: 'iw',    name: 'Hebrew',                native: 'עברית',              flag: '🇮🇱' },
+      { code: 'hi',    name: 'Hindi',                 native: 'हिन्दी',             flag: '🇮🇳' },
+      { code: 'hmn',   name: 'Hmong',                 native: 'Hmoob',              flag: '🌏' },
+      { code: 'hu',    name: 'Hungarian',             native: 'Magyar',             flag: '🇭🇺' },
+      { code: 'is',    name: 'Icelandic',             native: 'Íslenska',           flag: '🇮🇸' },
+      { code: 'ig',    name: 'Igbo',                  native: 'Igbo',               flag: '🇳🇬' },
+      { code: 'ilo',   name: 'Ilocano',               native: 'Ilocano',            flag: '🇵🇭' },
+      { code: 'id',    name: 'Indonesian',            native: 'Bahasa Indonesia',   flag: '🇮🇩' },
+      { code: 'ga',    name: 'Irish',                 native: 'Gaeilge',            flag: '🇮🇪' },
+      { code: 'it',    name: 'Italian',               native: 'Italiano',           flag: '🇮🇹' },
+      { code: 'ja',    name: 'Japanese',              native: '日本語',              flag: '🇯🇵' },
+      { code: 'jw',    name: 'Javanese',              native: 'Jawa',               flag: '🇮🇩' },
+      { code: 'kn',    name: 'Kannada',               native: 'ಕನ್ನಡ',              flag: '🇮🇳' },
+      { code: 'kk',    name: 'Kazakh',                native: 'Қазақ тілі',         flag: '🇰🇿' },
+      { code: 'km',    name: 'Khmer',                 native: 'ភាសាខ្មែរ',          flag: '🇰🇭' },
+      { code: 'rw',    name: 'Kinyarwanda',           native: 'Ikinyarwanda',       flag: '🇷🇼' },
+      { code: 'gom',   name: 'Konkani',               native: 'कोंकणी',             flag: '🇮🇳' },
+      { code: 'ko',    name: 'Korean',                native: '한국어',              flag: '🇰🇷' },
+      { code: 'kri',   name: 'Krio',                  native: 'Krio',               flag: '🇸🇱' },
+      { code: 'ku',    name: 'Kurdish (Kurmanji)',     native: 'Kurdî',              flag: '🌍' },
+      { code: 'ckb',   name: 'Kurdish (Sorani)',       native: 'سۆرانی',             flag: '🌍' },
+      { code: 'ky',    name: 'Kyrgyz',                native: 'Кыргызча',           flag: '🇰🇬' },
+      { code: 'lo',    name: 'Lao',                   native: 'ລາວ',               flag: '🇱🇦' },
+      { code: 'la',    name: 'Latin',                 native: 'Latina',             flag: '🏛️' },
+      { code: 'lv',    name: 'Latvian',               native: 'Latviešu',           flag: '🇱🇻' },
+      { code: 'ln',    name: 'Lingala',               native: 'Lingála',            flag: '🇨🇩' },
+      { code: 'lt',    name: 'Lithuanian',            native: 'Lietuvių',           flag: '🇱🇹' },
+      { code: 'lg',    name: 'Luganda',               native: 'Luganda',            flag: '🇺🇬' },
+      { code: 'lb',    name: 'Luxembourgish',         native: 'Lëtzebuergesch',     flag: '🇱🇺' },
+      { code: 'mk',    name: 'Macedonian',            native: 'Македонски',         flag: '🇲🇰' },
+      { code: 'mai',   name: 'Maithili',              native: 'मैथिली',             flag: '🇮🇳' },
+      { code: 'mg',    name: 'Malagasy',              native: 'Malagasy',           flag: '🇲🇬' },
+      { code: 'ms',    name: 'Malay',                 native: 'Bahasa Melayu',      flag: '🇲🇾' },
+      { code: 'ml',    name: 'Malayalam',             native: 'മലയാളം',             flag: '🇮🇳' },
+      { code: 'mt',    name: 'Maltese',               native: 'Malti',              flag: '🇲🇹' },
+      { code: 'mi',    name: 'Maori',                 native: 'Te Reo Māori',       flag: '🇳🇿' },
+      { code: 'mr',    name: 'Marathi',               native: 'मराठी',              flag: '🇮🇳' },
+      { code: 'mni-Mtei', name: 'Meitei (Manipuri)', native: 'ꯃꯤꯇꯩꯂꯣꯟ',          flag: '🇮🇳' },
+      { code: 'lus',   name: 'Mizo',                  native: 'Mizo ṭawng',         flag: '🇮🇳' },
+      { code: 'mn',    name: 'Mongolian',             native: 'Монгол',             flag: '🇲🇳' },
+      { code: 'my',    name: 'Myanmar (Burmese)',     native: 'မြန်မာဘာသာ',         flag: '🇲🇲' },
+      { code: 'ne',    name: 'Nepali',                native: 'नेपाली',             flag: '🇳🇵' },
+      { code: 'no',    name: 'Norwegian',             native: 'Norsk',              flag: '🇳🇴' },
+      { code: 'or',    name: 'Odia (Oriya)',          native: 'ଓଡ଼ିଆ',              flag: '🇮🇳' },
+      { code: 'om',    name: 'Oromo',                 native: 'Afaan Oromoo',       flag: '🇪🇹' },
+      { code: 'ps',    name: 'Pashto',                native: 'پښتو',               flag: '🇦🇫' },
+      { code: 'fa',    name: 'Persian',               native: 'فارسی',              flag: '🇮🇷' },
+      { code: 'pl',    name: 'Polish',                native: 'Polski',             flag: '🇵🇱' },
+      { code: 'pt',    name: 'Portuguese',            native: 'Português',          flag: '🇵🇹' },
+      { code: 'pa',    name: 'Punjabi',               native: 'ਪੰਜਾਬੀ',             flag: '🇮🇳' },
+      { code: 'qu',    name: 'Quechua',               native: 'Runasimi',           flag: '🇵🇪' },
+      { code: 'ro',    name: 'Romanian',              native: 'Română',             flag: '🇷🇴' },
+      { code: 'ru',    name: 'Russian',               native: 'Русский',            flag: '🇷🇺' },
+      { code: 'sm',    name: 'Samoan',                native: 'Gagana Samoa',       flag: '🇼🇸' },
+      { code: 'sa',    name: 'Sanskrit',              native: 'संस्कृतम्',           flag: '🇮🇳' },
+      { code: 'gd',    name: 'Scots Gaelic',          native: 'Gàidhlig',           flag: '🏴󠁧󠁢󠁳󠁣󠁴󠁿' },
+      { code: 'nso',   name: 'Sepedi',                native: 'Sepedi',             flag: '🇿🇦' },
+      { code: 'sr',    name: 'Serbian',               native: 'Српски',             flag: '🇷🇸' },
+      { code: 'st',    name: 'Sesotho',               native: 'Sesotho',            flag: '🇱🇸' },
+      { code: 'sn',    name: 'Shona',                 native: 'chiShona',           flag: '🇿🇼' },
+      { code: 'sd',    name: 'Sindhi',                native: 'سنڌي',               flag: '🇵🇰' },
+      { code: 'si',    name: 'Sinhala',               native: 'සිංහල',              flag: '🇱🇰' },
+      { code: 'sk',    name: 'Slovak',                native: 'Slovenčina',         flag: '🇸🇰' },
+      { code: 'sl',    name: 'Slovenian',             native: 'Slovenščina',        flag: '🇸🇮' },
+      { code: 'so',    name: 'Somali',                native: 'Soomaali',           flag: '🇸🇴' },
+      { code: 'es',    name: 'Spanish',               native: 'Español',            flag: '🇪🇸' },
+      { code: 'su',    name: 'Sundanese',             native: 'Basa Sunda',         flag: '🇮🇩' },
+      { code: 'sw',    name: 'Swahili',               native: 'Kiswahili',          flag: '🇰🇪' },
+      { code: 'sv',    name: 'Swedish',               native: 'Svenska',            flag: '🇸🇪' },
+      { code: 'tg',    name: 'Tajik',                 native: 'Тоҷикӣ',             flag: '🇹🇯' },
+      { code: 'ta',    name: 'Tamil',                 native: 'தமிழ்',              flag: '🇮🇳' },
+      { code: 'tt',    name: 'Tatar',                 native: 'Татар теле',         flag: '🇷🇺' },
+      { code: 'te',    name: 'Telugu',                native: 'తెలుగు',             flag: '🇮🇳' },
+      { code: 'th',    name: 'Thai',                  native: 'ภาษาไทย',            flag: '🇹🇭' },
+      { code: 'ti',    name: 'Tigrinya',              native: 'ትግርኛ',              flag: '🇪🇷' },
+      { code: 'ts',    name: 'Tsonga',                native: 'Xitsonga',           flag: '🇿🇦' },
+      { code: 'tr',    name: 'Turkish',               native: 'Türkçe',             flag: '🇹🇷' },
+      { code: 'tk',    name: 'Turkmen',               native: 'Türkmen',            flag: '🇹🇲' },
+      { code: 'ak',    name: 'Twi',                   native: 'Twi',                flag: '🇬🇭' },
+      { code: 'uk',    name: 'Ukrainian',             native: 'Українська',         flag: '🇺🇦' },
+      { code: 'ur',    name: 'Urdu',                  native: 'اردو',               flag: '🇵🇰' },
+      { code: 'ug',    name: 'Uyghur',                native: 'ئۇيغۇرچە',           flag: '🇨🇳' },
+      { code: 'uz',    name: 'Uzbek',                 native: "O'zbek",             flag: '🇺🇿' },
+      { code: 'vi',    name: 'Vietnamese',            native: 'Tiếng Việt',         flag: '🇻🇳' },
+      { code: 'cy',    name: 'Welsh',                 native: 'Cymraeg',            flag: '🏴󠁧󠁢󠁷󠁬󠁳󠁿' },
+      { code: 'xh',    name: 'Xhosa',                 native: 'isiXhosa',           flag: '🇿🇦' },
+      { code: 'yi',    name: 'Yiddish',               native: 'ייִדיש',             flag: '✡️' },
+      { code: 'yo',    name: 'Yoruba',                native: 'Yorùbá',             flag: '🇳🇬' },
+      { code: 'zu',    name: 'Zulu',                  native: 'isiZulu',            flag: '🇿🇦' },
+    ];
+
+    /* ─────────────────────────────────────────────────────────
+       2. DOM REFS
+       ───────────────────────────────────────────────────────── */
+    const trigger     = document.getElementById('translateTrigger');
+    const panel       = document.getElementById('translatePanel');
+    const searchInput = document.getElementById('langSearchInput');
+    const listUL      = document.getElementById('langListUL');
+    const countEl     = document.getElementById('langCount');
+    const resetBtn    = document.getElementById('resetTranslateBtn');
+    const labelEl     = document.getElementById('selectedLangLabel');
+
+    let currentCode = '';
+
+    /* ─────────────────────────────────────────────────────────
+       3. RENDER LIST
+       ───────────────────────────────────────────────────────── */
+    function renderList(query) {
+      const q = (query || '').trim().toLowerCase();
+      const filtered = q
+        ? LANGUAGES.filter(l =>
+            l.name.toLowerCase().includes(q) ||
+            l.native.toLowerCase().includes(q) ||
+            l.code.toLowerCase().includes(q)
+          )
+        : LANGUAGES;
+
+      listUL.innerHTML = '';
+      countEl.textContent = filtered.length + ' languages';
+
+      if (!filtered.length) {
+        listUL.innerHTML = '<li class="translate-no-results" style="display:block">No languages found</li>';
+        return;
       }
 
-      // Formspree Submission Logic
-      const FORMSPREE_ID = 'xjgaoqnq'; // Your form ID
-      const form       = document.getElementById('sampleForm');
-      const submitBtn  = document.getElementById('submitBtn');
-      const statusEl   = document.getElementById('form-status');
+      filtered.forEach(lang => {
+        const li = document.createElement('li');
+        li.setAttribute('role', 'option');
+        li.setAttribute('aria-selected', lang.code === currentCode ? 'true' : 'false');
+        if (lang.code === currentCode) li.classList.add('active');
 
-      form.addEventListener('submit', async function(e) {
-        e.preventDefault();
-        
-        // Strict Validation
-        if (!form.name.value.trim() || !form.email.value.trim()) {
-          statusEl.textContent = 'Please fill in required fields (*).'; 
-          statusEl.style.color = '#dc2626'; 
-          return;
-        }
-        
-        submitBtn.disabled = true; 
-        submitBtn.textContent = 'Authenticating Secure Connection...';
-        
-        try {
-          const response = await fetch(`https://formspree.io/f/${FORMSPREE_ID}`, {
-            method: 'POST', 
-            headers: { 'Accept': 'application/json' }, 
-            body: new FormData(form),
-          });
-          
-          if (response.ok) {
-            statusEl.textContent = '✓ Institutional request logged. Our export desk will contact you shortly.'; 
-            statusEl.style.color = '#059669'; 
-            form.reset();
-          } else {
-            statusEl.textContent = 'Transmission failed. Email exports@apexoriginglobal.com directly.'; 
-            statusEl.style.color = '#dc2626';
-          }
-        } catch (err) {
-          statusEl.textContent = 'Network error. Email exports@apexoriginglobal.com directly.'; 
+        li.innerHTML =
+          `<span class="lang-flag">${lang.flag}</span>` +
+          `<span>${lang.name}</span>` +
+          `<span class="lang-native">${lang.native}</span>`;
+
+        li.addEventListener('click', () => selectLanguage(lang));
+        listUL.appendChild(li);
+      });
+    }
+
+    /* ─────────────────────────────────────────────────────────
+       4. SELECT LANGUAGE → drive Google Translate combo
+       ───────────────────────────────────────────────────────── */
+    function selectLanguage(lang) {
+      currentCode = lang.code;
+      labelEl.textContent = lang.name;
+      closePanel();
+
+      // Wait until Google Translate has injected its combo select
+      waitForGoogCombo(function (combo) {
+        combo.value = lang.code;
+        combo.dispatchEvent(new Event('change'));
+      });
+    }
+
+    function waitForGoogCombo(cb, attempts) {
+      attempts = attempts || 0;
+      const combo = document.querySelector('.goog-te-combo');
+      if (combo) { cb(combo); return; }
+      if (attempts > 40) return; // give up after ~4 s
+      setTimeout(() => waitForGoogCombo(cb, attempts + 1), 100);
+    }
+
+    /* ─────────────────────────────────────────────────────────
+       5. RESET TO ENGLISH
+       ───────────────────────────────────────────────────────── */
+    function resetLanguage() {
+      currentCode = '';
+      labelEl.textContent = 'Translate';
+      closePanel();
+
+      // Try the Google Translate restore mechanism
+      const iframe = document.querySelector('.goog-te-banner-frame');
+      if (iframe) {
+        const innerDoc = iframe.contentDocument || iframe.contentWindow.document;
+        const restoreBtn = innerDoc.querySelector('.goog-te-banner-content a');
+        if (restoreBtn) { restoreBtn.click(); return; }
+      }
+      // Fallback: reload without translation cookie
+      const googCookie = document.cookie.match(/googtrans=([^;]+)/);
+      if (googCookie) {
+        document.cookie = 'googtrans=; expires=Thu, 01 Jan 1970 00:00:00 UTC; path=/;';
+        document.cookie = 'googtrans=; expires=Thu, 01 Jan 1970 00:00:00 UTC; path=/; domain=' + window.location.hostname + ';';
+      }
+      window.location.reload();
+    }
+
+    /* ─────────────────────────────────────────────────────────
+       6. TOGGLE / OPEN / CLOSE PANEL
+       ───────────────────────────────────────────────────────── */
+    function openPanel() {
+      panel.classList.add('open');
+      trigger.classList.add('open');
+      trigger.setAttribute('aria-expanded', 'true');
+      renderList('');
+      setTimeout(() => { searchInput.focus(); searchInput.select(); }, 50);
+    }
+
+    function closePanel() {
+      panel.classList.remove('open');
+      trigger.classList.remove('open');
+      trigger.setAttribute('aria-expanded', 'false');
+    }
+
+    trigger.addEventListener('click', function (e) {
+      e.stopPropagation();
+      panel.classList.contains('open') ? closePanel() : openPanel();
+    });
+
+    // Close when clicking outside
+    document.addEventListener('click', function (e) {
+      if (!document.getElementById('translateWrapper').contains(e.target)) {
+        closePanel();
+      }
+    });
+
+    // Close on Escape
+    document.addEventListener('keydown', function (e) {
+      if (e.key === 'Escape') closePanel();
+    });
+
+    // Live search
+    searchInput.addEventListener('input', function () {
+      renderList(this.value);
+    });
+
+    // Stop panel click from bubbling to document
+    panel.addEventListener('click', function (e) { e.stopPropagation(); });
+
+    // Reset button
+    resetBtn.addEventListener('click', resetLanguage);
+
+    // Initial render (for count)
+    renderList('');
+
+    /* ─────────────────────────────────────────────────────────
+       7. GEO-IP HERO TEXT
+       ───────────────────────────────────────────────────────── */
+    const msgEl   = document.getElementById('shippingMessage');
+    const DEFAULT = "Origin-direct consolidation from Karnataka's agricultural clusters. Securing robust retail supply chains for international distributors.";
+    const cached  = sessionStorage.getItem('apog_country_name');
+
+    if (cached) {
+      msgEl.innerHTML = `Direct export supply from India to <strong>${cached}</strong>. Securing robust retail supply chains for international distributors.`;
+    } else {
+      fetch('https://ipapi.co/json/')
+        .then(r => r.json())
+        .then(data => {
+          const cn = (data && data.country_name) || '';
+          if (cn) {
+            sessionStorage.setItem('apog_country_name', cn);
+            msgEl.innerHTML = `Direct export supply from India to <strong>${cn}</strong>. Securing robust retail supply chains for international distributors.`;
+          } else { msgEl.textContent = DEFAULT; }
+        })
+        .catch(() => { msgEl.textContent = DEFAULT; });
+    }
+
+    /* ─────────────────────────────────────────────────────────
+       8. FORMSPREE CONTACT FORM
+       ───────────────────────────────────────────────────────── */
+    const FORMSPREE_ID = 'xjgaoqnq';
+    const form      = document.getElementById('sampleForm');
+    const submitBtn = document.getElementById('submitBtn');
+    const statusEl  = document.getElementById('form-status');
+
+    form.addEventListener('submit', async function (e) {
+      e.preventDefault();
+      if (!form.name.value.trim() || !form.email.value.trim()) {
+        statusEl.textContent = 'Please fill in required fields (*).';
+        statusEl.style.color = '#dc2626';
+        return;
+      }
+      submitBtn.disabled = true;
+      submitBtn.textContent = 'Authenticating Secure Connection…';
+      try {
+        const response = await fetch(`https://formspree.io/f/${FORMSPREE_ID}`, {
+          method: 'POST',
+          headers: { 'Accept': 'application/json' },
+          body: new FormData(form),
+        });
+        if (response.ok) {
+          statusEl.textContent = '✓ Institutional request logged. Our export desk will contact you shortly.';
+          statusEl.style.color = '#059669';
+          form.reset();
+        } else {
+          statusEl.textContent = 'Transmission failed. Email exports@apexoriginglobal.com directly.';
           statusEl.style.color = '#dc2626';
         }
-        submitBtn.disabled = false; 
-        submitBtn.textContent = 'Submit Secure Procurement Request';
-      });
-    })();
+      } catch (err) {
+        statusEl.textContent = 'Network error. Email exports@apexoriginglobal.com directly.';
+        statusEl.style.color = '#dc2626';
+      }
+      submitBtn.disabled = false;
+      submitBtn.textContent = 'Submit Secure Procurement Request';
+    });
+
+  })();
   </script>
+
 </body>
 </html>
