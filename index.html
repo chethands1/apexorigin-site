@@ -32,11 +32,11 @@
     "name": "Apex Origin Global",
     "url": "https://apexoriginglobal.com",
     "email": "exports@apexoriginglobal.com",
-    "telephone": "+91-9986020742",
+    "telephone": "+91-9110652474",
     "industry": "Food Export",
     "address": {
       "@type": "PostalAddress",
-      "streetAddress": "Savitr Residency, 2, 2A, 1st C Main Road, Vivekananda Nagar, BSK 3rd stage",
+      "streetAddress": "2, 2A, 1st C Main Road, Vivekananda Nagar, BSK 3rd Stage",
       "addressLocality": "Bengaluru",
       "addressRegion": "Karnataka",
       "postalCode": "560085",
@@ -850,9 +850,8 @@
           <div class="contact-detail">
             <svg fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"></path></svg>
             <div>
-              <label>Export Desk Emails</label>
-              <a href="mailto:exports@apexoriginglobal.com" style="display:block; margin-bottom:4px;">exports@apexoriginglobal.com</a>
-              <a href="mailto:chethands1999@gmail.com" style="font-size: 14px; color: #D1D5DB;">chethands1999@gmail.com</a>
+              <label>Export Desk Email</label>
+              <a href="mailto:exports@apexoriginglobal.com">exports@apexoriginglobal.com</a>
             </div>
           </div>
           <div class="contact-detail">
@@ -866,7 +865,7 @@
             <svg fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"></path><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"></path></svg>
             <div>
               <label>Registered Headquarters</label>
-              <p>Savitr Residency, 2, 2A, 1st C Main Road<br>Vivekananda Nagar, BSK 3rd Stage<br>Bengaluru, Karnataka 560085<br>India</p>
+              <p>Apex Origin Global<br>2, 2A, 1st C Main Road, Vivekananda Nagar<br>BSK 3rd Stage, Bengaluru, Karnataka 560085<br>India</p>
             </div>
           </div>
           <div class="contact-detail">
@@ -913,7 +912,7 @@
     <iframe 
       title="Apex Origin Global Map"
       width="100%" height="100%" style="border:0;" loading="lazy" allowfullscreen referrerpolicy="no-referrer-when-downgrade"
-      src="https://www.google.com/maps?q=Savitr+Residency,+1st+C+Main+Road,+Vivekananda+Nagar,+BSK+3rd+Stage,+Bengaluru,+Karnataka+560085&output=embed">
+      src="https://www.google.com/maps?q=Apex+Origin+Global,+BSK+3rd+Stage,+Bengaluru,+Karnataka+560085&output=embed">
     </iframe>
     <div style="text-align:center; padding: 10px; background: #f8f9fa; border-top: 1px solid #E5E7EB;">
       <a href="https://maps.app.goo.gl/vg1Zp95GKxAsgHPNA" target="_blank" rel="noopener noreferrer"
@@ -1178,26 +1177,23 @@
     }
 
     /* ─────────────────────────────────────────────────────────
-       4. SELECT LANGUAGE → drive Google Translate combo
+       4. SELECT LANGUAGE → cookie + reload (most reliable method)
        ───────────────────────────────────────────────────────── */
     function selectLanguage(lang) {
+      if (lang.code === 'en') { resetLanguage(); return; }
+
       currentCode = lang.code;
       labelEl.textContent = lang.name;
       closePanel();
 
-      // Wait until Google Translate has injected its combo select
-      waitForGoogCombo(function (combo) {
-        combo.value = lang.code;
-        combo.dispatchEvent(new Event('change'));
-      });
-    }
-
-    function waitForGoogCombo(cb, attempts) {
-      attempts = attempts || 0;
-      const combo = document.querySelector('.goog-te-combo');
-      if (combo) { cb(combo); return; }
-      if (attempts > 40) return; // give up after ~4 s
-      setTimeout(() => waitForGoogCombo(cb, attempts + 1), 100);
+      // Set googtrans cookie on both root domain and hostname
+      const host = window.location.hostname;
+      const val  = '/en/' + lang.code;
+      document.cookie = 'googtrans=' + val + '; path=/';
+      if (host && host !== 'localhost' && host !== '127.0.0.1') {
+        document.cookie = 'googtrans=' + val + '; path=/; domain=' + host;
+      }
+      window.location.reload();
     }
 
     /* ─────────────────────────────────────────────────────────
@@ -1208,21 +1204,29 @@
       labelEl.textContent = 'Translate';
       closePanel();
 
-      // Try the Google Translate restore mechanism
-      const iframe = document.querySelector('.goog-te-banner-frame');
-      if (iframe) {
-        const innerDoc = iframe.contentDocument || iframe.contentWindow.document;
-        const restoreBtn = innerDoc.querySelector('.goog-te-banner-content a');
-        if (restoreBtn) { restoreBtn.click(); return; }
-      }
-      // Fallback: reload without translation cookie
-      const googCookie = document.cookie.match(/googtrans=([^;]+)/);
-      if (googCookie) {
-        document.cookie = 'googtrans=; expires=Thu, 01 Jan 1970 00:00:00 UTC; path=/;';
-        document.cookie = 'googtrans=; expires=Thu, 01 Jan 1970 00:00:00 UTC; path=/; domain=' + window.location.hostname + ';';
+      const host = window.location.hostname;
+      const exp  = '; expires=Thu, 01 Jan 1970 00:00:00 UTC; path=/';
+      document.cookie = 'googtrans=' + exp;
+      if (host && host !== 'localhost' && host !== '127.0.0.1') {
+        document.cookie = 'googtrans=' + exp + '; domain=' + host;
       }
       window.location.reload();
     }
+
+    /* ─────────────────────────────────────────────────────────
+       5b. ON PAGE LOAD — restore label if cookie already set
+       ───────────────────────────────────────────────────────── */
+    (function restoreLabelFromCookie() {
+      const m = document.cookie.match(/(?:^|;)\s*googtrans=\/en\/([^;]+)/);
+      if (m) {
+        const code = decodeURIComponent(m[1]);
+        const found = LANGUAGES.find(l => l.code === code);
+        if (found) {
+          currentCode = found.code;
+          labelEl.textContent = found.flag + ' ' + found.name;
+        }
+      }
+    })();
 
     /* ─────────────────────────────────────────────────────────
        6. TOGGLE / OPEN / CLOSE PANEL
