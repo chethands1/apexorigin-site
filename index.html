@@ -4,10 +4,10 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <meta name="theme-color" content="#1A0A02">
-<title>Apex Origin Global | Sona Masuri Rice & Coconut Exports</title>
-<meta name="description" content="Export-grade Sona Masuri rice and Karnataka coconut products delivered to UAE, UK, and global ports. Direct from origin. Request a quote today.">
+<title>Apex Origin Global | Basmati, Sona Masuri & Semi-Husked Coconut Exports</title>
+<meta name="description" content="Export-grade Basmati rice, Sona Masuri rice, and Semi-Husked Coconuts delivered to global ports. Direct from origin. Request a quote today.">
 <meta property="og:title" content="Apex Origin Global | Origin-Direct Indian Food Exports">
-<meta property="og:description" content="Sona Masuri rice and Karnataka coconut products exported worldwide. Clean documentation, fast dispatch.">
+<meta property="og:description" content="Basmati, Sona Masuri, and Semi-Husked Coconuts exported worldwide. Clean documentation, fast dispatch.">
 <meta property="og:type" content="website">
 <meta property="og:url" content="https://apexoriginglobal.com">
 <link rel="canonical" href="https://apexoriginglobal.com">
@@ -36,52 +36,24 @@
     },
     {
       "@type": "Product",
-      "name": "Export-Grade Sona Masuri Rice",
-      "description": "Sortex-cleaned, double-polished Sona Masuri rice. Moisture <14%, broken <5%. Minimum order 1 FCL.",
+      "name": "Export-Grade Basmati Rice",
+      "description": "Premium long-grain aromatic Basmati rice. Aged for perfection, ideal for Middle Eastern and European markets.",
       "category": "Agricultural Product",
-      "brand": {
-        "@type": "Brand",
-        "name": "Apex Origin Global"
-      }
+      "brand": { "@type": "Brand", "name": "Apex Origin Global" }
     },
     {
       "@type": "Product",
-      "name": "Karnataka Coconut Products",
-      "description": "Desiccated coconut and oils sourced from Karnataka. Export grade, moisture controlled.",
+      "name": "Export-Grade Sona Masuri Rice",
+      "description": "Sortex-cleaned, double-polished Sona Masuri rice. Moisture <14%, broken <5%.",
       "category": "Agricultural Product",
-      "brand": {
-        "@type": "Brand",
-        "name": "Apex Origin Global"
-      }
+      "brand": { "@type": "Brand", "name": "Apex Origin Global" }
     },
     {
-      "@type": "FAQPage",
-      "mainEntity": [
-        {
-          "@type": "Question",
-          "name": "What is the minimum order quantity (MOQ)?",
-          "acceptedAnswer": {
-            "@type": "Answer",
-            "text": "Sona Masuri rice: one 20-foot FCL. Coconut products: LCL orders accepted from 500 kg."
-          }
-        },
-        {
-          "@type": "Question",
-          "name": "What happens if a shipment is delayed?",
-          "acceptedAnswer": {
-            "@type": "Answer",
-            "text": "We provide real-time vessel tracking. In the rare event of port congestion, we communicate proactively and manage demurrage/detention risks alongside our freight forwarders."
-          }
-        },
-        {
-          "@type": "Question",
-          "name": "How do you ensure quality consistency?",
-          "acceptedAnswer": {
-            "@type": "Answer",
-            "text": "Every batch undergoes SGS or NABL lab testing for moisture (<14%), broken grain percentage, and purity before loading. We offer pre-shipment inspections so you can verify quality before final payment."
-          }
-        }
-      ]
+      "@type": "Product",
+      "name": "Semi-Husked Coconuts",
+      "description": "Fresh, export-quality semi-husked coconuts. Graded 500g-650g. Packed in PP bags.",
+      "category": "Agricultural Product",
+      "brand": { "@type": "Brand", "name": "Apex Origin Global" }
     }
   ]
 }
@@ -132,7 +104,7 @@ h1,h2,h3,h4 { font-family:var(--font-display); line-height:1.12; }
 .section-lead { font-size:17px; color:var(--ink-3); max-width:640px; line-height:1.8; }
 
 /* ═══════════════════════════════════════════
-   NAV & TOPBAR
+   NAV, TOPBAR & TRANSLATE UI
 ═══════════════════════════════════════════ */
 .topbar { background:var(--ink); border-bottom:2px solid var(--amber); padding:10px 0; position:relative; z-index:100; }
 .topbar-inner { display:flex; justify-content:space-between; align-items:center; flex-wrap:wrap; gap:8px; }
@@ -140,7 +112,6 @@ h1,h2,h3,h4 { font-family:var(--font-display); line-height:1.12; }
 .tb-link { display:inline-flex; align-items:center; gap:7px; font-size:12.5px; font-weight:500; color:rgba(255,255,255,.7); transition:color .2s; }
 .tb-link:hover { color:var(--amber-l); }
 .tb-link svg { width:13px; height:13px; flex-shrink:0; opacity:.7; }
-.tb-link strong { color:rgba(255,255,255,.9); }
 .tb-right { display:flex; align-items:center; gap:14px; }
 .tb-badge { font-family:var(--font-mono); font-size:10px; letter-spacing:1.5px; text-transform:uppercase; color:rgba(255,255,255,.4); font-weight:500; }
 
@@ -150,15 +121,71 @@ h1,h2,h3,h4 { font-family:var(--font-display); line-height:1.12; }
 .logo-name { font-family:var(--font-display); font-size:22px; font-weight:700; color:var(--rust-d); letter-spacing:-.03em; line-height:1; }
 .logo-name span { color:var(--amber); }
 .logo-sub { font-family:var(--font-mono); font-size:9px; font-weight:500; text-transform:uppercase; letter-spacing:2.5px; color:var(--ink-4); }
+
 .nav-links { display:flex; align-items:center; gap:4px; flex:1; justify-content:center; }
-.nav-link { padding:8px 14px; border-radius:var(--radius-s); font-size:14px; font-weight:500; color:var(--ink-3); transition:all .2s; white-space:nowrap; position:relative; }
+.nav-link { padding:8px 14px; border-radius:var(--radius-s); font-size:14px; font-weight:500; color:var(--ink-3); transition:all .2s; white-space:nowrap; }
 .nav-link:hover { color:var(--rust-d); background:rgba(139,47,12,.06); }
+
 .nav-right { display:flex; align-items:center; gap:10px; flex-shrink:0; }
 .btn-primary { display:inline-flex; align-items:center; gap:8px; background:var(--rust-d); color:var(--amber-pale); padding:11px 22px; border-radius:var(--radius-s); font-size:14px; font-weight:600; transition:all .25s var(--ease); box-shadow:0 2px 8px rgba(92,28,4,.3); white-space:nowrap; }
 .btn-primary:hover { background:var(--rust-l); transform:translateY(-1px); box-shadow:0 6px 20px rgba(92,28,4,.35); }
-.btn-wa-nav { display:inline-flex; align-items:center; gap:7px; background:#25D366; color:#fff; padding:11px 18px; border-radius:var(--radius-s); font-size:13px; font-weight:600; transition:all .25s; box-shadow:0 2px 8px rgba(37,211,102,.3); white-space:nowrap; }
-.btn-wa-nav svg { width:16px; height:16px; fill:#fff; flex-shrink:0; }
-.btn-wa-nav:hover { background:#1da851; transform:translateY(-1px); }
+
+/* Desktop Translate UI */
+.tr-wrap { position:relative; }
+.tr-trigger { display:inline-flex; align-items:center; gap:7px; padding:9px 13px; border-radius:var(--radius-s); border:1.5px solid var(--border); background:var(--warm); font-size:13px; font-weight:500; color:var(--ink-3); cursor:pointer; transition:all .2s; user-select:none; white-space:nowrap; }
+.tr-trigger:hover { border-color:var(--amber); color:var(--rust-d); }
+.tr-trigger svg { width:14px; height:14px; flex-shrink:0; }
+.tr-chevron { transition:transform .22s; }
+.tr-trigger.open .tr-chevron { transform:rotate(180deg); }
+.tr-panel { position:absolute; top:calc(100% + 10px); right:0; width:300px; background:var(--warm); border:1.5px solid var(--border); border-radius:var(--radius-l); box-shadow:var(--shadow-l); z-index:2000; display:none; overflow:hidden; animation:panelIn .22s var(--ease-spring) both; }
+.tr-panel.open { display:block; }
+@keyframes panelIn { from{opacity:0;transform:translateY(-8px) scale(.97)} to{opacity:1;transform:translateY(0) scale(1)} }
+.tr-panel-head { padding:14px 16px 10px; font-family:var(--font-mono); font-size:10px; letter-spacing:2px; text-transform:uppercase; color:var(--ink-4); font-weight:500; }
+.tr-search-wrap { padding:0 12px 10px; position:relative; }
+.tr-search-wrap svg { position:absolute; left:22px; top:50%; transform:translateY(-50%); width:14px; height:14px; color:var(--ink-4); pointer-events:none; }
+.tr-search { width:100%; padding:9px 10px 9px 34px; border:1.5px solid var(--border); border-radius:var(--radius-s); font-size:13px; color:var(--ink); background:var(--cream); outline:none; transition:all .2s; }
+.tr-search:focus { border-color:var(--amber); box-shadow:0 0 0 3px rgba(200,130,26,.12); }
+.tr-list { max-height:280px; overflow-y:auto; padding:4px 0; border-top:1px solid var(--border-ghost); }
+.tr-item { display:flex; align-items:center; gap:10px; padding:9px 16px; font-size:13px; font-weight:500; color:var(--ink); cursor:pointer; }
+.tr-item:hover { background:var(--cream); }
+.tr-item.active { background:rgba(139,47,12,.07); color:var(--rust-d); font-weight:700; }
+.tr-item-native { margin-left:auto; font-size:11px; color:var(--ink-4); }
+.tr-footer { padding:10px 16px; border-top:1px solid var(--border-ghost); display:flex; justify-content:space-between; align-items:center; }
+.tr-reset { font-size:12px; font-weight:600; color:var(--ink-4); cursor:pointer; background:none; border:none; }
+.tr-reset:hover { color:var(--rust-d); }
+.tr-count { font-size:11px; color:var(--ink-5); font-family:var(--font-mono); }
+
+/* Hamburger & Mobile Drawer */
+.hamburger { display:none; flex-direction:column; gap:4.5px; width:40px; height:40px; align-items:center; justify-content:center; border:1.5px solid var(--border); border-radius:var(--radius-s); cursor:pointer; background:var(--warm); flex-shrink:0; }
+.hamburger span { display:block; width:18px; height:2px; background:var(--rust-d); border-radius:1px; transition:all .3s var(--ease); transform-origin:center; }
+.hamburger.open span:nth-child(1) { transform:translateY(6.5px) rotate(45deg); }
+.hamburger.open span:nth-child(2) { opacity:0; transform:scaleX(0); }
+.hamburger.open span:nth-child(3) { transform:translateY(-6.5px) rotate(-45deg); }
+
+.mob-drawer { display:none; position:fixed; inset:0; top:var(--nav-h); z-index:999; pointer-events:none; }
+.mob-overlay { position:absolute; inset:0; background:rgba(15,6,0,.5); opacity:0; transition:opacity .3s; }
+.mob-panel { position:absolute; top:0; left:0; right:0; background:var(--warm); border-bottom:2px solid var(--amber); transform:translateY(-16px); opacity:0; transition:all .35s var(--ease-spring); max-height:calc(100vh - var(--nav-h)); overflow-y:auto; box-shadow:var(--shadow-xl); }
+.mob-drawer.open { pointer-events:all; }
+.mob-drawer.open .mob-overlay { opacity:1; }
+.mob-drawer.open .mob-panel { transform:translateY(0); opacity:1; }
+
+.mob-nav-link { display:flex; align-items:center; justify-content:space-between; padding:16px 24px; font-size:16px; font-weight:600; color:var(--ink); border-bottom:1px solid var(--border-ghost); }
+.mob-translate { padding:20px 24px 24px; }
+.mob-tr-label { font-family:var(--font-mono); font-size:10px; letter-spacing:2px; text-transform:uppercase; color:var(--ink-4); font-weight:500; margin-bottom:12px; display:block; }
+.mob-search-wrap { position:relative; margin-bottom:8px; }
+.mob-search { width:100%; padding:13px 12px 13px 36px; border:1.5px solid var(--border); border-radius:var(--radius-s); font-size:15px; background:var(--cream); outline:none; }
+.mob-lang-list { max-height:220px; overflow-y:auto; border:1.5px solid var(--border); border-radius:var(--radius-s); background:var(--warm); }
+.mob-lang-item { display:flex; align-items:center; gap:10px; padding:13px 14px; border-bottom:1px solid var(--border-ghost); font-size:14px; font-weight:500; cursor:pointer; }
+.mob-lang-item.active { background:rgba(139,47,12,.07); color:var(--rust-d); font-weight:700; }
+.mob-tr-reset { margin-top:10px; width:100%; padding:12px; background:none; border:1.5px solid var(--border); border-radius:var(--radius-s); font-size:13px; font-weight:600; color:var(--ink-3); cursor:pointer; }
+
+/* Hide Google Translate Default UI */
+#google_translate_element { position:absolute; opacity:0; pointer-events:none; width:0; height:0; overflow:hidden; }
+.goog-te-banner-frame.skiptranslate, .goog-te-gadget-icon, .goog-logo-link { display:none!important; }
+body { top:0px!important; }
+.goog-tooltip { display:none!important; pointer-events:none; }
+.goog-text-highlight { background-color:transparent!important; border:none!important; box-shadow:none!important; }
+.goog-te-gadget { font-size:0!important; color:transparent!important; }
 
 /* ═══════════════════════════════════════════
    HERO
@@ -170,7 +197,7 @@ h1,h2,h3,h4 { font-family:var(--font-display); line-height:1.12; }
 .hero-inner { position:relative; z-index:2; display:grid; grid-template-columns:1fr auto; gap:60px; align-items:center; }
 .hero-content { max-width:680px; }
 .hero-badge { display:inline-flex; align-items:center; gap:8px; background:rgba(200,130,26,.15); border:1px solid rgba(200,130,26,.35); color:var(--amber-l); padding:7px 16px; border-radius:40px; font-family:var(--font-mono); font-size:11px; letter-spacing:2px; text-transform:uppercase; font-weight:500; margin-bottom:28px; }
-.hero h1 { font-size:clamp(40px, 5vw, 64px); font-weight:700; line-height:1.06; letter-spacing:-.03em; margin-bottom:24px; color:#fff; }
+.hero h1 { font-size:clamp(36px, 4.5vw, 60px); font-weight:700; line-height:1.06; letter-spacing:-.03em; margin-bottom:24px; color:#fff; }
 .hero h1 em { font-style:italic; color:var(--amber-l); }
 .hero-sub { font-size:18px; color:rgba(255,255,255,.72); line-height:1.75; margin-bottom:12px; max-width:580px; }
 .hero-certline { display:flex; align-items:center; gap:8px; flex-wrap:wrap; margin-bottom:40px; }
@@ -180,15 +207,12 @@ h1,h2,h3,h4 { font-family:var(--font-display); line-height:1.12; }
 .hero-ctas { display:flex; gap:12px; flex-wrap:wrap; align-items:center; }
 .btn-hero-wa { display:inline-flex; align-items:center; gap:10px; background:var(--rust-d); color:var(--amber-pale); padding:16px 28px; font-size:15px; font-weight:700; border-radius:var(--radius-s); transition:all .25s; box-shadow:0 8px 24px rgba(92,28,4,.4); border:none;}
 .btn-hero-wa:hover { background:var(--rust-l); transform:translateY(-2px); box-shadow:0 14px 36px rgba(92,28,4,.5); }
-.btn-hero-enquiry { display:inline-flex; align-items:center; gap:8px; background:transparent; color:rgba(255,255,255,.85); padding:16px 28px; font-size:15px; font-weight:600; border:1.5px solid rgba(255,255,255,.25); border-radius:var(--radius-s); transition:all .25s; }
-.btn-hero-enquiry:hover { border-color:var(--amber-l); color:var(--amber-l); transform:translateY(-2px); }
 
 /* ═══════════════════════════════════════════
    TRUST BAR
 ═══════════════════════════════════════════ */
 .trust-bar { background:var(--rust-d); border-bottom:2px solid var(--amber); overflow:hidden; }
 .trust-scroll { display:flex; align-items:stretch; overflow-x:auto; -webkit-overflow-scrolling:touch; scrollbar-width:none; }
-.trust-scroll::-webkit-scrollbar { display:none; }
 .trust-item { display:flex; align-items:center; gap:9px; padding:14px 28px; white-space:nowrap; border-right:1px solid rgba(255,255,255,.1); flex-shrink:0; font-size:13px; font-weight:600; color:rgba(255,255,255,.9); }
 .trust-icon { font-size:16px; color:var(--amber-l); }
 
@@ -199,14 +223,36 @@ h1,h2,h3,h4 { font-family:var(--font-display); line-height:1.12; }
 .how-grid { display:grid; grid-template-columns:repeat(4,1fr); gap:0; border:1px solid var(--border); border-radius:var(--radius-l); overflow:hidden; box-shadow:var(--shadow-m); }
 .how-step { padding:40px 32px; position:relative; overflow:hidden; background:var(--warm); border-right:1px solid var(--border); transition:background .25s; }
 .how-step:last-child { border-right:none; }
-.how-step:hover { background:var(--amber-ghost); }
-.how-num { font-family:var(--font-display); font-size:80px; font-weight:700; color:var(--cream-2); position:absolute; right:-8px; top:-12px; line-height:1; pointer-events:none; user-select:none; transition:color .25s; }
-.how-step:hover .how-num { color:rgba(200,130,26,.12); }
-.how-icon { width:48px; height:48px; border-radius:var(--radius-m); background:var(--cream-2); border:1px solid var(--border); display:flex; align-items:center; justify-content:center; font-size:22px; margin-bottom:20px; position:relative; z-index:1; transition:all .25s; }
-.how-step:hover .how-icon { background:var(--amber); border-color:var(--amber); }
+.how-num { font-family:var(--font-display); font-size:80px; font-weight:700; color:var(--cream-2); position:absolute; right:-8px; top:-12px; line-height:1; pointer-events:none; }
+.how-icon { width:48px; height:48px; border-radius:var(--radius-m); background:var(--cream-2); border:1px solid var(--border); display:flex; align-items:center; justify-content:center; font-size:22px; margin-bottom:20px; position:relative; z-index:1; }
 .how-step h3 { font-size:20px; font-weight:700; color:var(--ink); margin-bottom:10px; position:relative; z-index:1; }
 .how-step p { font-size:14px; color:var(--ink-3); line-height:1.65; position:relative; z-index:1; margin-bottom: 8px;}
 .how-step .resp { font-size:12px; font-weight: 600; color: var(--rust-d); background: rgba(139,47,12,.08); padding: 4px 8px; border-radius: 4px; display: inline-block;}
+
+/* ═══════════════════════════════════════════
+   PRODUCTS (3-Column Layout)
+═══════════════════════════════════════════ */
+.products-section { background:var(--cream); }
+.products-grid { display:grid; grid-template-columns:repeat(3, 1fr); gap:28px; }
+.product-card { background:var(--warm); border:1px solid var(--border); border-radius:var(--radius-l); overflow:hidden; transition:all .3s var(--ease); box-shadow:var(--shadow-s); display: flex; flex-direction: column;}
+.product-card:hover { transform:translateY(-6px); box-shadow:var(--shadow-l); border-color:var(--amber); }
+.product-image { position:relative; height:240px; overflow:hidden; }
+.product-image img { width:100%; height:100%; object-fit:cover; transition:transform .6s var(--ease); }
+.product-card:hover .product-image img { transform:scale(1.05); }
+.product-badge { position:absolute; top:16px; left:16px; background:var(--rust-d); color:var(--amber-pale); font-family:var(--font-mono); font-size:10px; font-weight:500; letter-spacing:2px; text-transform:uppercase; padding:5px 12px; border-radius:var(--radius-s); }
+.product-body { padding:28px 24px; flex: 1;}
+.product-body h3 { font-size:24px; font-weight:700; color:var(--ink); margin-bottom:6px; }
+.product-usecase { font-size: 13px; font-weight: 700; color: var(--green-l); margin-bottom: 12px; }
+.product-body > p { font-size:14px; color:var(--ink-3); line-height:1.7; margin-bottom:16px; }
+.price-anchor { font-size:12px; color:var(--green-l); font-weight:700; margin-bottom:20px; display:inline-block; background:rgba(61,138,53,.1); padding:6px 10px; border-radius:var(--radius-s); }
+.spec-table { border-top:1px solid var(--border-ghost); margin-bottom: 16px; }
+.spec-row { display:grid; grid-template-columns:45% 1fr; padding:10px 0; border-bottom:1px solid var(--border-ghost); font-size:12.5px; gap:8px; }
+.spec-row:last-child { border-bottom:none; padding-bottom:0; }
+.spec-key { color:var(--ink-4); font-weight:500; }
+.spec-val { color:var(--ink-2); font-weight:600; text-align:right; }
+.product-footer { display:flex; gap:10px; padding:20px 24px 24px; border-top:1px solid var(--border-ghost); margin-top: auto;}
+.btn-product-primary { flex:1; display:flex; align-items:center; justify-content:center; gap:6px; background:var(--rust-d); color:var(--amber-pale); padding:13px 16px; border-radius:var(--radius-s); font-size:14px; font-weight:600; transition:all .2s; }
+.btn-product-primary:hover { background:var(--rust-l); transform:translateY(-1px); }
 
 /* ═══════════════════════════════════════════
    WHY CHOOSE US
@@ -220,65 +266,26 @@ h1,h2,h3,h4 { font-family:var(--font-display); line-height:1.12; }
 .why-card p { font-size:14px; color:rgba(255,255,255,.6); line-height:1.6; }
 
 /* ═══════════════════════════════════════════
-   PRODUCTS
-═══════════════════════════════════════════ */
-.products-section { background:var(--cream); }
-.products-grid { display:grid; grid-template-columns:1fr 1fr; gap:28px; }
-.product-card { background:var(--warm); border:1px solid var(--border); border-radius:var(--radius-l); overflow:hidden; transition:all .3s var(--ease); box-shadow:var(--shadow-s); display: flex; flex-direction: column;}
-.product-card:hover { transform:translateY(-6px); box-shadow:var(--shadow-l); border-color:var(--amber); }
-.product-image { position:relative; height:260px; overflow:hidden; }
-.product-image img { width:100%; height:100%; object-fit:cover; transition:transform .6s var(--ease); }
-.product-card:hover .product-image img { transform:scale(1.05); }
-.product-badge { position:absolute; top:16px; left:16px; background:var(--rust-d); color:var(--amber-pale); font-family:var(--font-mono); font-size:10px; font-weight:500; letter-spacing:2px; text-transform:uppercase; padding:5px 12px; border-radius:var(--radius-s); }
-.product-body { padding:32px; flex: 1;}
-.product-body h3 { font-size:28px; font-weight:700; color:var(--ink); margin-bottom:6px; }
-.product-usecase { font-size: 13px; font-weight: 700; color: var(--green-l); margin-bottom: 12px; }
-.product-body > p { font-size:14px; color:var(--ink-3); line-height:1.7; margin-bottom:16px; }
-.price-anchor { font-size:13px; color:var(--green-l); font-weight:700; margin-bottom:20px; display:inline-block; background:rgba(61,138,53,.1); padding:6px 12px; border-radius:var(--radius-s); }
-.spec-table { border-top:1px solid var(--border-ghost); margin-bottom: 16px; }
-.spec-row { display:grid; grid-template-columns:40% 1fr; padding:10px 0; border-bottom:1px solid var(--border-ghost); font-size:13px; gap:12px; }
-.spec-row:last-child { border-bottom:none; padding-bottom:0; }
-.spec-key { color:var(--ink-4); font-weight:500; }
-.spec-val { color:var(--ink-2); font-weight:600; text-align:right; }
-.product-footer { display:flex; gap:10px; padding:20px 32px 28px; border-top:1px solid var(--border-ghost); margin-top: auto;}
-.btn-product-primary { flex:1; display:flex; align-items:center; justify-content:center; gap:6px; background:var(--rust-d); color:var(--amber-pale); padding:13px 16px; border-radius:var(--radius-s); font-size:14px; font-weight:600; transition:all .2s; }
-.btn-product-primary:hover { background:var(--rust-l); transform:translateY(-1px); }
-
-/* ═══════════════════════════════════════════
-   LOGISTICS & DOCS (Condensed for brevity but maintained)
-═══════════════════════════════════════════ */
-.logistics-section { background:var(--warm); }
-.docs-grid { display:grid; grid-template-columns:repeat(3,1fr); gap:16px; }
-.doc-item { display:flex; align-items:center; gap:14px; background:var(--cream); border:1px solid var(--border); border-radius:var(--radius-m); padding:18px 16px; transition:all .2s; }
-.doc-item:hover { border-color:var(--amber); background:var(--amber-ghost); }
-.doc-icon { width:40px; height:40px; border-radius:var(--radius-s); background:var(--amber-pale); border:1px solid var(--border); display:flex; align-items:center; justify-content:center; font-size:18px; flex-shrink:0; }
-.doc-info h4 { font-size:14px; font-weight:700; color:var(--ink); margin-bottom:2px; font-family:var(--font-body); }
-.doc-info p { font-size:12px; color:var(--ink-4); }
-
-/* ═══════════════════════════════════════════
-   CONTACT & QUALIFICATION FORM
+   CONTACT & FORM
 ═══════════════════════════════════════════ */
 .contact-section { background:var(--cream-2); }
 .contact-layout { display:grid; grid-template-columns:1fr 1.5fr; gap:0; background:var(--warm); border:1px solid var(--border); border-radius:var(--radius-xl); overflow:hidden; box-shadow:var(--shadow-xl); }
 .contact-left { background:var(--ink); padding:64px 52px; position:relative; overflow:hidden; }
 .contact-left h3 { font-size:38px; font-weight:700; color:#fff; margin-bottom:8px; position:relative; z-index:1; letter-spacing:-.02em; }
-.contact-left h3 em { font-style:italic; color:var(--amber-l); }
 .contact-left-sub { font-size:14px; color:rgba(255,255,255,.45); margin-bottom:48px; position:relative; z-index:1; font-family:var(--font-mono); letter-spacing:.5px; }
 .contact-detail { display:flex; gap:16px; align-items:flex-start; margin-bottom:28px; position:relative; z-index:1; }
 .cd-icon { width:40px; height:40px; border-radius:var(--radius-m); background:rgba(200,130,26,.12); border:1px solid rgba(200,130,26,.2); display:flex; align-items:center; justify-content:center; flex-shrink:0; color:var(--amber-l); }
 .cd-label { font-family:var(--font-mono); font-size:9px; font-weight:500; text-transform:uppercase; letter-spacing:2px; color:rgba(255,255,255,.35); display:block; margin-bottom:5px; }
 .cd-value { color:#fff; font-size:14px; font-weight:500; line-height:1.55; }
 .cd-value a { color:#fff; transition:color .2s; }
-.cd-value a:hover { color:var(--amber-l); }
-
 .contact-right { padding:56px 52px; }
 .contact-right h3 { font-size:28px; font-weight:700; color:var(--ink); margin-bottom:6px; letter-spacing:-.02em; }
 .contact-right-sub { font-size:14px; color:var(--ink-4); margin-bottom:32px; }
 .form-row { display:grid; grid-template-columns:1fr 1fr; gap:16px; }
 .form-field { margin-bottom:18px; }
 .form-label { display:block; font-family:var(--font-mono); font-size:10px; font-weight:500; text-transform:uppercase; letter-spacing:1.5px; color:var(--ink-3); margin-bottom:8px; }
-.form-input, .form-select, .form-textarea { width:100%; padding:13px 16px; border:1.5px solid var(--border); border-radius:var(--radius-s); font-family:var(--font-body); font-size:15px; background:var(--cream); color:var(--ink); transition:all .2s; outline:none; -webkit-appearance:none; }
-.form-input:focus, .form-select:focus, .form-textarea:focus { border-color:var(--amber); background:var(--warm); box-shadow:0 0 0 4px rgba(200,130,26,.12); }
+.form-input, .form-select, .form-textarea { width:100%; padding:13px 16px; border:1.5px solid var(--border); border-radius:var(--radius-s); font-family:var(--font-body); font-size:15px; background:var(--cream); color:var(--ink); outline:none; -webkit-appearance:none; }
+.form-input:focus, .form-select:focus, .form-textarea:focus { border-color:var(--amber); box-shadow:0 0 0 4px rgba(200,130,26,.12); }
 .form-textarea { resize:vertical; min-height:100px; }
 .btn-submit { width:100%; padding:17px; background:var(--rust-d); color:var(--amber-pale); border:none; border-radius:var(--radius-s); font-family:var(--font-body); font-size:15px; font-weight:700; cursor:pointer; transition:all .25s; letter-spacing:.02em; }
 .btn-submit:hover { background:var(--rust-l); box-shadow:var(--shadow-m); transform:translateY(-1px); }
@@ -292,12 +299,16 @@ h1,h2,h3,h4 { font-family:var(--font-display); line-height:1.12; }
 .reveal { opacity:0; transform:translateY(20px); transition:opacity .6s var(--ease-spring), transform .6s var(--ease-spring); }
 .reveal.visible { opacity:1; transform:translateY(0); }
 .reveal-delay-1 { transition-delay:.1s; }
+.reveal-delay-2 { transition-delay:.2s; }
 
+@media(max-width:1200px) { .products-grid { grid-template-columns:repeat(2, 1fr); } }
 @media(max-width:1024px) { .hero-inner { grid-template-columns:1fr; } .contact-layout { grid-template-columns:1fr; } .why-grid { grid-template-columns:1fr; } }
-@media(max-width:768px) { .nav-links, .nav-right { display:none; } .how-grid { grid-template-columns:1fr; } .products-grid { grid-template-columns:1fr; } .form-row { grid-template-columns:1fr; } .docs-grid { grid-template-columns:1fr; } }
+@media(max-width:768px) { .nav-links, .nav-right { display:none; } .hamburger { display:flex; } .how-grid { grid-template-columns:1fr; } .products-grid { grid-template-columns:1fr; } .form-row { grid-template-columns:1fr; } }
 </style>
 </head>
 <body>
+
+<div id="google_translate_element" aria-hidden="true"></div>
 
 <div class="topbar">
   <div class="wrap tb-inner">
@@ -330,14 +341,55 @@ h1,h2,h3,h4 { font-family:var(--font-display); line-height:1.12; }
       <a href="#contact" class="nav-link">Contact</a>
     </div>
     <div class="nav-right">
-      <a href="https://wa.me/919110652474?text=Hello%20Apex%20Origin%20Global,%20I%20am%20interested%20in:%0A%0AProduct:%20%0AQuantity:%20%0ADestination:%20%0APackaging:%20" target="_blank" rel="noopener" class="btn-wa-nav">
-        <svg viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
-        WhatsApp Sales
-      </a>
+      
+      <div class="tr-wrap" id="trWrap">
+        <button class="tr-trigger" id="trTrigger" aria-label="Translate page" aria-expanded="false">
+          <svg fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M3 5h12M9 3v2m1.048 9.5A18.022 18.022 0 016.412 9m6.088 9h7M11 21l5-10 5 10M12.751 5C11.783 10.77 8.07 15.61 3 18.129"/></svg>
+          <span id="trLabel">Translate</span>
+          <svg class="tr-chevron" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="2.5"><path stroke-linecap="round" stroke-linejoin="round" d="M19 9l-7 7-7-7"/></svg>
+        </button>
+        <div class="tr-panel" id="trPanel" role="dialog" aria-label="Language selection">
+          <div class="tr-panel-head">Choose Language</div>
+          <div class="tr-search-wrap">
+            <svg fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"/></svg>
+            <input type="search" class="tr-search" id="trSearch" placeholder="Search 134 languages…" autocomplete="off" spellcheck="false">
+          </div>
+          <ul class="tr-list" id="trList" role="listbox"></ul>
+          <div class="tr-footer">
+            <button class="tr-reset" id="trReset">↩ Reset to English</button>
+            <span class="tr-count" id="trCount"></span>
+          </div>
+        </div>
+      </div>
+
       <a href="#contact" class="btn-primary">Get a Quote →</a>
     </div>
+
+    <button class="hamburger" id="hamburger" aria-label="Open menu" aria-expanded="false">
+      <span></span><span></span><span></span>
+    </button>
   </div>
 </nav>
+
+<div class="mob-drawer" id="mobDrawer" aria-hidden="true">
+  <div class="mob-overlay" id="mobOverlay"></div>
+  <div class="mob-panel">
+    <nav class="mob-nav">
+      <a href="#about" class="mob-nav-link mob-close-link">How it Works</a>
+      <a href="#products" class="mob-nav-link mob-close-link">Products</a>
+      <a href="#why-us" class="mob-nav-link mob-close-link">Why Choose Us</a>
+      <a href="#contact" class="mob-nav-link mob-close-link">Contact</a>
+    </nav>
+    <div class="mob-translate">
+      <span class="mob-tr-label">Translate This Page</span>
+      <div class="mob-search-wrap">
+        <input type="search" class="mob-search" id="mobSearch" placeholder="Search languages…">
+      </div>
+      <ul class="mob-lang-list" id="mobLangList"></ul>
+      <button class="mob-tr-reset" id="mobReset">↩ Reset to English</button>
+    </div>
+  </div>
+</div>
 
 <header class="hero">
   <div class="hero-bg"></div>
@@ -347,8 +399,8 @@ h1,h2,h3,h4 { font-family:var(--font-display); line-height:1.12; }
     <div class="hero-inner">
       <div class="hero-content">
         <div class="hero-badge">Verified Origin Exporter</div>
-        <h1>Export-Grade <em>Sona Masuri Rice</em><br>Delivered to UAE, UK & Global Ports</h1>
-        <p class="hero-sub" id="heroMessage">We supply sortex-cleaned rice and premium coconut products directly to importers worldwide. No middlemen. Clean documentation to minimize customs delays.</p>
+        <h1>Export-Grade <em>Basmati & Sona Masuri</em><br>Delivered to Global Ports</h1>
+        <p class="hero-sub" id="heroMessage">We supply premium Basmati, Sona Masuri, and Semi-Husked Coconuts directly to importers worldwide. No middlemen. Clean documentation to minimize customs delays.</p>
         <div class="hero-certline">
           <span class="cert-chip">MOQ: <strong>1 FCL / 500kg</strong></span>
           <span class="cert-chip">Lead Time: <strong>7-14 Days</strong></span>
@@ -385,7 +437,7 @@ h1,h2,h3,h4 { font-family:var(--font-display); line-height:1.12; }
       <div class="how-step">
         <div class="how-num">01</div>
         <h3>Share Requirements</h3>
-        <p>Specify quantity, packaging, destination port, and Incoterm. We will verify availability instantly.</p>
+        <p>Specify quantity, packaging, destination port, and Incoterm. We verify availability instantly.</p>
         <span class="resp">Your Action</span>
       </div>
       <div class="how-step">
@@ -403,7 +455,7 @@ h1,h2,h3,h4 { font-family:var(--font-display); line-height:1.12; }
       <div class="how-step">
         <div class="how-num">04</div>
         <h3>Dispatch & Clearance</h3>
-        <p>Goods loaded onto vessel. Full clean document set (BL, CoO, Phyto) transmitted for your local clearance.</p>
+        <p>Goods loaded onto vessel. Full clean document set (BL, CoO, Phyto) transmitted for local clearance.</p>
         <span class="resp" style="color:var(--green); background:rgba(46,107,40,.08);">Our Action</span>
       </div>
     </div>
@@ -418,48 +470,73 @@ h1,h2,h3,h4 { font-family:var(--font-display); line-height:1.12; }
       <p class="section-lead">Sourced direct. Tested for compliance. Packed for your retail shelves or distribution network.</p>
     </div>
     <div class="products-grid">
+      
       <div class="product-card reveal">
+        <div class="product-image">
+          <img src="https://images.unsplash.com/photo-1586201375761-83865001e8ac?w=900&q=80" loading="lazy" alt="Premium Basmati Rice Export">
+          <span class="product-badge">Premium Rice</span>
+        </div>
+        <div class="product-body">
+          <h3>Basmati Rice</h3>
+          <div class="product-usecase">Best for: Middle East & EU Markets, Catering</div>
+          <p>Extra-long grain 1121 and premium Pusa Basmati varieties. Highly aromatic, aged to perfection, delivering exceptional elongation and non-sticky texture after cooking.</p>
+          <div class="price-anchor">Indicative FOB price shared on enquiry based on volume</div>
+          <div class="spec-table">
+            <div class="spec-row"><span class="spec-key">Minimum Order</span><span class="spec-val">1 × 20ft FCL</span></div>
+            <div class="spec-row"><span class="spec-key">Packaging</span><span class="spec-val">10kg, 25kg PP/Non-Woven</span></div>
+            <div class="spec-row"><span class="spec-key">Private Label</span><span class="spec-val">Yes (From 3 FCL)</span></div>
+            <div class="spec-row"><span class="spec-key">Inspection</span><span class="spec-val">SGS / NABL / Intertek</span></div>
+          </div>
+        </div>
+        <div class="product-footer">
+          <a href="#contact" class="btn-product-primary">Request Pricing →</a>
+        </div>
+      </div>
+
+      <div class="product-card reveal reveal-delay-1">
         <div class="product-image">
           <img src="https://images.unsplash.com/photo-1604328698692-f76ea9498e76?w=900&q=80" loading="lazy" alt="Sona Masuri rice export">
           <span class="product-badge">Premium Rice</span>
         </div>
         <div class="product-body">
           <h3>Sona Masuri Rice</h3>
-          <div class="product-usecase">Best for: Retail Supermarkets, Diaspora Grocers, Bulk Trading</div>
+          <div class="product-usecase">Best for: Diaspora Grocers, Everyday Retail</div>
           <p>Export-grade, lightweight aromatic medium-grain rice. Sortex cleaned and double polished to ensure less than 5% broken grain and strictly controlled moisture.</p>
           <div class="price-anchor">Indicative FOB price shared on enquiry based on volume</div>
           <div class="spec-table">
-            <div class="spec-row"><span class="spec-key">Minimum Order (MOQ)</span><span class="spec-val">1 × 20ft FCL (approx. 25 MT)</span></div>
+            <div class="spec-row"><span class="spec-key">Minimum Order</span><span class="spec-val">1 × 20ft FCL</span></div>
             <div class="spec-row"><span class="spec-key">Packaging</span><span class="spec-val">5kg, 10kg, 25kg, 50kg PP</span></div>
-            <div class="spec-row"><span class="spec-key">Private Label</span><span class="spec-val">Yes (Available from 3 FCL)</span></div>
-            <div class="spec-row"><span class="spec-key">Inspection</span><span class="spec-val">SGS / NABL / Intertek available</span></div>
+            <div class="spec-row"><span class="spec-key">Private Label</span><span class="spec-val">Yes (From 3 FCL)</span></div>
+            <div class="spec-row"><span class="spec-key">Inspection</span><span class="spec-val">SGS / NABL / Intertek</span></div>
           </div>
         </div>
         <div class="product-footer">
           <a href="#contact" class="btn-product-primary">Request Pricing →</a>
         </div>
       </div>
-      <div class="product-card reveal reveal-delay-1">
+
+      <div class="product-card reveal reveal-delay-2">
         <div class="product-image">
-          <img src="https://images.unsplash.com/photo-1568909344668-6f14a07b56a0?w=900&q=80" loading="lazy" alt="Karnataka coconut products">
-          <span class="product-badge">Coconut</span>
+          <img src="https://images.unsplash.com/photo-1629863483981-d41cbf2d8e40?w=900&q=80" loading="lazy" alt="Semi Husked Coconut Exports">
+          <span class="product-badge">Fresh Produce</span>
         </div>
         <div class="product-body">
-          <h3>Desiccated Coconut & Oil</h3>
-          <div class="product-usecase">Best for: Food Manufacturing, Bakery Supply, FMCG Brands</div>
-          <p>High-fat and low-fat desiccated coconut, alongside virgin and refined oils. Sourced from the fertile coastal belts of Karnataka, processed to international food-safe standards.</p>
+          <h3>Semi-Husked Coconuts</h3>
+          <div class="product-usecase">Best for: Retail Markets, Food Manufacturing</div>
+          <p>Fresh, export-quality semi-husked coconuts sourced from the fertile coastal belts of South India. Carefully graded by weight (500g - 650g) and checked for spoilage.</p>
           <div class="price-anchor">Indicative FOB price shared on enquiry based on volume</div>
           <div class="spec-table">
-            <div class="spec-row"><span class="spec-key">Minimum Order (MOQ)</span><span class="spec-val">LCL from 500 kg accepted</span></div>
-            <div class="spec-row"><span class="spec-key">Packaging</span><span class="spec-val">Jute bags, PP woven, Cartons</span></div>
-            <div class="spec-row"><span class="spec-key">Private Label</span><span class="spec-val">Yes (Available upon request)</span></div>
-            <div class="spec-row"><span class="spec-key">Inspection</span><span class="spec-val">SGS / NABL / Intertek available</span></div>
+            <div class="spec-row"><span class="spec-key">Minimum Order</span><span class="spec-val">LCL from 500 kg accepted</span></div>
+            <div class="spec-row"><span class="spec-key">Packaging</span><span class="spec-val">25 nuts per PP woven bag</span></div>
+            <div class="spec-row"><span class="spec-key">Size/Weight</span><span class="spec-val">500g – 650g per nut</span></div>
+            <div class="spec-row"><span class="spec-key">Inspection</span><span class="spec-val">Pre-shipment Phyto</span></div>
           </div>
         </div>
         <div class="product-footer">
           <a href="#contact" class="btn-product-primary">Request Pricing →</a>
         </div>
       </div>
+
     </div>
   </div>
 </section>
@@ -475,12 +552,12 @@ h1,h2,h3,h4 { font-family:var(--font-display); line-height:1.12; }
       <div class="why-card">
         <div class="why-card-icon">🌾</div>
         <h3>Direct Sourcing</h3>
-        <p>We source straight from Karnataka mills and farms. Zero broker layers means transparent pricing and full accountability.</p>
+        <p>We source straight from Indian mills and farms. Zero broker layers means transparent pricing and full accountability.</p>
       </div>
       <div class="why-card">
         <div class="why-card-icon">💧</div>
         <h3>Moisture Control (<14%)</h3>
-        <p>High moisture ruins shipments. We enforce strict moisture controls and verify every batch before loading.</p>
+        <p>High moisture ruins shipments. We enforce strict moisture controls and verify every rice batch before loading.</p>
       </div>
       <div class="why-card">
         <div class="why-card-icon">🔬</div>
@@ -567,9 +644,10 @@ h1,h2,h3,h4 { font-family:var(--font-display); line-height:1.12; }
               <label class="form-label" for="fproduct">Product Interest *</label>
               <select id="fproduct" name="product" class="form-select" required>
                 <option value="">— Select Product —</option>
+                <option value="basmati-rice">Basmati Rice</option>
                 <option value="sona-masuri-rice">Sona Masuri Rice</option>
-                <option value="coconut-products">Coconut & Coconut Products</option>
-                <option value="both">Both Products</option>
+                <option value="semi-husked-coconut">Semi-Husked Coconuts</option>
+                <option value="multiple">Multiple Products</option>
               </select>
             </div>
             <div class="form-field">
@@ -609,22 +687,104 @@ h1,h2,h3,h4 { font-family:var(--font-display); line-height:1.12; }
 <footer style="background:var(--ink); color:rgba(255,255,255,.55); border-top:3px solid var(--amber); padding:72px 0 32px; text-align:center;">
   <div class="wrap">
     <div style="font-family:var(--font-display); font-size:24px; font-weight:700; color:#fff; margin-bottom:8px;">Apex Origin <span style="color:var(--amber);">Global</span></div>
-    <p style="font-size:13px; max-width:400px; margin:0 auto 20px;">A verified merchant export company from Bengaluru, Karnataka. Bringing the finest of South India's fields to buyers worldwide.</p>
+    <p style="font-size:13px; max-width:400px; margin:0 auto 20px;">A verified merchant export company from Bengaluru, Karnataka. Bringing the finest of India's fields to buyers worldwide.</p>
     <div style="border-top:1px solid rgba(255,255,255,.08); padding-top:28px; font-size:12px; font-weight:500;">
       © 2026 Apex Origin Global · APEDA Registered · FSSAI Licensed · IEC Active
     </div>
   </div>
 </footer>
 
+<script>function googleTranslateElementInit(){new google.translate.TranslateElement({pageLanguage:'en',autoDisplay:false},'google_translate_element');}</script>
+<script src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit" async defer></script>
+
 <script>
-document.addEventListener('DOMContentLoaded', () => {
-  /* ─── SCROLL REVEAL ─── */
-  const revealEls = document.querySelectorAll('.reveal');
-  const io = new IntersectionObserver((entries) => {
-    entries.forEach(en => { if(en.isIntersecting){ en.target.classList.add('visible'); io.unobserve(en.target); }});
-  }, {threshold: .1, rootMargin: '0px 0px -40px 0px'});
-  revealEls.forEach(el => io.observe(el));
-});
+(function(){
+'use strict';
+
+/* ─── LANGUAGE DATA ─── */
+const LANGS=[
+  {c:'af',n:'Afrikaans',nat:'Afrikaans',f:'🇿🇦'},{c:'sq',n:'Albanian',nat:'Shqip',f:'🇦🇱'},{c:'ar',n:'Arabic',nat:'العربية',f:'🇸🇦'},{c:'bn',n:'Bengali',nat:'বাংলা',f:'🇧🇩'},{c:'zh-CN',n:'Chinese (Simplified)',nat:'中文(简体)',f:'🇨🇳'},{c:'zh-TW',n:'Chinese (Traditional)',nat:'中文(繁體)',f:'🇹🇼'},{c:'nl',n:'Dutch',nat:'Nederlands',f:'🇳🇱'},{c:'en',n:'English',nat:'English',f:'🇬🇧'},{c:'fr',n:'French',nat:'Français',f:'🇫🇷'},{c:'de',n:'German',nat:'Deutsch',f:'🇩🇪'},{c:'hi',n:'Hindi',nat:'हिन्दी',f:'🇮🇳'},{c:'id',n:'Indonesian',nat:'Bahasa Indonesia',f:'🇮🇩'},{c:'it',n:'Italian',nat:'Italiano',f:'🇮🇹'},{c:'ja',n:'Japanese',nat:'日本語',f:'🇯🇵'},{c:'ko',n:'Korean',nat:'한국어',f:'🇰🇷'},{c:'ms',n:'Malay',nat:'Bahasa Melayu',f:'🇲🇾'},{c:'fa',n:'Persian',nat:'فارسی',f:'🇮🇷'},{c:'pt',n:'Portuguese',nat:'Português',f:'🇵🇹'},{c:'ru',n:'Russian',nat:'Русский',f:'🇷🇺'},{c:'es',n:'Spanish',nat:'Español',f:'🇪🇸'},{c:'sw',n:'Swahili',nat:'Kiswahili',f:'🇰🇪'},{c:'ta',n:'Tamil',nat:'தமிழ்',f:'🇮🇳'},{c:'th',n:'Thai',nat:'ภาษาไทย',f:'🇹🇭'},{c:'tr',n:'Turkish',nat:'Türkçe',f:'🇹🇷'},{c:'ur',n:'Urdu',nat:'اردو',f:'🇵🇰'},{c:'vi',n:'Vietnamese',nat:'Tiếng Việt',f:'🇻🇳'}
+];
+
+/* ─── TRANSLATE HELPERS ─── */
+function applyLang(c){
+  if(c==='en'){resetLang();return;}
+  const h=window.location.hostname, v='/en/'+c;
+  document.cookie='googtrans='+v+'; path=/';
+  if(h&&h!=='localhost'&&h!=='127.0.0.1')document.cookie='googtrans='+v+'; path=/; domain='+h;
+  window.location.reload();
+}
+function resetLang(){
+  const h=window.location.hostname, e='; expires=Thu, 01 Jan 1970 00:00:00 UTC; path=/';
+  document.cookie='googtrans='+e;
+  if(h&&h!=='localhost'&&h!=='127.0.0.1')document.cookie='googtrans='+e+'; domain='+h;
+  window.location.reload();
+}
+let activeLang='';
+(function(){
+  const m=document.cookie.match(/(?:^|;)\s*googtrans=\/en\/([^;]+)/);
+  if(!m)return;
+  const c=decodeURIComponent(m[1]), L=LANGS.find(l=>l.c===c);
+  if(!L)return;
+  activeLang=L.c;
+  const lbl=document.getElementById('trLabel');
+  if(lbl)lbl.textContent=L.f+' '+L.n;
+})();
+
+function buildLangList(query, el, countEl){
+  const q=(query||'').trim().toLowerCase();
+  const fl=q?LANGS.filter(L=>L.n.toLowerCase().includes(q)||L.nat.toLowerCase().includes(q)||L.c.toLowerCase().includes(q)):LANGS;
+  if(countEl)countEl.textContent=fl.length+' languages';
+  if(!el)return;
+  el.innerHTML='';
+  if(!fl.length){el.innerHTML='<li style="padding:20px;text-align:center;color:var(--ink-5)">No results</li>';return;}
+  const isMob=el.classList.contains('mob-lang-list');
+  fl.forEach(L=>{
+    const li=document.createElement('li');
+    li.className=(L.c===activeLang?'active ':'')+(isMob?'mob-lang-item':'tr-item');
+    li.innerHTML='<span style="font-size:'+(isMob?'20':'17')+'px;flex-shrink:0">'+L.f+'</span><span>'+L.n+'</span><span class="'+(isMob?'':'tr-item-native')+'">'+L.nat+'</span>';
+    li.onclick=()=>applyLang(L.c);
+    el.appendChild(li);
+  });
+}
+
+/* Desktop Translate UI */
+const trTrig=document.getElementById('trTrigger'), trPanel=document.getElementById('trPanel'), trSearch=document.getElementById('trSearch');
+function openTr(){trPanel.classList.add('open'); trTrig.classList.add('open'); trTrig.setAttribute('aria-expanded','true'); buildLangList('',document.getElementById('trList'),document.getElementById('trCount')); setTimeout(()=>trSearch&&trSearch.focus(),60);}
+function closeTr(){trPanel.classList.remove('open'); trTrig.classList.remove('open'); trTrig.setAttribute('aria-expanded','false');}
+if(trTrig)trTrig.addEventListener('click',e=>{e.stopPropagation(); trPanel.classList.contains('open')?closeTr():openTr();});
+if(trPanel)trPanel.addEventListener('click',e=>e.stopPropagation());
+if(trSearch)trSearch.addEventListener('input',function(){buildLangList(this.value,document.getElementById('trList'),document.getElementById('trCount'));});
+const trReset=document.getElementById('trReset');
+if(trReset)trReset.addEventListener('click',resetLang);
+document.addEventListener('click',()=>closeTr());
+document.addEventListener('keydown',e=>{if(e.key==='Escape'){closeTr(); closeMob();}});
+buildLangList('',document.getElementById('trList'),document.getElementById('trCount'));
+
+/* Mobile Translate UI */
+const mobSearchEl=document.getElementById('mobSearch');
+if(mobSearchEl)mobSearchEl.addEventListener('input',function(){buildLangList(this.value,document.getElementById('mobLangList'),null);});
+const mobReset=document.getElementById('mobReset');
+if(mobReset)mobReset.addEventListener('click',resetLang);
+buildLangList('',document.getElementById('mobLangList'),null);
+
+/* Mobile Drawer */
+const hamburger=document.getElementById('hamburger'), mobDrawer=document.getElementById('mobDrawer'), mobOverlay=document.getElementById('mobOverlay');
+let mobOpen=false;
+function openMob(){mobOpen=true; hamburger.classList.add('open'); mobDrawer.classList.add('open'); mobDrawer.setAttribute('aria-hidden','false'); hamburger.setAttribute('aria-expanded','true'); document.body.style.overflow='hidden';}
+function closeMob(){mobOpen=false; hamburger.classList.remove('open'); mobDrawer.classList.remove('open'); mobDrawer.setAttribute('aria-hidden','true'); hamburger.setAttribute('aria-expanded','false'); document.body.style.overflow='';}
+if(hamburger)hamburger.addEventListener('click',e=>{e.stopPropagation(); mobOpen?closeMob():openMob();});
+if(mobOverlay)mobOverlay.addEventListener('click',closeMob);
+document.querySelectorAll('.mob-close-link').forEach(a=>a.addEventListener('click',closeMob));
+
+/* SCROLL REVEAL */
+const revealEls = document.querySelectorAll('.reveal');
+const io = new IntersectionObserver((entries) => {
+  entries.forEach(en => { if(en.isIntersecting){ en.target.classList.add('visible'); io.unobserve(en.target); }});
+}, {threshold: .1, rootMargin: '0px 0px -40px 0px'});
+revealEls.forEach(el => io.observe(el));
+
+})();
 </script>
 </body>
 </html>
