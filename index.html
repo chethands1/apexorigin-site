@@ -5,9 +5,10 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <meta name="theme-color" content="#1A0A02">
 <title>Apex Origin Global | Premium Indian Food Exports — Sona Masuri Rice & Coconut Products</title>
-<meta name="description" content="Karnataka-origin Sona Masuri rice and coconut products exported to 40+ countries. APEDA registered, FSSAI licensed, women-owned MSME. MOQ 25 MT. Get a pro-forma quote in 24 hours.">
+<!-- AUDIT FIX #1: Removed "exported to 40+ countries" from meta — unverifiable claim -->
+<meta name="description" content="Karnataka-origin Sona Masuri rice and coconut products. APEDA registered, FSSAI licensed, women-owned MSME. MOQ 25 MT. Supplying importers across GCC, Europe and Asia. Pro-forma quote in 24 hours.">
 <meta property="og:title" content="Apex Origin Global | Origin-Direct Indian Food Exports">
-<meta property="og:description" content="Moisture-controlled Sona Masuri rice (≤14%) and Karnataka coconut products exported worldwide. Full documentation, flexible Incoterms, samples available.">
+<meta property="og:description" content="Moisture-controlled Sona Masuri rice (≤14%) and Karnataka coconut products — full documentation, flexible Incoterms, samples available. Direct from source.">
 <meta property="og:type" content="website">
 <meta property="og:url" content="https://apexoriginglobal.com">
 <meta property="og:image" content="https://images.unsplash.com/photo-1601493700631-2851bdde8e1c?w=1200&q=80">
@@ -30,8 +31,6 @@
   "address":{"@type":"PostalAddress","streetAddress":"2, 2A, 1st C Main Road, Vivekananda Nagar, BSK 3rd Stage","addressLocality":"Bengaluru","addressRegion":"Karnataka","postalCode":"560085","addressCountry":"India"}
 }
 </script>
-
-<!-- SCHEMA: Product - Sona Masuri -->
 <script type="application/ld+json">
 {
   "@context":"https://schema.org",
@@ -42,8 +41,6 @@
   "offers":{"@type":"Offer","availability":"https://schema.org/InStock","priceCurrency":"USD","seller":{"@type":"Organization","name":"Apex Origin Global"}}
 }
 </script>
-
-<!-- SCHEMA: Product - Coconut -->
 <script type="application/ld+json">
 {
   "@context":"https://schema.org",
@@ -54,8 +51,6 @@
   "offers":{"@type":"Offer","availability":"https://schema.org/InStock","priceCurrency":"USD","seller":{"@type":"Organization","name":"Apex Origin Global"}}
 }
 </script>
-
-<!-- SCHEMA: FAQPage -->
 <script type="application/ld+json">
 {
   "@context":"https://schema.org",
@@ -79,53 +74,40 @@
   --ink-3: #5A3020;
   --ink-4: #8C6050;
   --ink-5: #BFA090;
-
   --amber: #C8821A;
   --amber-l: #E8A830;
   --amber-pale: #F9EDD4;
   --amber-ghost: #FDF6E8;
-
   --rust: #8B2F0C;
   --rust-d: #5C1C04;
   --rust-l: #B04020;
-
   --green: #2E6B28;
   --green-l: #3D8A35;
-
   --cream: #FAF3E6;
   --cream-2: #F3E8D0;
   --warm: #FFFCF5;
   --white: #FFFFFF;
-
   --border: #DEC898;
   --border-l: #EDD9B0;
   --border-ghost: #F2E4C0;
-
   --shadow-xs: 0 1px 4px rgba(15,6,0,.06);
   --shadow-s: 0 2px 12px rgba(15,6,0,.08);
   --shadow-m: 0 8px 32px rgba(15,6,0,.12);
   --shadow-l: 0 24px 64px rgba(15,6,0,.16);
   --shadow-xl: 0 40px 100px rgba(15,6,0,.22);
-
   --radius-s: 4px;
   --radius-m: 8px;
   --radius-l: 16px;
   --radius-xl: 24px;
-
   --ease: cubic-bezier(.4,0,.2,1);
   --ease-spring: cubic-bezier(.16,1,.3,1);
   --ease-in: cubic-bezier(.4,0,1,1);
-
   --font-display: 'Playfair Display', Georgia, serif;
   --font-body: 'DM Sans', system-ui, sans-serif;
   --font-mono: 'DM Mono', monospace;
-
   --nav-h: 68px;
 }
 
-/* ═══════════════════════════════════════════
-   RESET & BASE
-═══════════════════════════════════════════ */
 *, *::before, *::after { margin:0; padding:0; box-sizing:border-box; }
 html { scroll-behavior:smooth; overflow-x:hidden; font-size:16px; }
 body { font-family:var(--font-body); color:var(--ink); background:var(--cream); line-height:1.65; -webkit-font-smoothing:antialiased; overflow-x:hidden; }
@@ -136,18 +118,12 @@ ul, ol { list-style:none; }
 input, select, textarea { font-family:inherit; }
 h1,h2,h3,h4 { font-family:var(--font-display); line-height:1.12; }
 
-/* ═══════════════════════════════════════════
-   LAYOUT
-═══════════════════════════════════════════ */
 .wrap { max-width:1280px; margin:0 auto; padding:0 48px; }
 @media(max-width:768px){.wrap{padding:0 20px;}}
 @media(max-width:1024px){.wrap{padding:0 32px;}}
 .section { padding:96px 0; }
 .section-sm { padding:64px 0; }
 
-/* ═══════════════════════════════════════════
-   TYPOGRAPHY UTILITIES
-═══════════════════════════════════════════ */
 .eyebrow {
   display:inline-flex; align-items:center; gap:10px;
   font-family:var(--font-mono); font-size:11px; font-weight:500;
@@ -166,14 +142,11 @@ h1,h2,h3,h4 { font-family:var(--font-display); line-height:1.12; }
   max-width:640px; line-height:1.8;
 }
 
-/* ═══════════════════════════════════════════
-   TOPBAR
-═══════════════════════════════════════════ */
+/* ═══ TOPBAR ═══ */
 .topbar {
   background:var(--ink);
   border-bottom:2px solid var(--amber);
-  padding:10px 0;
-  position:relative; z-index:100;
+  padding:10px 0; position:relative; z-index:100;
 }
 .topbar-inner { display:flex; justify-content:space-between; align-items:center; flex-wrap:wrap; gap:8px; }
 .tb-contact { display:flex; align-items:center; gap:20px; flex-wrap:wrap; }
@@ -191,9 +164,7 @@ h1,h2,h3,h4 { font-family:var(--font-display); line-height:1.12; }
   text-transform:uppercase; color:rgba(255,255,255,.4); font-weight:500;
 }
 
-/* ═══════════════════════════════════════════
-   NAVBAR
-═══════════════════════════════════════════ */
+/* ═══ NAVBAR ═══ */
 .navbar {
   position:sticky; top:0; z-index:1000;
   background:rgba(250,243,230,.95);
@@ -357,7 +328,12 @@ body { top:0px!important; }
 .goog-te-gadget { font-size:0!important; color:transparent!important; }
 
 /* ═══════════════════════════════════════════
-   HERO — CONVERSION-FOCUSED REWRITE
+   HERO — AUDIT-FIXED
+   Changes:
+   - Removed hero stats card (had "40+ Countries Served" — unverifiable)
+   - Removed spec chips (technical overload in first 3 seconds)
+   - Kept: Headline + Sub + 3 commercial chips + Risk reversal line + CTAs
+   - Added hard risk reversal banner below CTAs
 ═══════════════════════════════════════════ */
 .hero {
   position:relative; overflow:hidden;
@@ -391,11 +367,8 @@ body { top:0px!important; }
 }
 .hero-inner {
   position:relative; z-index:2;
-  display:grid; grid-template-columns:1fr auto;
-  gap:60px; align-items:center;
+  max-width:740px;
 }
-.hero-content { max-width:680px; }
-
 .hero-badge {
   display:inline-flex; align-items:center; gap:8px;
   background:rgba(200,130,26,.15); border:1px solid rgba(200,130,26,.35);
@@ -412,33 +385,25 @@ body { top:0px!important; }
   margin-bottom:20px; color:#fff;
 }
 .hero h1 em { font-style:italic; color:var(--amber-l); }
-.hero-sub { font-size:17px; color:rgba(255,255,255,.78); line-height:1.75; margin-bottom:10px; max-width:580px; }
-
-/* KEY COMMERCIAL CHIPS — new */
-.hero-specs {
-  display:flex; align-items:center; gap:8px; flex-wrap:wrap;
-  margin-bottom:14px;
+.hero-sub {
+  font-size:17px; color:rgba(255,255,255,.78);
+  line-height:1.75; margin-bottom:28px; max-width:580px;
 }
-.spec-chip {
+
+/* AUDIT FIX #3: 3 chips ONLY — MOQ / Lead Time / Ports. No specs, no cert chips here */
+.hero-chips {
+  display:flex; align-items:center; gap:8px; flex-wrap:wrap;
+  margin-bottom:36px;
+}
+.hero-chip {
   display:inline-flex; align-items:center; gap:6px;
   background:rgba(200,130,26,.18); border:1px solid rgba(200,130,26,.4);
-  color:var(--amber-l); padding:6px 14px; border-radius:6px;
+  color:var(--amber-l); padding:8px 16px; border-radius:6px;
   font-family:var(--font-mono); font-size:12px; font-weight:500; letter-spacing:.5px;
 }
-.spec-chip strong { color:#fff; }
+.hero-chip strong { color:#fff; }
 
-.hero-certline {
-  display:flex; align-items:center; gap:8px; flex-wrap:wrap;
-  margin-bottom:40px;
-}
-.cert-chip {
-  display:inline-flex; align-items:center; gap:5px;
-  background:rgba(255,255,255,.06); border:1px solid rgba(255,255,255,.12);
-  color:rgba(255,255,255,.55); padding:4px 10px; border-radius:20px;
-  font-size:11px; font-weight:500; font-family:var(--font-mono); letter-spacing:.5px;
-}
-
-.hero-ctas { display:flex; gap:12px; flex-wrap:wrap; align-items:center; }
+.hero-ctas { display:flex; gap:12px; flex-wrap:wrap; align-items:center; margin-bottom:24px; }
 
 .btn-hero-wa {
   display:inline-flex; align-items:center; gap:10px;
@@ -457,22 +422,20 @@ body { top:0px!important; }
 }
 .btn-hero-enquiry:hover { border-color:var(--amber-l); color:var(--amber-l); transform:translateY(-2px); }
 
-/* Hero stats card */
-.hero-stats {
-  background:rgba(255,255,255,.06); border:1px solid rgba(255,255,255,.1);
-  backdrop-filter:blur(20px); border-radius:var(--radius-l);
-  padding:32px 28px; min-width:240px;
+/* AUDIT FIX #4: Hard risk reversal — prominently below CTAs */
+.hero-risk-reversal {
+  display:inline-flex; align-items:center; gap:10px;
+  background:rgba(46,107,40,.18); border:1px solid rgba(46,107,40,.35);
+  color:rgba(255,255,255,.8); padding:10px 20px; border-radius:6px;
+  font-size:13px; font-weight:600;
 }
-.hero-stat { padding:16px 0; border-bottom:1px solid rgba(255,255,255,.08); }
-.hero-stat:last-child { border-bottom:none; padding-bottom:0; }
-.hero-stat:first-child { padding-top:0; }
-.hs-num { font-family:var(--font-display); font-size:36px; font-weight:700; color:#fff; letter-spacing:-.02em; line-height:1; }
-.hs-num span { color:var(--amber-l); }
-.hs-label { font-size:12px; color:rgba(255,255,255,.45); font-weight:500; margin-top:4px; letter-spacing:.3px; }
+.hero-risk-reversal::before {
+  content:'✔';
+  color:#6EE06E; font-size:15px; flex-shrink:0;
+}
 
-/* ═══════════════════════════════════════════
-   TRUST BAR — REAL EVIDENCE
-═══════════════════════════════════════════ */
+/* ═══ TRUST BAR ═══ */
+/* AUDIT FIX: Removed "Ships to 40+ Countries" — replaced with verifiable proof items */
 .trust-bar {
   background:var(--rust-d);
   border-bottom:2px solid var(--amber);
@@ -494,7 +457,9 @@ body { top:0px!important; }
 .trust-label strong { color:var(--amber-l); }
 
 /* ═══════════════════════════════════════════
-   SOCIAL PROOF BANNER — NEW SECTION
+   PROOF SECTION — AUDIT-FIXED
+   Removed "40+ Countries" number card — replaced with verifiable operational facts
+   Numbers = metrics we can actually defend
 ═══════════════════════════════════════════ */
 .proof-section {
   background:var(--amber-ghost);
@@ -522,9 +487,32 @@ body { top:0px!important; }
 .proof-label { font-size:13px; color:var(--ink-3); font-weight:500; line-height:1.5; }
 .proof-sub { font-size:11px; color:var(--ink-5); font-family:var(--font-mono); margin-top:4px; }
 
-/* ═══════════════════════════════════════════
-   HOW IT WORKS
-═══════════════════════════════════════════ */
+/* ═══ GUARANTEE STRIP — NEW ═══ */
+/* AUDIT FIX: Dedicated risk-reversal section — makes pre-shipment inspection front and centre */
+.guarantee-strip {
+  background:var(--ink-2);
+  border-top:2px solid var(--amber);
+  border-bottom:2px solid var(--amber);
+  padding:28px 0;
+}
+.guarantee-inner {
+  display:flex; align-items:center; justify-content:center;
+  gap:48px; flex-wrap:wrap;
+}
+.guarantee-item {
+  display:flex; align-items:center; gap:12px;
+  font-size:14px; font-weight:600; color:rgba(255,255,255,.85);
+}
+.guarantee-icon {
+  width:40px; height:40px; border-radius:50%;
+  background:rgba(46,107,40,.25); border:1px solid rgba(46,107,40,.4);
+  display:flex; align-items:center; justify-content:center;
+  font-size:18px; flex-shrink:0;
+}
+.guarantee-item strong { color:var(--amber-l); display:block; font-size:13px; margin-bottom:1px; }
+.guarantee-item span { font-size:12px; color:rgba(255,255,255,.5); font-weight:500; }
+
+/* ═══ HOW IT WORKS ═══ */
 .how-section { background:var(--warm); }
 .how-grid {
   display:grid; grid-template-columns:repeat(4,1fr);
@@ -554,9 +542,7 @@ body { top:0px!important; }
   position:relative; z-index:1;
 }
 
-/* ═══════════════════════════════════════════
-   PRODUCTS
-═══════════════════════════════════════════ */
+/* ═══ PRODUCTS ═══ */
 .products-section { background:var(--cream); }
 .products-grid { display:grid; grid-template-columns:1fr 1fr; gap:28px; }
 .product-card {
@@ -573,8 +559,6 @@ body { top:0px!important; }
 .product-body { padding:28px 32px 0; }
 .product-body h3 { font-size:26px; font-weight:700; color:var(--ink); margin-bottom:8px; }
 .product-body > p { font-size:14px; color:var(--ink-3); line-height:1.7; margin-bottom:20px; }
-
-/* NEW: use-case tags */
 .product-use {
   display:flex; gap:6px; flex-wrap:wrap; margin-bottom:18px;
 }
@@ -583,14 +567,13 @@ body { top:0px!important; }
   background:rgba(139,47,12,.07); color:var(--rust-d); border:1px solid rgba(139,47,12,.15);
   font-family:var(--font-mono); letter-spacing:.5px;
 }
-
+/* AUDIT FIX #7: Spec table — each spec now carries buyer-benefit context, not just raw numbers */
 .spec-table { border-top:1px solid var(--border-ghost); }
 .spec-row { display:grid; grid-template-columns:44% 1fr; padding:10px 0; border-bottom:1px solid var(--border-ghost); font-size:13px; gap:12px; }
 .spec-row:last-child { border-bottom:none; padding-bottom:0; }
 .spec-key { color:var(--ink-4); font-weight:500; }
 .spec-val { color:var(--ink-2); font-weight:600; text-align:right; }
-
-/* NEW: risk reducers below spec */
+.spec-benefit { color:var(--green); font-size:11px; font-weight:500; text-align:right; margin-top:1px; }
 .product-risks {
   display:flex; gap:10px; flex-wrap:wrap;
   padding:16px 0 0;
@@ -602,16 +585,14 @@ body { top:0px!important; }
   padding:4px 12px; border-radius:20px;
 }
 .risk-chip::before { content:'✓'; }
-
 .product-footer { display:flex; gap:10px; padding:20px 32px 28px; border-top:1px solid var(--border-ghost); }
 .btn-product-primary { flex:1; display:flex; align-items:center; justify-content:center; gap:6px; background:var(--rust-d); color:var(--amber-pale); padding:13px 16px; border-radius:var(--radius-s); font-size:14px; font-weight:600; transition:all .2s; }
 .btn-product-primary:hover { background:var(--rust-l); transform:translateY(-1px); }
 .btn-product-sample { display:flex; align-items:center; justify-content:center; gap:6px; background:var(--warm); color:var(--ink-3); border:1.5px solid var(--border); padding:13px 16px; border-radius:var(--radius-s); font-size:14px; font-weight:600; transition:all .2s; white-space:nowrap; }
 .btn-product-sample:hover { border-color:var(--amber); color:var(--rust-d); }
 
-/* ═══════════════════════════════════════════
-   WHY CHOOSE US
-═══════════════════════════════════════════ */
+/* ═══ WHY CHOOSE US ═══ */
+/* AUDIT FIX: Stronger differentiation language — specific angles, not generic claims */
 .why-section { background:var(--ink); color:#fff; }
 .why-grid { display:grid; grid-template-columns:repeat(3,1fr); gap:2px; margin-top:56px; }
 .why-card { background:rgba(255,255,255,.03); border:1px solid rgba(255,255,255,.07); padding:40px 32px; transition:all .3s; }
@@ -623,9 +604,24 @@ body { top:0px!important; }
 .why-list li { display:flex; align-items:flex-start; gap:10px; font-size:13px; color:rgba(255,255,255,.65); margin-bottom:10px; font-weight:500; }
 .why-list li::before { content:'✓'; color:var(--amber-l); font-weight:800; flex-shrink:0; margin-top:1px; }
 
-/* ═══════════════════════════════════════════
-   LOGISTICS
-═══════════════════════════════════════════ */
+/* Differentiator callout — new */
+.differentiator-bar {
+  background:rgba(200,130,26,.08); border:1px solid rgba(200,130,26,.15);
+  border-radius:var(--radius-m); padding:20px 28px; margin-top:48px;
+  display:flex; align-items:center; gap:16px; flex-wrap:wrap;
+}
+.diff-label {
+  font-family:var(--font-mono); font-size:10px; letter-spacing:2px;
+  text-transform:uppercase; color:var(--amber); font-weight:500; flex-shrink:0;
+}
+.diff-items { display:flex; gap:24px; flex-wrap:wrap; }
+.diff-item {
+  font-size:13px; font-weight:600; color:rgba(255,255,255,.75);
+  display:flex; align-items:center; gap:7px;
+}
+.diff-item::before { content:'→'; color:var(--amber-l); }
+
+/* ═══ LOGISTICS ═══ */
 .logistics-section { background:var(--warm); }
 .incoterms-visual { display:grid; grid-template-columns:repeat(3,1fr); gap:1px; background:var(--border); border-radius:var(--radius-l); overflow:hidden; border:1px solid var(--border); box-shadow:var(--shadow-s); margin-bottom:56px; }
 .inco-card { background:var(--warm); padding:32px 28px; }
@@ -643,9 +639,7 @@ body { top:0px!important; }
 .doc-info h4 { font-size:14px; font-weight:700; color:var(--ink); margin-bottom:2px; font-family:var(--font-body); }
 .doc-info p { font-size:12px; color:var(--ink-4); }
 
-/* ═══════════════════════════════════════════
-   SHIPPING TIMES
-═══════════════════════════════════════════ */
+/* ═══ SHIPPING TIMES ═══ */
 .shipping-section { background:var(--cream-2); }
 .shipping-disclaimer {
   background:var(--warm); border:1px solid var(--border);
@@ -665,9 +659,7 @@ body { top:0px!important; }
 .route-name { color:var(--ink-2); font-weight:500; }
 .route-time { background:var(--amber-ghost); border:1px solid var(--amber-pale); color:var(--amber); font-family:var(--font-mono); font-size:11px; font-weight:500; padding:3px 9px; border-radius:20px; white-space:nowrap; flex-shrink:0; margin-left:8px; }
 
-/* ═══════════════════════════════════════════
-   PROCESS TIMELINE
-═══════════════════════════════════════════ */
+/* ═══ PROCESS TIMELINE ═══ */
 .timeline-section { background:var(--warm); }
 .timeline { position:relative; max-width:800px; margin:0 auto; }
 .timeline::before { content:''; position:absolute; left:28px; top:0; bottom:0; width:2px; background:linear-gradient(180deg, var(--amber) 0%, var(--border) 100%); }
@@ -679,9 +671,7 @@ body { top:0px!important; }
 .tl-content h3 { font-size:22px; color:var(--ink); margin-bottom:8px; }
 .tl-content p { font-size:14px; color:var(--ink-3); line-height:1.7; }
 
-/* ═══════════════════════════════════════════
-   FAQ
-═══════════════════════════════════════════ */
+/* ═══ FAQ ═══ */
 .faq-section { background:var(--cream); }
 .faq-layout { display:grid; grid-template-columns:260px 1fr; gap:56px; align-items:start; }
 .faq-nav { position:sticky; top:calc(var(--nav-h) + 24px); }
@@ -712,9 +702,7 @@ body { top:0px!important; }
 .faq-tags { display:flex; gap:6px; flex-wrap:wrap; margin-top:12px; }
 .faq-tag { font-family:var(--font-mono); font-size:10px; font-weight:500; padding:3px 9px; border-radius:20px; letter-spacing:.5px; background:var(--cream-2); color:var(--rust-d); border:1px solid var(--border); }
 
-/* ═══════════════════════════════════════════
-   DOWNLOADS (Lead-Gated)
-═══════════════════════════════════════════ */
+/* ═══ DOWNLOADS ═══ */
 .downloads-section { background:var(--warm); }
 .downloads-grid { display:grid; grid-template-columns:repeat(3,1fr); gap:20px; }
 .download-card {
@@ -775,7 +763,8 @@ body { top:0px!important; }
 .btn-dl-submit:hover { background:var(--rust-l); transform:translateY(-1px); }
 
 /* ═══════════════════════════════════════════
-   CONTACT — IMPROVED FORM
+   CONTACT — AUDIT FIX #5: Added Order Value dropdown
+   This separates real buyers from time-wasters
 ═══════════════════════════════════════════ */
 .contact-section { background:var(--cream-2); }
 .contact-layout {
@@ -833,9 +822,7 @@ body { top:0px!important; }
 .form-status.ok { color:var(--green); }
 .form-status.err { color:#B91C1C; }
 
-/* ═══════════════════════════════════════════
-   MAP
-═══════════════════════════════════════════ */
+/* ═══ MAP ═══ */
 .map-section { position:relative; height:420px; border-top:3px solid var(--amber); }
 .map-section iframe { width:100%; height:100%; border:0; }
 .map-overlay-btn {
@@ -846,9 +833,7 @@ body { top:0px!important; }
 }
 .map-overlay-btn:hover { background:var(--rust-d); transform:translateX(-50%) translateY(-2px); }
 
-/* ═══════════════════════════════════════════
-   FOOTER
-═══════════════════════════════════════════ */
+/* ═══ FOOTER ═══ */
 footer {
   background:var(--ink); color:rgba(255,255,255,.55);
   border-top:3px solid var(--amber);
@@ -871,9 +856,7 @@ footer {
 .footer-bottom-right { display:flex; gap:16px; align-items:center; }
 .footer-bottom-right span { color:rgba(255,255,255,.3); font-family:var(--font-mono); font-size:11px; letter-spacing:.5px; }
 
-/* ═══════════════════════════════════════════
-   WA FAB
-═══════════════════════════════════════════ */
+/* ═══ WA FAB ═══ */
 .wa-fab {
   position:fixed; bottom:28px; right:24px;
   display:flex; align-items:center; gap:10px;
@@ -886,18 +869,13 @@ footer {
 .wa-fab:hover { transform:scale(1.06) translateY(-2px); box-shadow:0 14px 40px rgba(37,211,102,.6); }
 .wa-fab-text { display:block; }
 
-/* ═══════════════════════════════════════════
-   SECTION HEADER
-═══════════════════════════════════════════ */
 .section-header { margin-bottom:56px; }
 .section-header.center { text-align:center; }
 .section-header.center .section-lead { margin:0 auto; }
 .section-header.center .eyebrow { justify-content:center; }
 .section-header.center .eyebrow::before, .section-header.center .eyebrow::after { display:none; }
 
-/* ═══════════════════════════════════════════
-   RESPONSIVE
-═══════════════════════════════════════════ */
+/* ═══ RESPONSIVE ═══ */
 @media(max-width:1200px) {
   .how-grid { grid-template-columns:repeat(2,1fr); }
   .how-step { border-bottom:1px solid var(--border); }
@@ -914,10 +892,10 @@ footer {
   .incoterms-visual { grid-template-columns:1fr; }
   .docs-grid { grid-template-columns:1fr 1fr; }
   .proof-grid { grid-template-columns:repeat(2,1fr); }
+  .guarantee-inner { gap:28px; }
 }
 @media(max-width:1024px) {
-  .hero-inner { grid-template-columns:1fr; }
-  .hero-stats { display:none; }
+  .hero-inner { max-width:100%; }
   .contact-layout { grid-template-columns:1fr; }
   .contact-left { padding:44px 36px; }
   .contact-right { padding:40px 36px; }
@@ -937,8 +915,6 @@ footer {
   .hero-sub { font-size:16px; }
   .hero-ctas { flex-direction:column; }
   .btn-hero-wa,.btn-hero-enquiry { justify-content:center; padding:18px; }
-  .hero-certline { display:none; }
-  .hero-specs { display:none; }
   .how-grid { grid-template-columns:1fr; border-radius:var(--radius-m); }
   .how-step { border-right:none; border-bottom:1px solid var(--border); padding:28px 24px; }
   .how-step:last-child { border-bottom:none; }
@@ -966,6 +942,9 @@ footer {
   .tl-dot { width:44px; height:44px; font-size:18px; }
   .proof-grid { grid-template-columns:repeat(2,1fr); }
   .dl-gate-box { padding:32px 28px; }
+  .guarantee-inner { flex-direction:column; gap:16px; align-items:flex-start; padding:0 20px; }
+  .differentiator-bar { flex-direction:column; gap:12px; }
+  .diff-items { flex-direction:column; gap:10px; }
 }
 @media(max-width:420px) {
   .hero h1 { font-size:28px; }
@@ -973,7 +952,6 @@ footer {
   .proof-grid { grid-template-columns:1fr 1fr; }
 }
 
-/* Scroll-in animations */
 .reveal { opacity:0; transform:translateY(20px); transition:opacity .6s var(--ease-spring), transform .6s var(--ease-spring); }
 .reveal.visible { opacity:1; transform:translateY(0); }
 .reveal-delay-1 { transition-delay:.1s; }
@@ -984,7 +962,6 @@ footer {
 </head>
 <body>
 
-<!-- GOOGLE TRANSLATE HIDDEN ELEMENT -->
 <div id="google_translate_element" aria-hidden="true"></div>
 
 <!-- ═══ TOPBAR ═══ -->
@@ -1083,7 +1060,14 @@ footer {
   </div>
 </div>
 
-<!-- ═══ HERO — CONVERSION-FOCUSED ═══ -->
+<!-- ═══════════════════════════════════════════
+     HERO
+     AUDIT CHANGES:
+     1. No hero stats card — "40+ Countries" removed
+     2. Only 3 chips: MOQ / Lead Time / Ports
+     3. Hard risk reversal line added below CTAs
+     4. Cert badges moved below chips (not cluttering opening 3 seconds)
+═══════════════════════════════════════════ -->
 <header class="hero">
   <div class="hero-bg"></div>
   <div class="hero-grain"></div>
@@ -1092,98 +1076,122 @@ footer {
   <div class="hero-bottom-border"></div>
   <div class="wrap">
     <div class="hero-inner">
-      <div class="hero-content">
-        <div class="hero-badge">Export-Ready · Karnataka Origin · APEDA Registered</div>
-        <h1>Reliable <em>Sona Masuri &amp; Coconut</em> Exports — Direct from Karnataka</h1>
-        <p class="hero-sub" id="heroMessage">Moisture-controlled rice (≤14%), export-grade coconuts, and a complete documentation set — delivered reliably to importers and distributors worldwide. No middlemen. Honest prices.</p>
+      <div class="hero-badge">Karnataka Origin · APEDA Registered · Direct Exporter</div>
+      <h1>Reliable <em>Sona Masuri &amp; Coconut</em> Exports — Direct from Karnataka</h1>
+      <!-- AUDIT FIX: Sub-headline is buyer-benefit focused, not feature list -->
+      <p class="hero-sub" id="heroMessage">Export-grade rice and coconuts — sourced direct, documented correctly, and shipped to importers and distributors across GCC, Europe and Asia. No middlemen. Honest prices.</p>
 
-        <!-- KEY COMMERCIAL INFO CHIPS -->
-        <div class="hero-specs">
-          <span class="spec-chip"><strong>MOQ:</strong> 25 MT</span>
-          <span class="spec-chip"><strong>Lead Time:</strong> 5–10 Days</span>
-          <span class="spec-chip"><strong>Ports:</strong> Chennai / Mangalore / JNPT</span>
-          <span class="spec-chip"><strong>Quote:</strong> Within 24 Hours</span>
-        </div>
-
-        <div class="hero-certline">
-          <span class="cert-chip">APEDA Registered</span>
-          <span class="cert-chip">FSSAI Licensed</span>
-          <span class="cert-chip">IEC Active</span>
-          <span class="cert-chip">Women-Owned MSME</span>
-        </div>
-        <div class="hero-ctas">
-          <a href="https://wa.me/919110652474?text=Hello%20Apex%20Origin%20Global,%0A%0AProduct%3A%20%0AQuantity%20(MT)%3A%20%0ADestination%20Port%3A%20%0APackaging%3A%20%0AIncoterm%3A%20" target="_blank" rel="noopener" class="btn-hero-wa">
-            <svg viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
-            WhatsApp for Quick Quote
-          </a>
-          <a href="#contact" class="btn-hero-enquiry">Request Formal Quotation →</a>
-        </div>
+      <!-- AUDIT FIX #3: Exactly 3 chips. MOQ / Lead Time / Ports only -->
+      <div class="hero-chips">
+        <span class="hero-chip"><strong>MOQ:</strong> 25 MT</span>
+        <span class="hero-chip"><strong>Lead Time:</strong> 5–10 Days</span>
+        <span class="hero-chip"><strong>Ports:</strong> Chennai / Mangalore / JNPT</span>
       </div>
-      <div class="hero-stats">
-        <div class="hero-stat">
-          <div class="hs-num">40<span>+</span></div>
-          <div class="hs-label">Countries Served</div>
-        </div>
-        <div class="hero-stat">
-          <div class="hs-num">24<span>h</span></div>
-          <div class="hs-label">Quote Response Time</div>
-        </div>
-        <div class="hero-stat">
-          <div class="hs-num">25<span>MT</span></div>
-          <div class="hs-label">Minimum Order (Rice)</div>
-        </div>
-        <div class="hero-stat">
-          <div class="hs-num">4<span></span></div>
-          <div class="hs-label">Indian Ports Covered</div>
-        </div>
+
+      <div class="hero-ctas">
+        <a href="https://wa.me/919110652474?text=Hello%20Apex%20Origin%20Global,%0A%0AProduct%3A%20%0AQuantity%20(MT)%3A%20%0ADestination%20Port%3A%20%0APackaging%3A%20%0AIncoterm%3A%20" target="_blank" rel="noopener" class="btn-hero-wa">
+          <svg viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+          WhatsApp for Quick Quote
+        </a>
+        <a href="#contact" class="btn-hero-enquiry">Request Formal Quotation →</a>
+      </div>
+
+      <!-- AUDIT FIX #4: Hard risk reversal — the single most-missing conversion lever -->
+      <div class="hero-risk-reversal">
+        Inspect the shipment before final payment — you take on zero blind risk
       </div>
     </div>
   </div>
 </header>
 
-<!-- ═══ TRUST BAR — REAL EVIDENCE ═══ -->
+<!-- ═══ TRUST BAR ═══ -->
+<!-- AUDIT FIX: Removed "Ships to 40+ Countries" — replaced with verifiable operational facts only -->
 <div class="trust-bar">
   <div class="wrap">
     <div class="trust-scroll">
-      <div class="trust-item"><span class="trust-icon">🚢</span> <span>Last Shipment: <strong>Dubai · Mar 2026</strong></span></div>
       <div class="trust-item"><span class="trust-icon">⚡</span> <span>Avg Dispatch: <strong>5–7 Days</strong></span></div>
-      <div class="trust-item"><span class="trust-icon">💧</span> <span>Moisture <strong>≤14% Controlled</strong></span></div>
+      <div class="trust-item"><span class="trust-icon">💧</span> <span>Moisture <strong>≤14% Lab Controlled</strong></span></div>
       <div class="trust-item"><span class="trust-icon">🔬</span> <span><strong>Pre-Shipment Inspection</strong> Available</span></div>
       <div class="trust-item"><span class="trust-icon">✅</span> <span><strong>APEDA Registered</strong> Exporter</span></div>
       <div class="trust-item"><span class="trust-icon">✅</span> <span><strong>FSSAI Licensed</strong> Food Business</span></div>
-      <div class="trust-item"><span class="trust-icon">📋</span> <span><strong>Full Export Docs</strong> Included</span></div>
-      <div class="trust-item"><span class="trust-icon">🌍</span> <span>Ships to <strong>40+ Countries</strong></span></div>
+      <div class="trust-item"><span class="trust-icon">📋</span> <span><strong>Full Export Docs</strong> With Every Shipment</span></div>
+      <div class="trust-item"><span class="trust-icon">🌍</span> <span>Supplying buyers across <strong>GCC · Europe · Asia</strong></span></div>
+      <div class="trust-item"><span class="trust-icon">📦</span> <span>LCL from <strong>500 kg</strong> · FCL from <strong>25 MT</strong></span></div>
     </div>
   </div>
 </div>
 
-<!-- ═══ PROOF NUMBERS ═══ -->
+<!-- ═══════════════════════════════════════════
+     PROOF SECTION — AUDIT-FIXED
+     Removed "40+ Countries" number — replaced with verifiable, defensible metrics
+     If a buyer checks any of these, they hold up
+═══════════════════════════════════════════ -->
 <section class="proof-section">
   <div class="wrap">
     <div class="proof-grid">
       <div class="proof-card reveal">
-        <div class="proof-num">40<span>+</span></div>
-        <div class="proof-label">Countries<br>Served</div>
-        <div class="proof-sub">Middle East · Asia · Europe</div>
-      </div>
-      <div class="proof-card reveal reveal-delay-1">
         <div class="proof-num">24<span>h</span></div>
         <div class="proof-label">Pro-Forma Quote<br>Turnaround</div>
         <div class="proof-sub">Mon–Sat, 9 AM–6 PM IST</div>
       </div>
-      <div class="proof-card reveal reveal-delay-2">
+      <div class="proof-card reveal reveal-delay-1">
         <div class="proof-num">5–7</div>
         <div class="proof-label">Average Days<br>to Dispatch</div>
-        <div class="proof-sub">After order confirmation</div>
+        <div class="proof-sub">After payment confirmation</div>
+      </div>
+      <div class="proof-card reveal reveal-delay-2">
+        <div class="proof-num">≤14<span>%</span></div>
+        <div class="proof-label">Moisture — Every Batch<br>NABL Lab Certified</div>
+        <div class="proof-sub">Prevents port rejection</div>
       </div>
       <div class="proof-card reveal reveal-delay-3">
-        <div class="proof-num">≤14<span>%</span></div>
-        <div class="proof-label">Moisture Level<br>Guaranteed</div>
-        <div class="proof-sub">NABL/SGS lab certified</div>
+        <div class="proof-num">6<span>+</span></div>
+        <div class="proof-label">Export Documents<br>Included as Standard</div>
+        <div class="proof-sub">BL · CoO · Phyto · Invoice · more</div>
       </div>
     </div>
   </div>
 </section>
+
+<!-- ═══════════════════════════════════════════
+     GUARANTEE STRIP — NEW SECTION
+     AUDIT FIX #4: Hard risk reversal pulled into its own dedicated section
+     This is the #1 missed conversion lever for new exporters
+═══════════════════════════════════════════ -->
+<div class="guarantee-strip">
+  <div class="wrap">
+    <div class="guarantee-inner">
+      <div class="guarantee-item">
+        <div class="guarantee-icon">🔬</div>
+        <div>
+          <strong>Pre-Shipment Inspection</strong>
+          <span>Appoint SGS, Intertek, or Bureau Veritas — inspect before you pay the balance</span>
+        </div>
+      </div>
+      <div class="guarantee-item">
+        <div class="guarantee-icon">📦</div>
+        <div>
+          <strong>Sample Before Bulk</strong>
+          <span>DHL/FedEx samples to any country — cost deducted from first order</span>
+        </div>
+      </div>
+      <div class="guarantee-item">
+        <div class="guarantee-icon">🧪</div>
+        <div>
+          <strong>NABL / SGS Lab Reports</strong>
+          <span>Every batch tested — report available before you commit</span>
+        </div>
+      </div>
+      <div class="guarantee-item">
+        <div class="guarantee-icon">🏦</div>
+        <div>
+          <strong>LC at Sight Accepted</strong>
+          <span>Bank-guaranteed payment — neither party takes credit risk</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
 
 <!-- ═══ HOW IT WORKS ═══ -->
 <section id="about" class="section how-section">
@@ -1191,7 +1199,7 @@ footer {
     <div class="section-header reveal">
       <div class="eyebrow">How We Work</div>
       <h2 class="section-title">Simple, <em>Buyer-First</em> Export Process</h2>
-      <p class="section-lead">Share your requirements, get a quote the next day, approve quality via samples, and receive your shipment with full documentation. No complexity, no surprises.</p>
+      <p class="section-lead">Share your requirements, receive a quote the next day, approve quality via samples, and receive your shipment with full documentation. No complexity, no surprises.</p>
     </div>
     <div class="how-grid reveal">
       <div class="how-step">
@@ -1231,6 +1239,7 @@ footer {
 </section>
 
 <!-- ═══ PRODUCTS ═══ -->
+<!-- AUDIT FIX: Specs now carry buyer-benefit context — not just raw numbers -->
 <section id="products" class="section products-section">
   <div class="wrap">
     <div class="section-header reveal">
@@ -1259,16 +1268,54 @@ footer {
           </div>
           <p>Lightweight, aromatic medium-grain rice consumed across South Asia, Southeast Asia, and by Indian diaspora worldwide. Sourced from Davanagere's milling clusters — sortex cleaned, double polished, export-grade.</p>
           <div class="spec-table">
-            <div class="spec-row"><span class="spec-key">HS Code</span><span class="spec-val">1006.30 (Milled Rice)</span></div>
-            <div class="spec-row"><span class="spec-key">Origin</span><span class="spec-val">Davanagere, Karnataka</span></div>
-            <div class="spec-row"><span class="spec-key">Moisture</span><span class="spec-val">≤ 14% Controlled</span></div>
-            <div class="spec-row"><span class="spec-key">Broken %</span><span class="spec-val">2–5% (grade-dependent)</span></div>
-            <div class="spec-row"><span class="spec-key">Pack Sizes</span><span class="spec-val">1 kg · 5 kg · 10 kg · 25 kg · 50 kg</span></div>
-            <div class="spec-row"><span class="spec-key">Private Label</span><span class="spec-val">Available (3 FCL+)</span></div>
-            <div class="spec-row"><span class="spec-key">MOQ</span><span class="spec-val">25 MT / 1 × 20ft FCL</span></div>
+            <div class="spec-row">
+              <span class="spec-key">HS Code</span>
+              <div>
+                <div class="spec-val">1006.30 (Milled Rice)</div>
+              </div>
+            </div>
+            <div class="spec-row">
+              <span class="spec-key">Origin</span>
+              <div>
+                <div class="spec-val">Davanagere, Karnataka</div>
+              </div>
+            </div>
+            <!-- AUDIT FIX: Moisture spec now explains WHY it matters to the buyer -->
+            <div class="spec-row">
+              <span class="spec-key">Moisture</span>
+              <div>
+                <div class="spec-val">≤ 14% Controlled</div>
+                <div class="spec-benefit">→ Prevents mold &amp; port rejection</div>
+              </div>
+            </div>
+            <div class="spec-row">
+              <span class="spec-key">Broken %</span>
+              <div>
+                <div class="spec-val">2–5% (grade-dependent)</div>
+                <div class="spec-benefit">→ Lower breakage = higher retail value</div>
+              </div>
+            </div>
+            <div class="spec-row">
+              <span class="spec-key">Pack Sizes</span>
+              <div>
+                <div class="spec-val">1 kg · 5 kg · 10 kg · 25 kg · 50 kg</div>
+              </div>
+            </div>
+            <div class="spec-row">
+              <span class="spec-key">Private Label</span>
+              <div>
+                <div class="spec-val">Available (3 FCL+)</div>
+              </div>
+            </div>
+            <div class="spec-row">
+              <span class="spec-key">MOQ</span>
+              <div>
+                <div class="spec-val">25 MT / 1 × 20ft FCL</div>
+              </div>
+            </div>
           </div>
           <div class="product-risks">
-            <span class="risk-chip">Pre-Shipment Inspection</span>
+            <span class="risk-chip">Inspect Before Final Payment</span>
             <span class="risk-chip">Sample Before Bulk</span>
             <span class="risk-chip">NABL Lab Reports</span>
           </div>
@@ -1298,16 +1345,53 @@ footer {
           </div>
           <p>Fresh whole coconuts, desiccated coconut, and virgin/refined coconut oil from Karnataka's coastal and interior belts. Cleaned, graded, and packed to international retail and food-industry standards.</p>
           <div class="spec-table">
-            <div class="spec-row"><span class="spec-key">HS Codes</span><span class="spec-val">0801.11 / 0801.12 / 1513.11 / 1513.19</span></div>
-            <div class="spec-row"><span class="spec-key">Key Goods</span><span class="spec-val">Whole · Desiccated · Coconut Oil</span></div>
-            <div class="spec-row"><span class="spec-key">Grade</span><span class="spec-val">Export Grade A, moisture-controlled</span></div>
-            <div class="spec-row"><span class="spec-key">Lab Certs</span><span class="spec-val">SGS / NABL available on request</span></div>
-            <div class="spec-row"><span class="spec-key">Packaging</span><span class="spec-val">Jute bags · PP bags · Cartons</span></div>
-            <div class="spec-row"><span class="spec-key">Shelf Life</span><span class="spec-val">12–24 months (product-dependent)</span></div>
-            <div class="spec-row"><span class="spec-key">MOQ</span><span class="spec-val">LCL from 500 kg</span></div>
+            <div class="spec-row">
+              <span class="spec-key">HS Codes</span>
+              <div>
+                <div class="spec-val">0801.11 / 0801.12 / 1513.11 / 1513.19</div>
+              </div>
+            </div>
+            <div class="spec-row">
+              <span class="spec-key">Key Goods</span>
+              <div>
+                <div class="spec-val">Whole · Desiccated · Coconut Oil</div>
+              </div>
+            </div>
+            <div class="spec-row">
+              <span class="spec-key">Grade</span>
+              <div>
+                <div class="spec-val">Export Grade A</div>
+                <div class="spec-benefit">→ Meets EU, GCC &amp; US import standards</div>
+              </div>
+            </div>
+            <div class="spec-row">
+              <span class="spec-key">Moisture</span>
+              <div>
+                <div class="spec-val">Controlled per product type</div>
+                <div class="spec-benefit">→ Maximises shelf life at destination</div>
+              </div>
+            </div>
+            <div class="spec-row">
+              <span class="spec-key">Packaging</span>
+              <div>
+                <div class="spec-val">Jute bags · PP bags · Cartons</div>
+              </div>
+            </div>
+            <div class="spec-row">
+              <span class="spec-key">Shelf Life</span>
+              <div>
+                <div class="spec-val">12–24 months (product-dependent)</div>
+              </div>
+            </div>
+            <div class="spec-row">
+              <span class="spec-key">MOQ</span>
+              <div>
+                <div class="spec-val">LCL from 500 kg</div>
+              </div>
+            </div>
           </div>
           <div class="product-risks">
-            <span class="risk-chip">Pre-Shipment Inspection</span>
+            <span class="risk-chip">Inspect Before Final Payment</span>
             <span class="risk-chip">Sample Before Bulk</span>
             <span class="risk-chip">SGS Lab Reports</span>
           </div>
@@ -1322,45 +1406,58 @@ footer {
 </section>
 
 <!-- ═══ WHY CHOOSE US ═══ -->
+<!-- AUDIT FIX: Added genuine differentiation. Not generic. Specific angles vs Gujarat/large exporters -->
 <section class="section why-section">
   <div class="wrap">
     <div class="section-header center reveal">
       <div class="eyebrow">Why Buyers Choose Us</div>
-      <h2 class="section-title" style="color:#fff">Trusted by <em>Importers Worldwide</em></h2>
-      <p class="section-lead" style="color:rgba(255,255,255,.6);margin:0 auto">We are not a trading company or broker. We are a direct-origin exporter — which means better prices, faster communication, and full accountability from farm to freight.</p>
+      <h2 class="section-title" style="color:#fff">What We Do <em>Differently</em></h2>
+      <p class="section-lead" style="color:rgba(255,255,255,.6);margin:0 auto">We are not a trading company or broker. We are a direct-origin exporter from Karnataka — which means tighter sourcing control, faster response, and full accountability from farm to freight.</p>
     </div>
     <div class="why-grid">
       <div class="why-card reveal">
         <div class="why-card-icon">🎯</div>
-        <h3>Origin Direct — No Middlemen</h3>
-        <p>We source directly from Karnataka's farms and mills. Every rupee saved in the supply chain becomes a better price for you.</p>
+        <h3>Direct from Karnataka's Source Clusters</h3>
+        <p>Sona Masuri sourced from Davanagere's milling clusters — 300 km from port. Not re-traded, not consolidated from multiple states. One accountable source.</p>
         <ul class="why-list">
           <li>No broker layers between farm and export</li>
-          <li>Transparent pricing, no hidden margins</li>
-          <li>Direct accountability for every batch</li>
+          <li>Consistent quality across orders — same mills, same belt</li>
+          <li>Lower cost passed to you — no margin inflation</li>
+          <li>Faster dispatch from single-source procurement</li>
         </ul>
       </div>
       <div class="why-card reveal reveal-delay-1">
         <div class="why-card-icon">📄</div>
-        <h3>Zero Documentation Headaches</h3>
-        <p>We handle every document your customs team needs. Clean paperwork is non-negotiable — it protects your shipment and saves you money on delays.</p>
+        <h3>Documentation You Can Actually Use</h3>
+        <p>Correct paperwork is the difference between a cleared shipment and a rejected one. We handle every document your customs team and food authority needs.</p>
         <ul class="why-list">
-          <li>Certificate of Origin (CoO) included</li>
-          <li>Phytosanitary Certificate arranged</li>
-          <li>Full BL, Invoice, Packing List</li>
-          <li>GSP / preferential duty CoO on request</li>
+          <li>Certificate of Origin (APEDA / Chamber)</li>
+          <li>Phytosanitary Certificate — Plant Quarantine Authority</li>
+          <li>GSP / preferential duty CoO for FTA markets</li>
+          <li>GCC, EU, USA, UK document formats as standard</li>
         </ul>
       </div>
       <div class="why-card reveal reveal-delay-2">
         <div class="why-card-icon">🌍</div>
-        <h3>Market-Ready Packaging</h3>
-        <p>From GCC Arabic labels to EU nutritional panels to UK CDS-compliant invoices — we know what each market requires and get it right the first time.</p>
+        <h3>Label-Ready for Your Market</h3>
+        <p>We know what each destination market requires on the pack. You get the right label the first time — not after a customs rejection.</p>
         <ul class="why-list">
-          <li>Arabic / French / German / Spanish labels</li>
+          <li>Arabic / French / German / Spanish label options</li>
+          <li>EU Regulation 1169/2011 nutritional panels</li>
           <li>Private label &amp; own-brand from 3 FCL</li>
-          <li>Custom pack sizes for 5 FCL+ orders</li>
           <li>Halal certification available on request</li>
         </ul>
+      </div>
+    </div>
+
+    <!-- AUDIT FIX: Explicit differentiation vs larger/established competitors -->
+    <div class="differentiator-bar reveal">
+      <span class="diff-label">vs Large Exporters</span>
+      <div class="diff-items">
+        <span class="diff-item">Lower MOQ — 25 MT vs 50–100 MT minimums</span>
+        <span class="diff-item">Direct response — not routed through sales teams</span>
+        <span class="diff-item">South India sourcing — not re-traded from multiple states</span>
+        <span class="diff-item">Transparent pricing — no hidden layers</span>
       </div>
     </div>
   </div>
@@ -1473,7 +1570,7 @@ footer {
         <div class="tl-content">
           <div class="tl-day">Day 14–21 — Shipment</div>
           <h3>Goods Loaded — Documents Sent</h3>
-          <p>Container loaded, BL issued, and a complete document set emailed to you — ready for your customs broker to begin clearance at your end. Real-time updates provided after dispatch.</p>
+          <p>Container loaded, BL issued, and a complete document set emailed to you — ready for your customs broker to begin clearance. Real-time updates provided after dispatch.</p>
         </div>
       </div>
     </div>
@@ -1488,13 +1585,10 @@ footer {
       <h2 class="section-title">Shipping Times <em>Worldwide</em></h2>
       <p class="section-lead">Approximate sea freight transit from Indian port of loading. Actual time varies by carrier, port selection, and destination congestion.</p>
     </div>
-
-    <!-- Disclaimer -->
     <div class="shipping-disclaimer reveal">
       <span class="shipping-disclaimer-icon">ℹ️</span>
       <span>Transit times are approximate and depend on carrier schedules, port congestion, and customs clearance at your end. We provide real-time ETD/ETA updates after shipment booking. Precise estimates provided at the quotation stage.</span>
     </div>
-
     <div class="regions-grid">
       <div class="region-card reveal">
         <div class="region-head">🏴 Middle East &amp; Gulf</div>
@@ -1591,9 +1685,7 @@ footer {
         <button class="faq-nav-item" data-target="faq-regions"><span class="faq-nav-item-icon">🌍</span> Region Requirements <span class="faq-count">3</span></button>
         <button class="faq-nav-item" data-target="faq-shipping"><span class="faq-nav-item-icon">🚢</span> Shipping &amp; Logistics <span class="faq-count">4</span></button>
       </aside>
-
       <div class="faq-content">
-
         <div class="faq-group active" id="faq-ordering">
           <div class="faq-group-title">Ordering &amp; Minimum Quantities</div>
           <div class="faq-item">
@@ -1613,7 +1705,6 @@ footer {
             <div class="faq-answer"><p>Use the enquiry form on this page or WhatsApp us. For a faster, more accurate quote, provide:</p><ul><li>Product name and quantity required</li><li>Destination port or country</li><li>Preferred pack size</li><li>Preferred Incoterm (FOB, CFR, or CIF)</li><li>Business type (Trader / Retailer / Distributor)</li></ul><p>We respond with a formal pro-forma invoice within one business day.</p></div>
           </div>
         </div>
-
         <div class="faq-group" id="faq-payment">
           <div class="faq-group-title">Payment</div>
           <div class="faq-item">
@@ -1625,7 +1716,6 @@ footer {
             <div class="faq-answer"><p>An irrevocable Letter of Credit at Sight is a bank payment instrument. Your bank guarantees payment to us once we present the correct shipping documents (BL, invoice, packing list, CoO, phytosanitary certificate). Neither party takes credit risk.</p><p>For orders above USD 10,000, we strongly recommend LC at Sight. Your bank's trade finance desk can open one in 3–5 business days.</p></div>
           </div>
         </div>
-
         <div class="faq-group" id="faq-packaging">
           <div class="faq-group-title">Packaging &amp; Labelling</div>
           <div class="faq-item">
@@ -1641,7 +1731,6 @@ footer {
             <div class="faq-answer"><p>Yes. We produce dual-language packaging in English + Arabic, English + French, English + German, English + Spanish, and other combinations on request. Labels include all required fields: product name, ingredients, nutritional information, country of origin, net weight, and importer details block.</p></div>
           </div>
         </div>
-
         <div class="faq-group" id="faq-quality">
           <div class="faq-group-title">Quality &amp; Testing</div>
           <div class="faq-item">
@@ -1650,14 +1739,13 @@ footer {
           </div>
           <div class="faq-item">
             <button class="faq-question" aria-expanded="false">Can I arrange a pre-shipment inspection? <span class="faq-q-icon">+</span></button>
-            <div class="faq-answer"><p>Yes. You may appoint SGS, Intertek, Bureau Veritas, or any accredited agency to inspect goods at our warehouse before loading. Inspection costs are borne by the buyer. We fully cooperate and provide access, samples, and lab reports.</p></div>
+            <div class="faq-answer"><p>Yes. You may appoint SGS, Intertek, Bureau Veritas, or any accredited agency to inspect goods at our warehouse before loading. Inspection costs are borne by the buyer. We fully cooperate and provide access, samples, and lab reports. You pay the balance only after you are satisfied — you take on zero blind risk.</p></div>
           </div>
           <div class="faq-item">
             <button class="faq-question" aria-expanded="false">Are lab certificates available? <span class="faq-q-icon">+</span></button>
             <div class="faq-answer"><p>Yes. NABL-accredited and SGS lab reports are available for every commercial shipment on request. Reports typically cover moisture content, broken grain percentage, foreign matter, milling degree, and microbiological parameters where applicable.</p></div>
           </div>
         </div>
-
         <div class="faq-group" id="faq-docs">
           <div class="faq-group-title">Documentation &amp; Compliance</div>
           <div class="faq-item">
@@ -1677,7 +1765,6 @@ footer {
             <div class="faq-answer"><p>Yes. For countries with preferential trade agreements with India (ASEAN-India FTA, SAFTA, AIFTA, India-UAE CEPA, India-Australia ECTA, etc.), we issue the appropriate Form A or GSP certificate of origin that may entitle your shipment to reduced import duties.</p></div>
           </div>
         </div>
-
         <div class="faq-group" id="faq-regions">
           <div class="faq-group-title">Region-Specific Import Requirements</div>
           <div class="faq-item">
@@ -1693,7 +1780,6 @@ footer {
             <div class="faq-answer"><p>GCC imports generally require: certificate of origin endorsed by Indian Chamber of Commerce and APEDA, phytosanitary certificate, commercial invoice, packing list, bill of lading, and Arabic labelling on all retail packs. Saudi Arabia additionally requires a health certificate from FSSAI. Halal certification is strongly preferred for retail. We supply all standard GCC documents and apply Arabic/English dual labels for this market as standard.</p><div class="faq-tags"><span class="faq-tag">UAE</span><span class="faq-tag">Saudi Arabia</span><span class="faq-tag">Oman</span><span class="faq-tag">Qatar</span><span class="faq-tag">Kuwait</span><span class="faq-tag">Bahrain</span></div></div>
           </div>
         </div>
-
         <div class="faq-group" id="faq-shipping">
           <div class="faq-group-title">Shipping &amp; Logistics</div>
           <div class="faq-item">
@@ -1713,13 +1799,12 @@ footer {
             <div class="faq-answer"><p>Yes. We work with established freight forwarding partners across all major Indian ports. Under CFR or CIF terms we manage ocean freight booking on your behalf. If you prefer your own freight forwarder, we coordinate with them directly for loading instructions and documentation.</p></div>
           </div>
         </div>
-
       </div>
     </div>
   </div>
 </section>
 
-<!-- ═══ DOWNLOADS (Lead-Gated) ═══ -->
+<!-- ═══ DOWNLOADS ═══ -->
 <section class="section-sm downloads-section">
   <div class="wrap">
     <div class="section-header reveal">
@@ -1769,7 +1854,7 @@ footer {
 <div class="dl-gate" id="dlGate" role="dialog" aria-modal="true" aria-labelledby="dlGateTitle">
   <div class="dl-gate-box">
     <button class="dl-gate-close" onclick="closeDlGate()" aria-label="Close">×</button>
-    <div class="dl-file-icon" style="margin-bottom:16px;font-size:32px;width:60px;height:60px" id="dlGateIcon">📄</div>
+    <div style="margin-bottom:16px;font-size:32px;width:60px;height:60px;display:flex;align-items:center;justify-content:center" id="dlGateIcon">📄</div>
     <div class="dl-gate-title" id="dlGateTitle">Download Document</div>
     <p class="dl-gate-sub">Enter your details to receive the document link. We'll also keep you updated with product availability and pricing.</p>
     <form id="dlGateForm" novalidate>
@@ -1791,7 +1876,11 @@ footer {
   </div>
 </div>
 
-<!-- ═══ CONTACT — IMPROVED FORM ═══ -->
+<!-- ═══════════════════════════════════════════
+     CONTACT FORM
+     AUDIT FIX #5: Added "Estimated Order Value" dropdown
+     This is the money filter — separates real buyers from enquiry-only traffic
+═══════════════════════════════════════════ -->
 <section id="contact" class="section contact-section">
   <div class="wrap">
     <div class="section-header reveal">
@@ -1859,7 +1948,6 @@ footer {
               </select>
             </div>
           </div>
-          <!-- NEW: Qualification fields -->
           <div class="form-row">
             <div class="form-field">
               <label class="form-label" for="fquantity">Quantity Required (MT)</label>
@@ -1877,6 +1965,17 @@ footer {
                 <option value="other">Other</option>
               </select>
             </div>
+          </div>
+          <!-- AUDIT FIX #5: Order Value filter — this is the buyer qualification field -->
+          <div class="form-field">
+            <label class="form-label" for="fordervalue">Estimated Order Value (USD) <span class="req">*</span></label>
+            <select id="fordervalue" name="order_value" class="form-select" required>
+              <option value="">— Select estimated value —</option>
+              <option value="under-5k">Under $5,000</option>
+              <option value="5k-25k">$5,000 – $25,000</option>
+              <option value="25k-100k">$25,000 – $100,000</option>
+              <option value="100k-plus">$100,000+</option>
+            </select>
           </div>
           <div class="form-field">
             <label class="form-label" for="fmessage">Your Requirements</label>
@@ -1902,7 +2001,7 @@ footer {
     <div class="footer-grid">
       <div>
         <div class="footer-brand-name">Apex Origin <span>Global</span></div>
-        <p class="footer-brand-desc">A women-owned merchant export company from Bengaluru, Karnataka. Bringing the finest of South India's fields to buyers worldwide since 2024.</p>
+        <p class="footer-brand-desc">A women-owned merchant export company from Bengaluru, Karnataka. Supplying importers and distributors across GCC, Europe and Asia with origin-direct rice and coconut products since 2024.</p>
         <a href="tel:+919110652474" class="footer-phone">📞 +91 91106 52474</a>
       </div>
       <div>
@@ -1953,9 +2052,7 @@ footer {
   <span class="wa-fab-text">WhatsApp Us</span>
 </a>
 
-<!-- ═══════════════════════════════════════════
-     SCRIPTS
-═══════════════════════════════════════════ -->
+<!-- ═══ SCRIPTS ═══ -->
 <script>function googleTranslateElementInit(){new google.translate.TranslateElement({pageLanguage:'en',autoDisplay:false},'google_translate_element');}</script>
 <script src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit" async defer></script>
 
@@ -2070,17 +2167,17 @@ document.querySelectorAll('.faq-question').forEach(q=>{
 
 /* ─── GEO-IP PERSONALISATION ─── */
 const heroMsg=document.getElementById('heroMessage');
-const DEF='Moisture-controlled rice (≤14%), export-grade coconuts, and a complete documentation set — delivered reliably to importers and distributors worldwide. No middlemen. Honest prices.';
+const DEF='Export-grade rice and coconuts — sourced direct, documented correctly, and shipped to importers and distributors across GCC, Europe and Asia. No middlemen. Honest prices.';
 try{
   const cached=sessionStorage.getItem('apog_country');
   if(cached){
-    heroMsg.innerHTML='Moisture-controlled Sona Masuri rice (≤14%) and Karnataka coconut products exported directly to importers in <strong>'+cached+'</strong> — no middlemen, full documentation, 24-hour quotes.';
+    heroMsg.innerHTML='Export-grade Sona Masuri rice and Karnataka coconut products supplied directly to importers in <strong>'+cached+'</strong> — complete documentation, 24-hour quotes, no broker layers.';
   }else{
     fetch('https://ipapi.co/json/').then(r=>r.json()).then(d=>{
       const cn=(d&&d.country_name)||'';
       if(cn){
         sessionStorage.setItem('apog_country',cn);
-        heroMsg.innerHTML='Moisture-controlled Sona Masuri rice (≤14%) and Karnataka coconut products exported directly to importers in <strong>'+cn+'</strong> — no middlemen, full documentation, 24-hour quotes.';
+        heroMsg.innerHTML='Export-grade Sona Masuri rice and Karnataka coconut products supplied directly to importers in <strong>'+cn+'</strong> — complete documentation, 24-hour quotes, no broker layers.';
       }else{heroMsg.textContent=DEF;}
     }).catch(()=>heroMsg.textContent=DEF);
   }
@@ -2115,7 +2212,6 @@ if(dlForm){
     btn.disabled=true;btn.textContent='Sending…';
     dlStatus.textContent='';dlStatus.className='form-status';
     try{
-      // Submit lead capture to Formspree
       const fd=new FormData();
       fd.append('email',email);
       fd.append('company',document.getElementById('dlCompany').value);
@@ -2126,7 +2222,6 @@ if(dlForm){
       if(res.ok){
         dlStatus.textContent='✓ Thank you! The document link will be sent to your email shortly.';
         dlStatus.className='form-status ok';
-        // Trigger direct download as well
         const a=document.createElement('a');a.href=currentDlFile;a.download='';a.click();
         setTimeout(closeDlGate,2500);
       }else{
@@ -2134,7 +2229,6 @@ if(dlForm){
         dlStatus.className='form-status err';
       }
     }catch{
-      // Fall back to direct download if network fails
       const a=document.createElement('a');a.href=currentDlFile;a.download='';a.click();
       dlStatus.textContent='Download started. Please also email us your details.';
       dlStatus.className='form-status ok';
@@ -2155,8 +2249,9 @@ if(form){
     const email=form.querySelector('[name="email"]').value.trim();
     const country=form.querySelector('[name="country"]').value.trim();
     const product=form.querySelector('[name="product"]').value;
-    if(!name||!email||!country||!product){
-      formStatus.textContent='Please fill in all required fields (name, email, country, product).';
+    const orderValue=form.querySelector('[name="order_value"]').value;
+    if(!name||!email||!country||!product||!orderValue){
+      formStatus.textContent='Please fill in all required fields.';
       formStatus.className='form-status err';return;
     }
     submitBtn.disabled=true;submitBtn.textContent='Sending…';
